@@ -25,29 +25,29 @@
                     <th class='px-2'>Surname</th>
                     <th class='px-2'>Email</th>
                     <th class='px-2'>Department</th>
-                    <th class='px-2'>Research</th>
+                    <th class='px-2'>Research Group</th>
                 </tr>
             </thead>
             <tbody>
                 {#each modules as module}
                     <tr>
                         <td>
-                            <a href={module.url} class="block">{module.code}</a>
+                            <a href={module.url} class="block">Dr</a>
                         </td>
-                        <td class="text-left ">
-                            <a href={module.url} class="block">{module.title}</a>
+                        <td class="text-center">
+                            <a href={module.url} class="block">Peter</a>
                         </td>
-                        <td class="text-left ">
-                            <a href={module.url} class="block">{module.department}</a>
+                        <td class="text-center">
+                            <a href={module.url} class="block">Hubbard</a>
                         </td>
                         <td class="text-center ">
-                            <a href={module.url} class="block">{module.credits}</a>
+                            <a href={module.url} class="block">p.hubbard@lboro.ac.uk</a>
                         </td>
                         <td>
-                            <a href={module.url} class="block">{module.examWeighting}</a>
+                            <a href={module.url} class="block">Wolfson School of MEME</a>
                         </td>
                         <td>
-                            <a href={module.url} class="block">{module.courseworkWeighting}</a>
+                            <a href={module.url} class="block">Control Systems Group</a>
                         </td>
                     </tr>
                 {/each}

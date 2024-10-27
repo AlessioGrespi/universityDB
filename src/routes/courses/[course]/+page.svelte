@@ -149,7 +149,7 @@
           <td class="p-2 text-center">10%</td>
         </tr>
         <tr>
-          <td class="p-2">Optional (interdepertment)</td>
+          <td class="p-2">Optional (interdepartment)</td>
           <td class="p-2 text-center">10%</td>
         </tr>
         <!-- <tr class="bg-gray-50">

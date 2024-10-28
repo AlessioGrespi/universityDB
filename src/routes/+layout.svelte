@@ -2,6 +2,7 @@
 	import ChatWindow from '$lib/components/ChatWindow.svelte';
 import '../app.css';
 	import { House } from 'lucide-svelte';
+	// import { inject } from '@vercel/analytics';
 </script>
 
 <div class='w-full flex justify-center'>

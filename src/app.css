@@ -29,11 +29,15 @@ body {
   .card {
     @apply bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow duration-200;
   }
+
+  .subcard {
+    @apply bg-gray-50 shadow rounded-lg p-6 hover:shadow-lg transition-shadow duration-200;
+  }
   
   .btn-secondary {
     @apply bg-gray-200 text-gray-900 hover:bg-gray-300;
   }
   
   .btn-primary {
-    @apply bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out;
+    @apply  px-4 py-2 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out;
   }

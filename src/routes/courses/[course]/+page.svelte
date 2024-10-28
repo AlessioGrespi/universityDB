@@ -188,7 +188,7 @@
     </div>
   </div>
 
-	<div class="card col-span-7">
+	<div class="card col-span-7 mb-8">
 		<h2 class="mb-4 text-2xl font-semibold">Programme Structure</h2>
 		<p class="mb-4 text-gray-700">
 			The programme is structured over four years (with an optional placement year). Each year
@@ -196,7 +196,59 @@
 			specialization. Students will have the opportunity to choose optional modules in later years,
 			allowing for customization of their degree path.
 		</p>
-		<a href="/degrees/1" class="btn btn-primary">View Full Course Structure</a>
+		<a href="/degrees/1" class="text-white bg-purple-800 px-2 py-1 rounded font-semibold my-4">View Full Course Structure</a>
+    <div class='subcard grid grid-cols-1 gap-4 mt-4'>
+      <h2 class="mb-4 text-2xl font-semibold">First Year (part A)</h2>
+      <table class='w-full table-auto'>
+        <thead>
+          <tr class='bg-white'>
+            <th>Module Code</th>
+            <th>Module Title</th>
+            <th>Credits</th>
+            <th>ECTS Credits</th>
+            <th>Semester</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BSA005</td>
+            <td>Organisational Behaviour</td>
+            <td>10</td>
+            <td>5</td>
+            <td>S1</td>
+          </tr>
+          <tr>
+            <td>BSA020</td>
+            <td>Organisational Behaviour</td>
+            <td>10</td>
+            <td>5</td>
+            <td>S1</td>
+          </tr>
+          <tr>
+            <td>BSA025</td>
+            <td>Organisational Behaviour</td>
+            <td>10</td>
+            <td>5</td>
+            <td>S1</td>
+          </tr>
+          <tr>
+            <td>BSA005</td>
+            <td>Organisational Behaviour</td>
+            <td>10</td>
+            <td>5</td>
+            <td>S1</td>
+          </tr>
+          <tr>
+            <td>BSA005</td>
+            <td>Organisational Behaviour</td>
+            <td>10</td>
+            <td>5</td>
+            <td>S1</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
 	</div>
   <!-- <div class="card col-span-2">
     <h2 class="mb-4 text-center text-2xl font-semibold">Grade Boundaries</h2>

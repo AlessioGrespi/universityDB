@@ -293,7 +293,7 @@
 
 <style>
 	.pill {
-		@apply rounded-full bg-neutral-200 px-2 py-0.5;
+		@apply rounded-full bg-neutral-200 px-2 py-0.5 list-none;
 	}
 
   .pill-list li {

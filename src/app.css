@@ -30,48 +30,8 @@ body {
     @apply bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow duration-200;
   }
 
-  .card h1 {
-    @apply text-4xl font-semibold pb-4;
-  }
-
-  .card h2 {
-    @apply mb-4 text-center text-2xl font-semibold;
-  }
-
-  .card h3 {
-    @apply text-xl;
-  }
-
-  .card table {
-    @apply w-full;
-  }
-
-  .card th {
-    @apply bg-gray-100;
-  }
-
-  .card th {
-    @apply p-2;
-  }
-
-  .card td {
-    @apply p-2;
-  }
-
-  .card tbody tr {
-@apply hover:bg-gray-200;
-  }
-
-  .card ul {
-    @apply list-disc py-1 pl-8;
-  }
-
-  .card ol {
-    @apply list-decimal pl-8;
-  }
-
   .subcard {
-    @apply bg-neutral-50 shadow rounded-lg p-6 hover:shadow-lg transition-shadow duration-200;
+    @apply bg-gray-50 shadow rounded-lg p-6 hover:shadow-lg transition-shadow duration-200;
   }
 
   .subcard tbody {

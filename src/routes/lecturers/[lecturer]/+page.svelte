@@ -93,7 +93,7 @@
                         </table>
                     </div>
                     <div class='col-span-1'>
-                        <ul class='flex flex-wrap justify-center gap-1 list-none'>
+                        <ul class='flex flex-wrap justify-center gap-1'>
                             <li class='rounded-full bg-gray-100 px-2 py-0.5 font-semibold'>Control Systems Design</li>
                             <li class='rounded-full bg-gray-100 px-2 py-0.5 font-semibold'>Avionics</li>
                             <li class='rounded-full bg-gray-100 px-2 py-0.5 font-semibold'>Kalman Filters</li>

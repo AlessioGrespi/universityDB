@@ -33,6 +33,18 @@ body {
   .subcard {
     @apply bg-gray-50 shadow rounded-lg p-6 hover:shadow-lg transition-shadow duration-200;
   }
+
+  .subcard th {
+    @apply p-2;
+  }
+  
+  .subcard tbody {
+    @apply bg-gray-50 text-center;
+  }
+
+  .subcard tr {
+    @apply text-center;
+  }
   
   .btn-secondary {
     @apply bg-gray-200 text-gray-900 hover:bg-gray-300;

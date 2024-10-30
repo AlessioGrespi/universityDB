@@ -196,74 +196,306 @@
 			specialization. Students will have the opportunity to choose optional modules in later years,
 			allowing for customization of their degree path.
 		</p>
-		<a href="/degrees/1" class="text-white bg-purple-800 px-2 py-1 rounded font-semibold my-4">View Full Course Structure</a>
-    <div class='subcard grid grid-cols-1 gap-4 mt-4'>
-      <h2 class="mb-4 text-2xl font-semibold">First Year (part A)</h2>
-      <table class='w-full table-auto'>
-        <thead>
-          <tr class='bg-white'>
-            <th>Module Code</th>
-            <th>Module Title</th>
-            <th>Credits</th>
-            <th>ECTS Credits</th>
-            <th>Semester</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>BSA005</td>
-            <td>Organisational Behaviour</td>
-            <td>10</td>
-            <td>5</td>
-            <td>S1</td>
-          </tr>
-          <tr>
-            <td>BSA020</td>
-            <td>Organisational Behaviour</td>
-            <td>10</td>
-            <td>5</td>
-            <td>S1</td>
-          </tr>
-          <tr>
-            <td>BSA025</td>
-            <td>Organisational Behaviour</td>
-            <td>10</td>
-            <td>5</td>
-            <td>S1</td>
-          </tr>
-          <tr>
-            <td>BSA005</td>
-            <td>Organisational Behaviour</td>
-            <td>10</td>
-            <td>5</td>
-            <td>S1</td>
-          </tr>
-          <tr>
-            <td>BSA005</td>
-            <td>Organisational Behaviour</td>
-            <td>10</td>
-            <td>5</td>
-            <td>S1</td>
-          </tr>
-        </tbody>
-      </table>
-
+		<a href="/degrees/1" class="bg-gray-300 px-2 py-1 rounded font-semibold my-4">View Full Course Structure</a>
+    <div class='grid grid-cols-1 gap-4 mt-4'>
+      <div class='subcard col-span-1'>
+        <h2 class="mb-4 text-2xl font-semibold">First Year (part A)</h2>
+        <table class='w-full table-auto'>
+          <thead>
+            <tr class='bg-gray-200'>
+              <th>Module Code</th>
+              <th>Module Title</th>
+              <th>Credits</th>
+              <th>ECTS Credits</th>
+              <th>Semester</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1</td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td >BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1</td>
+            </tr>
+            <tr>
+              <td>BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1</td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td >BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S2</td>
+            </tr>
+            <tr>
+              <td>BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S2</td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td >BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S2</td>
+            </tr>
+            <tr>
+              <td>BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1 + S2</td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td >BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1 + S2</td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+      <div class='subcard col-span-1'>
+        <h2 class="mb-4 text-2xl font-semibold">Second Year (part B)</h2>
+        <table class='w-full table-auto'>
+          <thead>
+            <tr class='bg-gray-200'>
+              <th>Module Code</th>
+              <th>Module Title</th>
+              <th>Credits</th>
+              <th>ECTS Credits</th>
+              <th>Semester</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1</td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td >BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1</td>
+            </tr>
+            <tr>
+              <td>BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1</td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td >BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S2</td>
+            </tr>
+            <tr>
+              <td>BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S2</td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td >BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S2</td>
+            </tr>
+            <tr>
+              <td>BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1 + S2</td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td >BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1 + S2</td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+      <div class='subcard col-span-1'>
+        <h2 class="mb text-2xl font-semibold">Optional Placement/Study Abroad Year (part I)</h2>
+      </div>
+      <div class='subcard col-span-1'>
+        <h2 class="mb-4 text-2xl font-semibold">Third Year (part C)</h2>
+        <h3 class="mb-4 text-xl font-medium">Compulsary</h3>
+        <table class='w-full table-auto'>
+          <thead>
+            <tr class='bg-gray-200'>
+              <th>Module Code</th>
+              <th>Module Title</th>
+              <th>Credits</th>
+              <th>ECTS Credits</th>
+              <th>Semester</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1</td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td >BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1</td>
+            </tr>
+            <tr>
+              <td>BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1</td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td >BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S2</td>
+            </tr>
+            <tr>
+              <td>BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S2</td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td >BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S2</td>
+            </tr>
+            <tr>
+              <td>BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1 + S2</td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td >BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1 + S2</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3 class="text-xl font-medium mt-4">Optional</h3>
+        <h4 class='text-lg font-medium mb-4'>Students must pick X credits from S1 and X credits from S2</h4>
+          <table class='w-full table-auto'>
+            <thead>
+              <tr class='bg-gray-200'>
+                <th>Module Code</th>
+                <th>Module Title</th>
+                <th>Credits</th>
+                <th>ECTS Credits</th>
+                <th>Semester</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BSA005</td>
+                <td class='text-left'>Organisational Behaviour</td>
+                <td>10</td>
+                <td>5</td>
+                <td>S1</td>
+              </tr>
+              <tr class='bg-gray-100'>
+                <td >BSA005</td>
+                <td class='text-left'>Organisational Behaviour</td>
+                <td>10</td>
+                <td>5</td>
+                <td>S1</td>
+              </tr>
+              <tr>
+                <td>BSA005</td>
+                <td class='text-left'>Organisational Behaviour</td>
+                <td>10</td>
+                <td>5</td>
+                <td>S1</td>
+              </tr>
+              <tr class='bg-gray-100'>
+                <td >BSA005</td>
+                <td class='text-left'>Organisational Behaviour</td>
+                <td>10</td>
+                <td>5</td>
+                <td>S2</td>
+              </tr>
+              <tr>
+                <td>BSA005</td>
+                <td class='text-left'>Organisational Behaviour</td>
+                <td>10</td>
+                <td>5</td>
+                <td>S2</td>
+              </tr>
+              <tr class='bg-gray-100'>
+                <td >BSA005</td>
+                <td class='text-left'>Organisational Behaviour</td>
+                <td>10</td>
+                <td>5</td>
+                <td>S2</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+ 
     </div>
-	</div>
-  <!-- <div class="card col-span-2">
-    <h2 class="mb-4 text-center text-2xl font-semibold">Grade Boundaries</h2>
-    <table class="w-full">
-      <tr class="bg-gray-100">
-        <th class="p-2 text-left">UK</th>
-        <th class="p-2 text-left">US</th>
-        <th class="p-2 text-left">Percentage</th>
-      </tr>
-      <tr>
-        <td class="p-2">1st</td>
-        <td class="p-2">?</td>
-        <td class="p-2">+70%</td>
-      </tr>
-      <tr class="bg-gray-50">
+    
+        </div>
+    <!-- <div class="card col-span-2">
+      <h2 class="mb-4 text-center text-2xl font-semibold">Grade Boundaries</h2>
+      <table class="w-full">
+        <tr class="bg-gray-100">
+          <th class="p-2 text-left">UK</th>
+          <th class="p-2 text-left">US</th>
+          <th class="p-2 text-left">Percentage</th>
+        </tr>
+        <tr>
+          <td class="p-2">1st</td>
+          <td class="p-2">?</td>
+          <td class="p-2">+70%</td>
+        </tr>
+        <tr class="bg-gray-50">
         <td class="p-2">2:1</td>
         <td class="p-2">?</td>
         <td class="p-2">59.5% - 69.5%</td>

@@ -28,25 +28,53 @@ h6 {
   @apply bg-blue-100;
 }
 
+.text-xxs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-xxxs {
+  font-size: 0.6rem;
+  line-height: 0.8rem;
+}
+
+.pill {
+  @apply text-xxxs sm:text-base rounded-full bg-gray-100 px-1 py-0.5 sm:px-2 sm:py-0.5;
+}
+
 /* .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   } */
 
 .container {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply max-w-7xl mx-auto px-1 sm:px-6 lg:px-8;
 }
 
 .card {
-  @apply bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow duration-200 overflow-hidden;
+  @apply p-2 bg-white shadow rounded-lg sm:p-6 hover:shadow-lg transition-shadow duration-200 overflow-hidden;
 }
 
 .card h1 {
   @apply text-2xl sm:text-4xl font-semibold pb-4;
 }
 
-.card table {
-  @apply w-full table-auto mt-2
+.card h2{
+  @apply mb-1 sm:mb-4 text-center text-sm sm:text-2xl font-semibold;
 }
+
+.card h3 {
+  @apply text-center text-xxs sm:text-xl 
+}
+
+.card table {
+  @apply text-xs sm:text-base w-full table-auto sm:mt-2
+}
+
+.card th, .card td {
+  @apply p-1 sm:p-2;
+}
+
+
 
 .page-table th {
   @apply font-medium py-2 bg-neutral-100;
@@ -61,17 +89,28 @@ h6 {
 }
 
 .subcard {
-  @apply bg-gray-50 shadow rounded-lg p-6 hover:shadow-lg transition-shadow duration-200;
+  @apply p-2 bg-gray-50 shadow rounded-lg sm:p-6 hover:shadow-lg transition-shadow duration-200;
 }
 
-.subcard th {
-  @apply p-2;
+.subcard h2 {
+  @apply text-xs sm:text-base;
 }
+/* 
+.subcard th  {
+  @apply text-xss sm:text-base  p-0.5 sm:p-2;
+}
+
+.subcard td{
+  @apply text-xss sm:text-base  p-0.5 sm:p-2;
+} */
 
 .subcard tbody {
   @apply bg-gray-50 text-center;
 }
 
+.subcard table {
+  @apply text-xs sm:text-base w-full table-auto sm:mt-2;
+}
 .subcard tr {
   @apply text-center;
 }
@@ -83,3 +122,4 @@ h6 {
 .btn-primary {
   @apply px-4 py-2 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out;
 }
+

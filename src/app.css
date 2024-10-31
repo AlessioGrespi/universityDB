@@ -4,56 +4,82 @@
 
 
 body {
-    @apply bg-gray-50 text-gray-900 font-sans;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold text-gray-900;
-  }
-  
-  /* a {
+  @apply bg-gray-50 text-gray-900 font-sans;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-semibold text-gray-900;
+}
+
+/* a {
     @apply  ;
   } */
-  
-      .nav-link {
-          @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-150 ease-in-out;
-      }
-      .nav-link.active {
-          @apply bg-blue-100;
-      }
-  
-  /* .container {
+
+.nav-link {
+  @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-150 ease-in-out;
+}
+
+.nav-link.active {
+  @apply bg-blue-100;
+}
+
+/* .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   } */
-  
-  .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
 
-  .card {
-    @apply bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow duration-200;
-  }
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
 
-  .subcard {
-    @apply bg-gray-50 shadow rounded-lg p-6 hover:shadow-lg transition-shadow duration-200;
-  }
+.card {
+  @apply bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow duration-200 overflow-hidden;
+}
 
-  .subcard th {
-    @apply p-2;
-  }
-  
-  .subcard tbody {
-    @apply bg-gray-50 text-center;
-  }
+.card h1 {
+  @apply text-2xl sm:text-4xl font-semibold pb-4;
+}
 
-  .subcard tr {
-    @apply text-center;
-  }
-  
-  .btn-secondary {
-    @apply bg-gray-200 text-gray-900 hover:bg-gray-300;
-  }
-  
-  .btn-primary {
-    @apply  px-4 py-2 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out;
-  }
+.card table {
+  @apply w-full table-auto mt-2
+}
+
+.page-table th {
+  @apply font-medium py-2 bg-neutral-100;
+}
+
+.page-table tr {
+  @apply  text-xs sm:text-base text-center hover:bg-neutral-50;
+}
+
+.page-table td {
+  @apply px-2;
+}
+
+.subcard {
+  @apply bg-gray-50 shadow rounded-lg p-6 hover:shadow-lg transition-shadow duration-200;
+}
+
+.subcard th {
+  @apply p-2;
+}
+
+.subcard tbody {
+  @apply bg-gray-50 text-center;
+}
+
+.subcard tr {
+  @apply text-center;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-900 hover:bg-gray-300;
+}
+
+.btn-primary {
+  @apply px-4 py-2 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out;
+}

@@ -219,53 +219,53 @@
               <td>S1</td>
             </tr>
             <tr class='bg-gray-100'>
-              <td >BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S1</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1</a></td>
             </tr>
             <tr>
-              <td>BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S1</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1</a></td>
             </tr>
             <tr class='bg-gray-100'>
-              <td >BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S2</a></td>
             </tr>
             <tr>
-              <td>BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S2</a></td>
             </tr>
             <tr class='bg-gray-100'>
-              <td >BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S2</a></td>
             </tr>
             <tr>
-              <td>BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S1 + S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1 + S2</a></td>
             </tr>
             <tr class='bg-gray-100'>
-              <td >BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S1 + S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1 + S2</a></td>
             </tr>
           </tbody>
         </table>
@@ -292,53 +292,53 @@
               <td>S1</td>
             </tr>
             <tr class='bg-gray-100'>
-              <td >BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S1</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1</a></td>
             </tr>
             <tr>
-              <td>BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S1</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1</a></td>
             </tr>
             <tr class='bg-gray-100'>
-              <td >BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S2</a></td>
             </tr>
             <tr>
-              <td>BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S2</a></td>
             </tr>
             <tr class='bg-gray-100'>
-              <td >BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S2</a></td>
             </tr>
             <tr>
-              <td>BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S1 + S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1 + S2</a></td>
             </tr>
             <tr class='bg-gray-100'>
-              <td >BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S1 + S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1 + S2</a></td>
             </tr>
           </tbody>
         </table>
@@ -369,114 +369,128 @@
               <td>S1</td>
             </tr>
             <tr class='bg-gray-100'>
-              <td >BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S1</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1</a></td>
             </tr>
             <tr>
-              <td>BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S1</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1</a></td>
             </tr>
             <tr class='bg-gray-100'>
-              <td >BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S2</a></td>
             </tr>
             <tr>
-              <td>BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S2</a></td>
             </tr>
             <tr class='bg-gray-100'>
-              <td >BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S2</a></td>
             </tr>
             <tr>
-              <td>BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S1 + S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1 + S2</a></td>
             </tr>
             <tr class='bg-gray-100'>
-              <td >BSA005</td>
-              <td class='text-left'>Organisational Behaviour</td>
-              <td>10</td>
-              <td>5</td>
-              <td>S1 + S2</td>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1 + S2</a></td>
             </tr>
           </tbody>
         </table>
         
         <h3 class="text-xl font-medium mt-4">Optional</h3>
         <h4 class='text-lg font-medium mb-4'>Students must pick X credits from S1 and X credits from S2</h4>
-          <table class='w-full table-auto'>
-            <thead>
-              <tr class='bg-gray-200'>
-                <th>Module Code</th>
-                <th>Module Title</th>
-                <th>Credits</th>
-                <th>ECTS Credits</th>
-                <th>Semester</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>BSA005</td>
-                <td class='text-left'>Organisational Behaviour</td>
-                <td>10</td>
-                <td>5</td>
-                <td>S1</td>
-              </tr>
-              <tr class='bg-gray-100'>
-                <td >BSA005</td>
-                <td class='text-left'>Organisational Behaviour</td>
-                <td>10</td>
-                <td>5</td>
-                <td>S1</td>
-              </tr>
-              <tr>
-                <td>BSA005</td>
-                <td class='text-left'>Organisational Behaviour</td>
-                <td>10</td>
-                <td>5</td>
-                <td>S1</td>
-              </tr>
-              <tr class='bg-gray-100'>
-                <td >BSA005</td>
-                <td class='text-left'>Organisational Behaviour</td>
-                <td>10</td>
-                <td>5</td>
-                <td>S2</td>
-              </tr>
-              <tr>
-                <td>BSA005</td>
-                <td class='text-left'>Organisational Behaviour</td>
-                <td>10</td>
-                <td>5</td>
-                <td>S2</td>
-              </tr>
-              <tr class='bg-gray-100'>
-                <td >BSA005</td>
-                <td class='text-left'>Organisational Behaviour</td>
-                <td>10</td>
-                <td>5</td>
-                <td>S2</td>
-              </tr>
-            </tbody>
-          </table>
+        <table class='w-full table-auto'>
+          <thead>
+            <tr class='bg-gray-200'>
+              <th>Module Code</th>
+              <th>Module Title</th>
+              <th>Credits</th>
+              <th>ECTS Credits</th>
+              <th>Semester</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BSA005</td>
+              <td class='text-left'>Organisational Behaviour</td>
+              <td>10</td>
+              <td>5</td>
+              <td>S1</td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1</a></td>
+            </tr>
+            <tr>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1</a></td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S2</a></td>
+            </tr>
+            <tr>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S2</a></td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S2</a></td>
+            </tr>
+            <tr>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1 + S2</a></td>
+            </tr>
+            <tr class='bg-gray-100'>
+              <td ><a href='/modules/robotics/'>BSA005</a></td>
+              <td class='text-left'><a href='/modules/robotics/'>Organisational Behaviour</a></td>
+              <td><a href='/modules/robotics/'>10</a></td>
+              <td><a href='/modules/robotics/'>5</a></td>
+              <td><a href='/modules/robotics/'>S1 + S2</a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
  
     </div>

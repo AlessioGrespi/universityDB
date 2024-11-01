@@ -42,6 +42,10 @@ h6 {
   @apply text-xxxs sm:text-base rounded-full bg-gray-100 px-1 py-0.5 sm:px-2 sm:py-0.5;
 }
 
+.pill-list li {
+  @apply w-auto capitalize pill;
+}
+
 /* .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   } */
@@ -64,6 +68,10 @@ h6 {
 
 .card h3 {
   @apply text-center text-xxs sm:text-xl 
+}
+
+.card h4 {
+  @apply text-center text-xxs sm:text-xl font-medium;
 }
 
 .card table {
@@ -93,7 +101,7 @@ h6 {
 }
 
 .subcard h2 {
-  @apply text-xs sm:text-base;
+  @apply text-xs sm:text-xl;
 }
 /* 
 .subcard th  {

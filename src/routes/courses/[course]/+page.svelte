@@ -73,7 +73,7 @@
 		<h2 class="mb-4 text-center text-2xl font-semibold">Credits</h2>
 		<h3 class="text-center text-xl">480 UK, 240 ECTS</h3>
 	</div>
-	<div class="card col-span-2">
+	<div class="card col-span-2 sm:col-span-3">
 		<h2 class="">Accredited by</h2>
 		<ul class='text-xs sm:text-xl'>
 			<li>Royal Aeronautical Society (RAeS)</li>
@@ -132,7 +132,7 @@
 		</table>
 		<p class="text-xxs sm:text-base font-medium text-neutral-400">* Only shows distribution in compulsary modules</p>
 	</div>
-	<div class="card col-span-1sm:col-span-2">
+	<div class="card col-span-1 sm:col-span-2">
 		<h2 class="mb-4 text-2xl font-semibold">Content Split</h2>
 		<table class="w-full">
 			<thead>
@@ -191,16 +191,16 @@
 
 	<div class="card col-span-2 sm:col-span-7 mb-8">
 		<h2 class="mb-4 text-2xl font-semibold">Programme Structure</h2>
-		<p class="text-xs sm:text-base text-gray-700 mb-4">
+		<!-- <p class="text-xs sm:text-base text-gray-700 mb-4">
 			The programme is structured over four years (with an optional placement year). Each year
 			consists of modules that build upon previous knowledge, gradually increasing in complexity and
 			specialization. Students will have the opportunity to choose optional modules in later years,
 			allowing for customization of their degree path.
-		</p>
-		<a href="/degrees/1" class="my-4 rounded bg-gray-300 px-2 py-1 font-semibold"
+		</p> -->
+		<!-- <a href="/degrees/1" class="my-4 rounded bg-gray-300 px-2 py-1 font-semibold"
 			>View Full Course Structure</a
-		>
-		<div class="mt-4 grid grid-cols-1 gap-4">
+		> -->
+		<div class="mt-4 grid grid-cols-1 gap-2 sm:gap-4">
 			<div class="subcard col-span-1">
 				<h2 class="">First Year (part A)</h2>
 				<table class="w-full table-auto">
@@ -278,11 +278,11 @@
 				<table class="w-full table-auto">
 					<thead>
 						<tr class="bg-gray-200">
-							<th>Module Code</th>
+							<th>Code</th>
 							<th>Module Title</th>
 							<th>Credits</th>
-							<th>ECTS Credits</th>
-							<th>Semester</th>
+							<th>ECTS <span class='hidden sm:inline'>Credits</span></th>
+							<th>Sem.</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -349,16 +349,16 @@
 				<h2 class="mb text-2xl font-semibold">Optional Placement/Study Abroad Year (part I)</h2>
 			</div>
 			<div class="subcard col-span-1">
-				<h2 class="mb-4 text-2xl font-semibold">Third Year (part C)</h2>
-				<h3 class="mb-4 text-xl font-medium">Compulsary</h3>
+				<h2 class="text-2xl font-semibold">Third Year (part C)</h2>
+				<h3 class="sm:-mt-4 text-xl font-medium">Compulsary</h3>
 				<table class="w-full table-auto">
 					<thead>
 						<tr class="bg-gray-200">
-							<th>Module Code</th>
+							<th>Code</th>
 							<th>Module Title</th>
 							<th>Credits</th>
-							<th>ECTS Credits</th>
-							<th>Semester</th>
+							<th>ECTS <span class='hidden sm:inline'>Credits</span></th>
+							<th>Sem.</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -428,11 +428,11 @@
 				<table class="w-full table-auto">
 					<thead>
 						<tr class="bg-gray-200">
-							<th>Module Code</th>
+							<th>Code</th>
 							<th>Module Title</th>
 							<th>Credits</th>
-							<th>ECTS Credits</th>
-							<th>Semester</th>
+							<th>ECTS <span class='hidden sm:inline'>Credits</span></th>
+							<th>Sem.</th>
 						</tr>
 					</thead>
 					<tbody>

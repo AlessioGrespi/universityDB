@@ -24,36 +24,36 @@
 	<title>{course.programData.programTitle} - University Course</title>
 </svelte:head>
 
-<div class="container grid grid-cols-7 gap-6 pt-8">
-	<div class="col-span-5">
+<div class="container grid grid-cols-2 sm:grid-cols-7 gap-1.5 sm:gap-6 sm:pt-8">
+	<div class="col-span-2 sm:col-span-5">
 		<div class="flex h-full flex-col justify-center">
 			<div>
-				<h1 class="text-4xl font-semibold">Control Systems Design</h1>
-				<h2 class="text-2xl font-medium text-gray-800">
+				<h1 class="text-base sm:text-4xl font-semibold">Control Systems Design</h1>
+				<h2 class="text-sm sm:text-2xl font-medium text-gray-800">
 					Loughborough University <span class="text-gray-400"
 						>- {course.programData.department}</span
 					>
 				</h2>
 				<div class="my-1 flex gap-x-1">
-					<h4 class="rounded-full bg-gray-100 px-2 py-0.5 font-medium">
+					<h4 class="pill">
 						Internal Code: {course.programData.degreeCode}
 					</h4>
-					<h4 class="rounded-full bg-gray-100 px-2 py-0.5 font-medium">Semester 2</h4>
-					<h4 class="rounded-full bg-gray-100 px-2 py-0.5 font-medium">Second Year</h4>
+					<h4 class="pill">Semester 2</h4>
+					<h4 class="pill">Second Year</h4>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="card col-span-2">
-		<h2 class="mb-4 text-center text-2xl font-semibold">Lecturers</h2>
-		<ul class="list-none pl-0">
+	<div class="card col-span-1 sm:col-span-2">
+		<h2 class="">Lecturers</h2>
+		<ul class='text-xs sm:text-xl pl-0 list-none'>
 			<li>Pete Hubbard <span class="text-neutral-400">- Module Leader</span></li>
 			<li>Paul Lepper</li>
 		</ul>
 	</div>
-	<div class="card col-span-2">
-		<h2 class="mb-4 text-center text-2xl font-semibold">Credits</h2>
+	<div class="card col-span-1 sm:col-span-2">
+		<h2 class="">Credits</h2>
 		<table class="w-full">
 			<tbody>
 				<tr>
@@ -72,16 +72,16 @@
 		</table>
 	</div>
 
-	<div class="card col-span-5">
+	<div class="card col-span-2 sm:col-span-5">
 		<h2 class="mb-4 text-center text-2xl font-semibold">Assessments</h2>
 		<table class="w-full table-auto">
 			<thead>
 				<tr class="bg-gray-100">
 					<th class="p-2 text-center" colspan="2">Type</th>
-					<th class="text-nowrap p-2 text-center">% Weight</th>
+					<th class="text-nowrap p-2 text-center">% <span class='hidden sm:inline'>Weight</span></th>
 					<th class="text-nowrap p-2 text-center">Length</th>
-					<th class="p-2 text-center">Semester</th>
-					<th class="text-nowrap p-2 text-center">Resit Available</th>
+					<th class="p-2 text-center"><span class='inline sm:hidden'>Sem.</span><span class='hidden sm:inline'>Semester</span></th>
+					<th class="text-nowrap p-2 text-center">Resit <span class='hidden sm:inline'>Available</span></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -134,7 +134,7 @@
     <h3 class="text-center text-xl">None</h3>
   </div> -->
 
-	<div class="card col-span-3">
+	<div class="card col-span-2 sm:col-span-3">
 		<h2 class="mb-4 text-center text-2xl font-semibold">Content Delivery</h2>
 		<table class="w-full table-auto">
 			<thead>
@@ -174,27 +174,30 @@
 		</table>
 	</div>
 
-	<div class="card col-span-4">
+	<div class="card col-span-2 sm:col-span-4">
 		<h2 class="mb-4 text-2xl font-semibold">Module Summary</h2>
-		<p>
-			This module establishes the foundational principles of robotic manipulators and explores their
-			kinematic and dynamic behavior. Key topics include:
-		</p>
-		<ul class="list-disc py-1 pl-8">
-			<li>Use of vectors and matrices for spatial transformations in manipulators.</li>
-			<li>Forward and inverse kinematic models and their applications.</li>
-			<li>
-				Analysis of velocities and forces using Jacobian transforms and dynamic behavior with
-				Newton-Euler equations.
-			</li>
-		</ul>
-		<p>
-			Students will be taught through lectures and practical workshops totaling 40 hours. Assessment
-			includes coursework (40%) focused on programming a robotic manipulator and an in-person exam
-			(60%) evaluating theoretical knowledge.
-		</p>
+		<div class="text-xs sm:text-base text-gray-700">
+
+			<p>
+				This module establishes the foundational principles of robotic manipulators and explores their
+				kinematic and dynamic behavior. Key topics include:
+			</p>
+			<ul class="list-disc py-1 pl-8">
+				<li>Use of vectors and matrices for spatial transformations in manipulators.</li>
+				<li>Forward and inverse kinematic models and their applications.</li>
+				<li>
+					Analysis of velocities and forces using Jacobian transforms and dynamic behavior with
+					Newton-Euler equations.
+				</li>
+			</ul>
+			<p>
+				Students will be taught through lectures and practical workshops totaling 40 hours. Assessment
+				includes coursework (40%) focused on programming a robotic manipulator and an in-person exam
+				(60%) evaluating theoretical knowledge.
+			</p>
+		</div>
 	</div>
-	<div class="card col-span-4">
+	<div class="card col-span-2 sm:col-span-4">
 		<h2 class="mb-4 text-2xl font-semibold">Topics Covered</h2>
     <ul class='pill-list flex flex-wrap gap-1 justify-center'>
       <li>Fundamental robotic principles</li>
@@ -225,9 +228,9 @@
   </ul>
 	</div>
 
-	<div class="card col-span-3">
+	<div class="card col-span-2 sm:col-span-3">
 		<h2 class="mb-4 text-2xl font-semibold">Method of Feedback</h2>
-		<ol class="list-decimal pl-4">
+		<ol class="list-decimal pl-4 text-xs sm:text-base text-gray-700">
 			<li>
 				<strong>Feedback given to students in response to assessed work</strong>
 				<ul class="list-disc pl-8">
@@ -244,7 +247,7 @@
 			</li>
 		</ol>
 	</div>
-	<div class="col-span-7">
+	<div class="sm:col-span-7">
 		<div class="flex flex-wrap gap-1">
 			<!-- <h3 class='pill'>Fluid Dynamics</h3>
       <h3 class='pill'>MATLAB</h3>
@@ -292,11 +295,7 @@
 </div>
 
 <style>
-	.pill {
-		@apply rounded-full bg-neutral-200 px-2 py-0.5;
-	}
 
-  .pill-list li {
-    @apply rounded-full bg-neutral-200 px-2 py-0.5 w-auto capitalize;
-  }
+
+  
 </style>

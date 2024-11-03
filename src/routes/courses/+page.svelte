@@ -19,8 +19,15 @@
 
 <div class='py-4 px-1 card mt-4 '>
     <h1 >Courses</h1>
-    <div class='subcard'>
-        <h2>BEng Robotics, Mechatronics and Control Engineering</h2>
+    <div class='flex flex-col gap-1.5'>
+        <div class='subcard flex flex-col place-items-start'>
+            <h2>Loughborough University - L79</h2>
+            <h2>BEng Robotics, Mechatronics and Control Engineering</h2>
+            <div class='flex gap-1'>
+                <h2>WSUB35</h2>
+            <h2>UCAS H402, H403</h2>
+            </div>          
+        </div>
     </div>
     <table class='page-table'>
         <thead>

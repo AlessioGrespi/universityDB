@@ -82,7 +82,7 @@
             <div class='card'>
                 <h2 class="mb-4 text-center text-2xl font-semibold">Research</h2>
                 <div class='w-full grid grid-cols-3 gap-4'>
-                    <div class='col-span-3 sm:col-span-2'>
+                    <div class='col-span-3 lg:col-span-2'>
                         <!-- <h3 class="mb-4 text-center text-xl font-medium">Papers</h3> -->
                         <table class='w-full'>
                             <thead class="bg-gray-100">
@@ -99,7 +99,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class='col-span-3 sm:col-span-1'>
+                    <div class='col-span-3 lg:col-span-1'>
                         <ul class='pill-list flex flex-wrap gap-1 justify-center'>
                             <li class=''>Control Systems Design</li>
                             <li class=''>Avionics</li>

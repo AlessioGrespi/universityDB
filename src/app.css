@@ -38,6 +38,11 @@ h6 {
   line-height: 0.8rem;
 }
 
+.text-xxxxs {
+  font-size: 0.1rem;
+  line-height: 0.6rem;
+}
+
 
 .pill {
   @apply text-xxxs sm:text-base rounded-full bg-gray-100 px-1 py-0.5 sm:px-2 sm:py-0.5;
@@ -61,7 +66,7 @@ h6 {
 }
 
 .card h1 {
-  @apply text-2xl sm:text-4xl font-semibold pb-4;
+  @apply text-2xl sm:text-4xl font-semibold sm:pb-4;
 }
 
 .card h2{
@@ -73,7 +78,7 @@ h6 {
 }
 
 .card h4 {
-  @apply text-center text-xxs sm:text-xl font-medium;
+  @apply text-center text-xxs sm:text-xl font-medium text-nowrap;
 }
 
 .card table {
@@ -107,7 +112,7 @@ h6 {
 }
 
 .card .subcard h4 {
-  @apply text-xs sm:text-sm;
+  @apply text-xxxxs sm:text-sm text-nowrap whitespace-nowrap;
 }
 
 .card .subcard .index {
@@ -115,15 +120,15 @@ h6 {
 }
 
 .card .subcard .index h2 {
-  @apply text-2xl text-nowrap -mb-0;
+  @apply text-xs sm:text-2xl text-nowrap -mb-0 text-left;
   }
 
 .card .subcard .index h3 {
-@apply text-sm text-nowrap;
+@apply text-xxxs sm:text-sm text-nowrap text-left ;
 }
 
 .card .subcard .index h4 {
-  @apply rounded-full px-2 py-0.5 text-sm bg-gray-100 flex flex-nowrap place-items-center text-nowrap;
+  @apply rounded-full px-2 py-0.5 text-xxxxs sm:text-sm bg-gray-100 flex flex-nowrap place-items-center text-nowrap;
 }
 /* 
 .subcard th  {

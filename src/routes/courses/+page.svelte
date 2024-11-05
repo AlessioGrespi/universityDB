@@ -17,38 +17,38 @@
 	];
 </script>
 
-<div class="card mt-4 px-1 py-4">
+<div class="card sm:mt-4 px-1 py-4">
 	<h1>Courses</h1>
 	<div class="flex w-full flex-col gap-2">
         <a href='/courses/robotics'>
-		<div class="subcard flex justify-between place-items-center">
+		<div class="subcard sm:flex sm:justify-between sm:place-items-center">
 			<div class="index">
-                <div class='flex gap-1 flex-wrap place-items-center'>
+                <div class='sm:flex gap-1 flex-wrap place-items-center'>
                     <h3 class=''>Loughborough University</h3>
-                    <h3 class='text-gray-500'>Wolfson School of Mechanical, Electrical and Manufacturing Engineering</h3>
+                    <h3 class='text-gray-500 hidden sm:inline'>Wolfson School of Mechanical, Electrical and Manufacturing Engineering</h3>
                 </div>
-				<h2 class='text-nowrap'>BEng Robotics, Mechatronics and Control Engineering</h2>
-				<div class="flex gap-1">
+				<h2 class=''>BEng Robotics, Mechatronics and Control Engineering</h2>
+				<div class="hidden sm:inline-flex  flex-wrap gap-1">
                     <h4 class="">#WSUB35</h4>
                     <h4 class=''>UCAS Institution Code: L79</h4>
 					<h4 class="">UCAS Code: H402, H403</h4>
 				</div>
 			</div>
-            <div class='index flex flex-col gap-1 max-w-[40%]'>
-                <div class='flex flex-wrap text-nowrap place-items-center justify-end w-full gap-1'>
+            <div class='index flex sm:flex-col gap-1 sm:max-w-[40%]'>
+                <div class='flex flex-wrap  place-items-center sm:justify-end w-full gap-1'>
                     <h4 class=''>Entry Requirements: ABB</h4>
                     <h4>25 Places</h4>
                 </div>
-                <div class='flex flex-wrap text-nowrap place-items-center justify-end w-full gap-1'>
+                <div class='hidden sm:inline-flex flex-wrap  place-items-center sm:justify-end w-full gap-1'>
                     <h4>Placement Year</h4>
                     <h4>Study Abroad</h4>
                 </div>
-                <div class='flex place-items-center justify-end w-full gap-1'>
+                <div class='hidden sm:inline-flex place-items-center sm:justify-end w-full gap-1'>
                     <h3 class='text-sm'>Fees Per Year: </h3>
                     <h4 class=''>Home £9,250</h4>
                     <h4 class=''>International £27,000</h4>
                 </div>
-                <div class='flex place-items-center justify-end w-full gap-1'>
+                <div class='hidden sm:inline-flex flex-wrap place-items-center sm:justify-end w-full gap-1'>
                     <h3 class='text-sm'>Assessment: </h3>
                     <h4 class=''>Exam 80%</h4>
                     <h4 class=''>Coursework 10%</h4>
@@ -57,21 +57,21 @@
             </div>
         </a>
         <a href='courses/robotics'>
-        <div class="subcard flex justify-between place-items-center">
+        <div class="subcard sm:flex sm:justify-between sm:place-items-center">
 			<div class="index">
                 <div class='flex gap-1 flex-wrap place-items-center'>
                     <h3 class=''>Loughborough University</h3>
-                    <h3 class='text-gray-500'>School of Design and Creative Arts / Design</h3>
+                    <h3 class='hidden sm:inline text-gray-500'>School of Design and Creative Arts / Design</h3>
                 </div>
 				<h2 class='text-nowrap'>MSc User Experience Design</h2>
-				<div class="flex gap-1">
+				<div class="hidden sm:inline-flex gap-1">
                     <h4 class="">#DSPT27</h4>
                     <!-- <h4 class=''>UCAS Institution Code: L79</h4> -->
 					<!-- <h4 class="">UCAS Code: H402, H403</h4> -->
 				</div>
 			</div>
-            <div class='index flex flex-col gap-1 max-w-[40%]'>
-                <div class='flex flex-wrap text-nowrap place-items-center justify-end w-full gap-1'>
+            <div class='index flex sm:flex-col gap-1 sm:max-w-[40%]'>
+                <div class='flex flex-wrap  place-items-center sm:justify-end w-full gap-1'>
                     <h4 class=''>Entry Requirements: 2:1</h4>
                     <h4>25 Places</h4>
                 </div>
@@ -79,12 +79,12 @@
                     <h4>Placement Year</h4>
                     <h4>Study Abroad</h4>
                 </div> -->
-                <div class='flex place-items-center justify-end w-full gap-1'>
-                    <h3 class='text-sm'>Fees Per Year: </h3>
+                <div class='flex place-items-center sm:justify-end w-full gap-1'>
+                    <h3 class='pl-2 sm:pl-0 text-sm'>Fees: </h3>
                     <h4 class=''>Home £11,000</h4>
                     <h4 class=''>International £29,000</h4>
                 </div>
-                <div class='flex place-items-center justify-end w-full gap-1'>
+                <div class='hidden sm:inline-flex place-items-center justify-end w-full gap-1'>
                     <h3 class='text-sm'>Assessment: </h3>
                     <!-- <h4 class=''>Exam 80%</h4> -->
                     <h4 class=''>Coursework 60%</h4>

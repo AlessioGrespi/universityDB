@@ -38,9 +38,11 @@ h6 {
   line-height: 0.8rem;
 }
 
+
 .pill {
   @apply text-xxxs sm:text-base rounded-full bg-gray-100 px-1 py-0.5 sm:px-2 sm:py-0.5;
 }
+
 
 .pill-list li {
   @apply w-auto capitalize pill;
@@ -96,12 +98,32 @@ h6 {
   @apply px-2;
 }
 
-.subcard {
+.card .subcard {
   @apply p-2 bg-gray-50 shadow rounded-lg sm:p-6 hover:shadow-lg transition-shadow duration-200;
 }
 
-.subcard h2 {
+.card .subcard h2 {
   @apply text-xs sm:text-xl;
+}
+
+.card .subcard h4 {
+  @apply text-xs sm:text-sm;
+}
+
+.card .subcard .index {
+  @apply flex flex-col place-items-start;
+}
+
+.card .subcard .index h2 {
+  @apply text-2xl text-nowrap -mb-0;
+  }
+
+.card .subcard .index h3 {
+@apply text-sm text-nowrap;
+}
+
+.card .subcard .index h4 {
+  @apply rounded-full px-2 py-0.5 text-sm bg-gray-100 flex flex-nowrap place-items-center text-nowrap;
 }
 /* 
 .subcard th  {

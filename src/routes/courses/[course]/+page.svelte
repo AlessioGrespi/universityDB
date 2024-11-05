@@ -422,7 +422,7 @@
 				</table>
 
 				<h3 class="mt-4 text-xl font-medium">Optional</h3>
-				<h4 class="mb-4 text-lg font-medium">
+				<h4 class="mb-4">
 					Students must pick X credits from S1 and X credits from S2
 				</h4>
 				<table class="w-full table-auto">

@@ -1,5 +1,6 @@
 <script>
-    import { onMount } from 'svelte';
+    import { BotMessageSquare } from 'lucide-svelte';
+import { onMount } from 'svelte';
     import { fade, fly } from 'svelte/transition';
   
     let isOpen = false;
@@ -28,11 +29,11 @@
   
   <div class="chat-widget">
     {#if !isOpen}
-      <button on:click={toggleChat} class="chat-button" transition:fade>
-        Further questions?
+      <button on:click={toggleChat} class="bg-blue-500 text-white border-none sm:px-5 sm:py-2.5 rounded-full cursor-pointer font-bold flex place-items-center" transition:fade>
+        <span class='hidden sm:inline'>Further questions?</span><span class='inline'><BotMessageSquare class='h-6 w-6 m-3'/></span>
       </button>
     {:else}
-      <div class="chat-window" transition:fly="{{ y: 50, duration: 300 }}">
+      <div class="w-72 h-96 bg-white rounded-lg shadow-lg flex flex-col" transition:fly="{{ y: 50, duration: 300 }}">
         <div class="chat-header">
           <h3>Chat with us</h3>
           <button on:click={toggleChat} class="close-button">&times;</button>
@@ -64,7 +65,7 @@
       right: 20px;
       z-index: 1000;
     }
-  
+/*   
     .chat-button {
       background-color: #4299e1;
       color: white;
@@ -74,8 +75,8 @@
       cursor: pointer;
       font-weight: bold;
     }
-  
-    .chat-window {
+   */
+    /* .chat-window {
       width: 300px;
       height: 400px;
       background-color: white;
@@ -84,7 +85,7 @@
       display: flex;
       flex-direction: column;
     }
-  
+   */
     .chat-header {
       background-color: #4299e1;
       color: white;

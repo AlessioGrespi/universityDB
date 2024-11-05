@@ -14,7 +14,47 @@
     ];
 </script>
 
-<div class='py-4 px-1 card mt-4 '>
+
+<div class="card sm:mt-4 px-1 py-4">
+	<h1>Lecturers</h1>
+	<div class="flex w-full flex-col gap-2">
+        <a href='/lecturers/robotics'>
+		<div class="subcard flex justify-between place-items-center">
+			<div class="index">
+                <div class='flex gap-1 flex-wrap place-items-center'>
+                    <h3 class='hidden sm:inline'>Loughborough University</h3>
+                    <h3 class='text-gray-500'>Wolfson School of Mechanical, Electrical and Manufacturing Engineering</h3>
+                </div>
+				<h2 class='text-nowrap'>Dr Pete Hubbard</h2>
+				<div class="flex flex-wrap gap-1">
+                    <!-- <h4 class="">#WSUB35</h4> -->
+                    <!-- <h4 class=''>20 Credits | 10 ECTS</h4> -->
+                    <!-- <h4 class=''>80% Exam | 20% Coursework</h4> -->
+					<!-- <h4 class="">Semester 1</h4> -->
+                    <h4 class="">Control Systems Group</h4>
+                    <h4 class="">WS200 Programme Director</h4>
+                    <h4 class="">WS201A, WS202B, WS203C Module Leader</h4>
+				</div>
+			</div>
+        </a>
+        <a href='courses/robotics'>
+        <div class="subcard flex justify-between place-items-center">
+			<div class="index">
+                <div class='flex gap-1 flex-wrap place-items-center'>
+                    <h3 class='hidden sm:inline'>Loughborough University</h3>
+                    <h3 class='text-gray-500'>School of Business and Economics</h3>
+                </div>
+				<h2 class='text-nowrap'>Dr Amanda Berry</h2>
+				<div class="flex flex-wrap gap-1">
+                    <h4 class="">Year in Enterprise Programme Director</h4>
+                    <h4 class=''>LEN Director</h4>
+				</div>
+			</div>
+        </a>
+		</div>
+	</div>
+
+<!-- <div class='py-4 px-1 card mt-4 '>
     <h1 class='text-4xl font-semibold pb-4'>Lecturers</h1>
     <div>
         <table>
@@ -54,7 +94,7 @@
             </tbody>
         </table>
     </div>
-</div>
+</div> -->
 
 
 

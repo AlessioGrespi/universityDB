@@ -18,18 +18,35 @@
                 <tbody>
                     <tr>
                         <td>Quacquarelli Symonds (QS)</td>
+                        <td>224</td>
+                        <td>-12</td>
+                        <td>Worldwide Ranking</td>
                     </tr>
                     <tr>
-                        <td>Academic Ranking of World Universities (ARWU), (Shanghai Ranking)</td>
+                        <td>Academic Ranking of World Universities (ARWU), <br>(Shanghai Ranking)</td>
+                    <td>701-800</td>
+                    <td>
+
+                    </td>
+                    <td>Worldwide Ranking</td>
                     </tr>
                     <tr>
                         <td>Times Higher Education (THE)</td>
+                        <td>301-350</td>
+                        <td></td>
+                        <td>Worldwide Ranking</td>
                     </tr>
                     <tr>
                         <td>US News</td>
+                        <td>527</td>
+                        <td></td>
+                        <td>Worldwide Ranking</td>
                     </tr>
                     <tr>
                         <td>Guardian</td>
+                        <td>10</td>
+                        <td></td>
+                        <td>National Ranking (UK)</td>
                     </tr>
                 </tbody>
             </table>
@@ -45,3 +62,9 @@
        
     </div>
 </div>
+
+<style>
+    .card h3 {
+        @apply text-4xl;
+    }
+</style>

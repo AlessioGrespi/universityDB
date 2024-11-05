@@ -29,7 +29,7 @@ import { onMount } from 'svelte';
   
   <div class="chat-widget">
     {#if !isOpen}
-      <button on:click={toggleChat} class="bg-blue-500 text-white border-none sm:px-5 sm:py-2.5 rounded-full cursor-pointer font-bold" transition:fade>
+      <button on:click={toggleChat} class="bg-blue-500 text-white border-none sm:px-5 sm:py-2.5 rounded-full cursor-pointer font-bold flex place-items-center" transition:fade>
         <span class='hidden sm:inline'>Further questions?</span><span class='inline'><BotMessageSquare class='h-6 w-6 m-3'/></span>
       </button>
     {:else}

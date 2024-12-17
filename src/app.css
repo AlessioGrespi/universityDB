@@ -39,8 +39,8 @@ h6 {
 }
 
 .text-xxxxs {
-  font-size: 0.1rem;
-  line-height: 0.6rem;
+  font-size: 0.5rem;
+  line-height: 0.5rem;
 }
 
 
@@ -62,7 +62,7 @@ h6 {
 }
 
 .card {
-  @apply p-2 bg-white shadow rounded-lg sm:p-6 hover:shadow-lg transition-shadow duration-200 overflow-hidden;
+  @apply p-2 bg-white shadow rounded-lg sm:p-6 hover:shadow-lg transition-shadow duration-200 overflow-hidden border;
 }
 
 .card h1 {
@@ -78,7 +78,7 @@ h6 {
 }
 
 .card h4 {
-  @apply text-center text-xxs sm:text-xl font-medium text-nowrap;
+  @apply text-center text-xs sm:text-xl font-medium text-nowrap;
 }
 
 .card table {

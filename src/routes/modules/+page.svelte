@@ -15,7 +15,7 @@
 </script>
 
 
-<div class="card mt-4 px-1 py-4">
+<div class="card sm:mt-4 px-1 py-4">
 	<h1>Modules</h1>
 	<div class="flex w-full flex-col gap-2">
         <a href='/modules/robotics'>

@@ -19,5 +19,9 @@
       "WebFetch(domain:www.navattic.com)",
       "WebFetch(domain:anythingdb.com)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "svelte"
+  ],
+  "enableAllProjectMcpServers": true
 }

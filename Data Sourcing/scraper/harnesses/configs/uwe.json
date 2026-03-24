@@ -1,0 +1,12 @@
+{
+  "university": "uwe",
+  "selectors": {
+    "title": { "css": "h1", "attribute": "text" },
+    "length": { "css": ".course-length", "attribute": "text" },
+    "fees_uk": { "css": ".fees-uk", "attribute": "text" },
+    "fees_international": { "css": ".fees-international", "attribute": "text" }
+  },
+  "wait_for": "h1",
+  "wait_timeout": 10,
+  "actions_before": []
+}

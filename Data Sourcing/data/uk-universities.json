@@ -1,0 +1,4223 @@
+[
+  {
+    "ukprn": "10007783",
+    "name": "UNIVERSITY OF ABERDEEN",
+    "sort_name": "Aberdeen, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "REGENT WALK",
+      "town": "ABERDEEN",
+      "postcode": "AB24 3FX"
+    },
+    "website": "http://www.abdn.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Aberdeen",
+    "groups": [],
+    "location": {
+      "latitude": 57.165003,
+      "longitude": -2.099129
+    },
+    "hesa_id": "0170",
+    "gtr_id": "F7E13617-2678-475B-99E4-31479C92038D",
+    "view_name": "University of Aberdeen"
+  },
+  {
+    "ukprn": "10007849",
+    "name": "UNIVERSITY OF ABERTAY DUNDEE",
+    "sort_name": "Abertay Dundee, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "KYDD BUILDING 40",
+      "locality": null,
+      "street": "BELL STREET",
+      "town": "DUNDEE",
+      "postcode": "DD1 1HG"
+    },
+    "website": "http://www.abertay.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Abertay_Dundee",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 56.463143,
+      "longitude": -2.974381
+    },
+    "hesa_id": "0095",
+    "gtr_id": "544242A5-6640-4FD5-87C5-348557ED5307",
+    "view_name": "University of Abertay Dundee"
+  },
+  {
+    "ukprn": "10000291",
+    "name": "ANGLIA RUSKIN UNIVERSITY",
+    "sort_name": "Anglia Ruskin University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "BISHOP HALL LANE",
+      "town": "CHELMSFORD",
+      "postcode": "CM1 1SQ"
+    },
+    "website": "http://www.anglia.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Anglia_Ruskin_University",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 51.741266,
+      "longitude": 0.474311
+    },
+    "hesa_id": "0047",
+    "gtr_id": "56F19F82-4654-46D6-891A-EA80CBC02587",
+    "view_name": "Anglia Ruskin University"
+  },
+  {
+    "ukprn": "10007759",
+    "name": "ASTON UNIVERSITY",
+    "sort_name": "Aston University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "THE ASTON TRIANGLE",
+      "town": "BIRMINGHAM",
+      "postcode": "B4 7ET"
+    },
+    "website": "http://www.aston.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Aston_University",
+    "groups": [
+      "NCUK",
+      "M5_Universities"
+    ],
+    "location": {
+      "latitude": 52.486651,
+      "longitude": -1.890947
+    },
+    "hesa_id": "0108",
+    "gtr_id": "5BFB9036-9D16-4AB9-A9EF-097BB6FBD69A",
+    "view_name": "Aston University"
+  },
+  {
+    "ukprn": "10007857",
+    "name": "BANGOR UNIVERSITY",
+    "sort_name": "Bangor University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "COLLEGE ROAD",
+      "town": "BANGOR",
+      "postcode": "LL57 2DG"
+    },
+    "website": "http://www.bangor.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Bangor_University",
+    "groups": [
+      "ABSA"
+    ],
+    "location": {
+      "latitude": 53.229236,
+      "longitude": -4.129505
+    },
+    "hesa_id": "0178",
+    "gtr_id": "F9F1D136-12E3-4BE4-9668-0C9BC4A7C1BF",
+    "view_name": "Bangor University"
+  },
+  {
+    "ukprn": "10000571",
+    "name": "BATH SPA UNIVERSITY",
+    "sort_name": "Bath Spa University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "NEWTON PARK",
+      "locality": "NEWTON ST. LOE",
+      "street": null,
+      "town": "BATH",
+      "postcode": "BA2 9BN"
+    },
+    "website": "http://www.bathspa.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Bath_Spa_University",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 51.378739,
+      "longitude": -2.4374
+    },
+    "hesa_id": "0048",
+    "gtr_id": "1A469850-02BA-4814-81EE-E60C851CABC3",
+    "view_name": "Bath Spa University"
+  },
+  {
+    "ukprn": "10007850",
+    "name": "UNIVERSITY OF BATH (THE)",
+    "sort_name": "Bath, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "CLAVERTON DOWN",
+      "street": null,
+      "town": "BATH",
+      "postcode": "BA2 7AY"
+    },
+    "website": "http://www.bath.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Bath",
+    "groups": [
+      "GW4"
+    ],
+    "location": {
+      "latitude": 51.380438,
+      "longitude": -2.330671
+    },
+    "hesa_id": "0109",
+    "gtr_id": "EAAD4D43-BD15-432B-9385-2DBD0C65958D",
+    "view_name": "University of Bath (The)"
+  },
+  {
+    "ukprn": "10007152",
+    "name": "UNIVERSITY OF BEDFORDSHIRE",
+    "sort_name": "Bedfordshire, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "UNIVERSITY SQUARE",
+      "town": "LUTON",
+      "postcode": "LU1 3JU"
+    },
+    "website": "http://www.beds.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Bedfordshire",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 51.87787,
+      "longitude": -0.411382
+    },
+    "hesa_id": "0026",
+    "gtr_id": "BA42FE9E-1091-4F26-9645-58A2BECFD230",
+    "view_name": "University of Bedfordshire"
+  },
+  {
+    "ukprn": "10007760",
+    "name": "BIRKBECK COLLEGE",
+    "sort_name": "Birkbeck College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "BIRKBECK COLLEGE",
+      "locality": null,
+      "street": "MALET STREET",
+      "town": "LONDON",
+      "postcode": "WC1E 7HX"
+    },
+    "website": "http://www.bbk.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Birkbeck,_University_of_London",
+    "groups": [
+      "1994_Group"
+    ],
+    "location": {
+      "latitude": 51.520998,
+      "longitude": -0.127819
+    },
+    "hesa_id": "0127",
+    "gtr_id": "3E18DACB-05AA-4C71-88FB-C909A8311BB5",
+    "view_name": "Birkbeck College"
+  },
+  {
+    "ukprn": "10007140",
+    "name": "BIRMINGHAM CITY UNIVERSITY",
+    "sort_name": "Birmingham City University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "PERRY BARR",
+      "street": "FRANCHISE STREET",
+      "town": "BIRMINGHAM",
+      "postcode": "B42 2SU"
+    },
+    "website": "http://www.bcu.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Birmingham_City_University",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 52.517286,
+      "longitude": -1.897282
+    },
+    "hesa_id": "0052",
+    "gtr_id": "A022BD3A-2A7B-4E64-8877-A2E381C4CCB5",
+    "view_name": "Birmingham City University"
+  },
+  {
+    "ukprn": "10000712",
+    "name": "UNIVERSITY COLLEGE BIRMINGHAM",
+    "sort_name": "Birmingham, University College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "SUMMER ROW",
+      "town": "BIRMINGHAM",
+      "postcode": "B3 1JB"
+    },
+    "website": "http://www.ucb.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_College_Birmingham",
+    "groups": [],
+    "location": {
+      "latitude": 52.481855,
+      "longitude": -1.905934
+    },
+    "hesa_id": "0200",
+    "gtr_id": null,
+    "view_name": "University College Birmingham"
+  },
+  {
+    "ukprn": "10006840",
+    "name": "UNIVERSITY OF BIRMINGHAM",
+    "sort_name": "Birmingham, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "EDGBASTON",
+      "street": null,
+      "town": "BIRMINGHAM",
+      "postcode": "B15 2TT"
+    },
+    "website": "http://www.birmingham.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Birmingham",
+    "groups": [
+      "NCUK",
+      "M5_Universities",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 52.448986,
+      "longitude": -1.930855
+    },
+    "hesa_id": "0110",
+    "gtr_id": "818CD6C9-61EE-41F2-9F37-0C7A8F43E25D",
+    "view_name": "University of Birmingham"
+  },
+  {
+    "ukprn": "10007811",
+    "name": "BISHOP GROSSETESTE UNIVERSITY",
+    "sort_name": "Bishop Grosseteste University College Lincoln",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "LONGDALES ROAD",
+      "town": "LINCOLN",
+      "postcode": "LN1 3DY"
+    },
+    "website": "http://www.bishopg.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Bishop_Grosseteste_University",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 53.244036,
+      "longitude": -0.535716
+    },
+    "hesa_id": "0007",
+    "gtr_id": "2455D70D-E7A2-4D77-A7FE-B618FCF13C46",
+    "view_name": "Bishop Grosseteste University College Lincoln"
+  },
+  {
+    "ukprn": "10006841",
+    "name": "UNIVERSITY OF BOLTON",
+    "sort_name": "Bolton, The University of ",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "DEANE ROAD",
+      "town": "BOLTON",
+      "postcode": "BL3 5AB"
+    },
+    "website": "http://www.bolton.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Bolton",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 53.573527,
+      "longitude": -2.436236
+    },
+    "hesa_id": "0049",
+    "gtr_id": "6CD99DF2-EA37-4EF2-8FC0-3FB1D421D2F1",
+    "view_name": "The University of Bolton"
+  },
+  {
+    "ukprn": "10000824",
+    "name": "BOURNEMOUTH UNIVERSITY",
+    "sort_name": "Bournemouth University",
+    "alias": null,
+    "address": {
+      "flat_name_number": "POOLE HOUSE",
+      "building_name_number": "TALBOT CAMPUS",
+      "locality": null,
+      "street": "FERN BARROW",
+      "town": "POOLE",
+      "postcode": "BH12 5BB"
+    },
+    "website": "http://www.bournemouth.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Bournemouth_University",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 50.742968,
+      "longitude": -1.897159
+    },
+    "hesa_id": "0050",
+    "gtr_id": "C0088682-E757-4D2A-BA97-C2D411DDCFFB",
+    "view_name": "Bournemouth University"
+  },
+  {
+    "ukprn": "10000385",
+    "name": "ARTS UNIVERSITY BOURNEMOUTH, THE",
+    "sort_name": "Bournemouth, The Arts University College at ",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "7",
+      "locality": null,
+      "street": "FERN BARROW",
+      "town": "POOLE",
+      "postcode": "BH12 5HH"
+    },
+    "website": "http://www.aub.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/The_Arts_University_College_at_Bournemouth",
+    "groups": [],
+    "location": {
+      "latitude": 50.741781,
+      "longitude": -1.8977
+    },
+    "hesa_id": "0197",
+    "gtr_id": "8F29E319-A83B-4497-A8AB-595E596CF61C",
+    "view_name": "The Arts University College at Bournemouth"
+  },
+  {
+    "ukprn": "10007785",
+    "name": "UNIVERSITY OF BRADFORD",
+    "sort_name": "Bradford, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "RICHMOND ROAD",
+      "town": "BRADFORD",
+      "postcode": "BD7 1DP"
+    },
+    "website": "http://www.bradford.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Bradford",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 53.791716,
+      "longitude": -1.762133
+    },
+    "hesa_id": "0111",
+    "gtr_id": "0838B2E1-D5E2-4ACD-AA27-D2B1BFDC124F",
+    "view_name": "University of Bradford"
+  },
+  {
+    "ukprn": "10000886",
+    "name": "UNIVERSITY OF BRIGHTON",
+    "sort_name": "Brighton, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "MITHRAS HOUSE",
+      "locality": null,
+      "street": "LEWES ROAD",
+      "town": "BRIGHTON",
+      "postcode": "BN2 4AT"
+    },
+    "website": "http://www.brighton.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Brighton",
+    "groups": [],
+    "location": {
+      "latitude": 50.842448,
+      "longitude": -0.119142
+    },
+    "hesa_id": "0051",
+    "gtr_id": "5904176C-7486-4E2B-959A-94C29ADE4D96",
+    "view_name": "University of Brighton"
+  },
+  {
+    "ukprn": "10007786",
+    "name": "UNIVERSITY OF BRISTOL",
+    "sort_name": "Bristol, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "SENATE HOUSE",
+      "locality": null,
+      "street": "TYNDALL AVENUE",
+      "town": "BRISTOL",
+      "postcode": "BS8 1TH"
+    },
+    "website": "http://www.bristol.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Bristol",
+    "groups": [
+      "GW4",
+      "NCUK",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 51.459064,
+      "longitude": -2.603292
+    },
+    "hesa_id": "0112",
+    "gtr_id": "FD94FDDE-5BBC-4E12-911F-0B70DBCFA743",
+    "view_name": "University of Bristol"
+  },
+  {
+    "ukprn": "10007164",
+    "name": "UNIVERSITY OF THE WEST OF ENGLAND, BRISTOL",
+    "sort_name": "Bristol, University of the West of England",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "FRENCHAY CAMPUS",
+      "locality": null,
+      "street": "COLDHARBOUR LANE",
+      "town": "BRISTOL",
+      "postcode": "BS16 1QY"
+    },
+    "website": "http://www.uwe.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_the_West_of_England",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 51.500205,
+      "longitude": -2.547491
+    },
+    "hesa_id": "0081",
+    "gtr_id": "2A80FFDA-3B8B-43BA-80C3-3AA850B49BA1",
+    "view_name": "University of the West of England, Bristol"
+  },
+  {
+    "ukprn": "10000961",
+    "name": "BRUNEL UNIVERSITY",
+    "sort_name": "Brunel University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "KINGSTON LANE",
+      "town": "UXBRIDGE",
+      "postcode": "UB8 3PH"
+    },
+    "website": "http://www.brunel.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Brunel_University",
+    "groups": [],
+    "location": {
+      "latitude": 51.532849,
+      "longitude": -0.472835
+    },
+    "hesa_id": "0113",
+    "gtr_id": "BECA2763-0902-40AA-8DB2-836A5731CF58",
+    "view_name": "Brunel University"
+  },
+  {
+    "ukprn": "10007787",
+    "name": "THE UNIVERSITY OF BUCKINGHAM",
+    "sort_name": "Buckingham, The University of ",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "YEOMANRY HOUSE",
+      "locality": null,
+      "street": "HUNTER STREET",
+      "town": "BUCKINGHAM",
+      "postcode": "MK18 1EG"
+    },
+    "website": "http://www.buckingham.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Buckingham",
+    "groups": [],
+    "location": {
+      "latitude": 51.996018,
+      "longitude": -0.99182
+    },
+    "hesa_id": "0203",
+    "gtr_id": "53944FC7-FD00-407E-A4F1-F22812C85420",
+    "view_name": "The University of Buckingham"
+  },
+  {
+    "ukprn": "10000975",
+    "name": "BUCKINGHAMSHIRE NEW UNIVERSITY",
+    "sort_name": "Buckinghamshire New University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "HIGH WYCOMBE CAMPUS",
+      "locality": null,
+      "street": "QUEEN ALEXANDRA ROAD",
+      "town": "HIGH WYCOMBE",
+      "postcode": "HP11 2JZ"
+    },
+    "website": "http://www.bucks.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Buckinghamshire_New_University",
+    "groups": [],
+    "location": {
+      "latitude": 51.627518,
+      "longitude": -0.752021
+    },
+    "hesa_id": "0009",
+    "gtr_id": "A6F9E630-7D6C-44A3-9E96-C6E89B68C44B",
+    "view_name": "Buckinghamshire New University"
+  },
+  {
+    "ukprn": "10007788",
+    "name": "UNIVERSITY OF CAMBRIDGE",
+    "sort_name": "Cambridge, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "THE OLD SCHOOL",
+      "locality": null,
+      "street": "TRINITY LANE",
+      "town": "CAMBRIDGE",
+      "postcode": "CB2 1TN"
+    },
+    "website": "http://www.cam.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Cambridge",
+    "groups": [
+      "Russell_Group",
+      "Oxbridge"
+    ],
+    "location": {
+      "latitude": 52.205317,
+      "longitude": 0.116642
+    },
+    "hesa_id": "0114",
+    "gtr_id": "D1774113-D5D2-4B7C-A412-66A90FE4B96F",
+    "view_name": "University of Cambridge"
+  },
+  {
+    "ukprn": "10001143",
+    "name": "CANTERBURY CHRIST CHURCH UNIVERSITY",
+    "sort_name": "Canterbury Christ Church University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "ST. GEORGES PLACE",
+      "town": "CANTERBURY",
+      "postcode": "CT1 1UT"
+    },
+    "website": "http://www.canterbury.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Canterbury_Christ_Church_University",
+    "groups": [
+      "Million_Plus",
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 51.275761,
+      "longitude": 1.085663
+    },
+    "hesa_id": "0012",
+    "gtr_id": "9DCA54FA-7193-4B70-9A85-369C1FD85B5D",
+    "view_name": "Canterbury Christ Church University"
+  },
+  {
+    "ukprn": "10007854",
+    "name": "CARDIFF METROPOLITAN UNIVERSITY",
+    "sort_name": "Cardiff Metropolitan University",
+    "alias": null,
+    "address": {
+      "flat_name_number": "PO BOX 377",
+      "building_name_number": null,
+      "locality": "LLANDAFF",
+      "street": null,
+      "town": "CARDIFF",
+      "postcode": "CF5 2SG"
+    },
+    "website": "http://www.cardiffmet.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Cardiff_Metropolitan_University",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 51.483555,
+      "longitude": -3.223617
+    },
+    "hesa_id": "0089",
+    "gtr_id": "8FE3A477-8A3B-4E51-AE01-4ABCE9099213",
+    "view_name": "Cardiff Metropolitan University"
+  },
+  {
+    "ukprn": "10007814",
+    "name": "CARDIFF UNIVERSITY",
+    "sort_name": "Cardiff University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "PARK PLACE",
+      "town": "CARDIFF",
+      "postcode": "CF10 3AT"
+    },
+    "website": "http://www.cardiff.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Cardiff_University",
+    "groups": [
+      "GW4",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 51.489093,
+      "longitude": -3.179907
+    },
+    "hesa_id": "0179",
+    "gtr_id": "9C10D78F-6430-4CA7-9528-B96B0762A4C6",
+    "view_name": "Cardiff University"
+  },
+  {
+    "ukprn": "10007141",
+    "name": "UNIVERSITY OF CENTRAL LANCASHIRE",
+    "sort_name": "Central Lancashire, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": null,
+      "town": "PRESTON",
+      "postcode": "PR1 2HE"
+    },
+    "website": "http://www.uclan.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Central_Lancashire",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 53.761354,
+      "longitude": -2.707381
+    },
+    "hesa_id": "0053",
+    "gtr_id": "AEC15D5A-BFD5-4D34-978F-500C126C4FDC",
+    "view_name": "University of Central Lancashire"
+  },
+  {
+    "ukprn": "10007816",
+    "name": "THE ROYAL CENTRAL SCHOOL OF SPEECH AND DRAMA",
+    "sort_name": "Central School of Speech and Drama(The)",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "EMBASSY THEATRE 62-64",
+      "locality": null,
+      "street": "ETON AVENUE",
+      "town": "LONDON",
+      "postcode": "NW3 3HY"
+    },
+    "website": "http://www.cssd.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Central_School_of_Speech_and_Drama",
+    "groups": [],
+    "location": {
+      "latitude": 51.544337,
+      "longitude": -0.174179
+    },
+    "hesa_id": "0010",
+    "gtr_id": "11FECE84-7672-4809-88F2-FEB786E20A70",
+    "view_name": "Central School of Speech and Drama(The)"
+  },
+  {
+    "ukprn": "10007848",
+    "name": "UNIVERSITY OF CHESTER",
+    "sort_name": "Chester, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "PARKGATE ROAD",
+      "town": "CHESTER",
+      "postcode": "CH1 4BJ"
+    },
+    "website": "http://www.chester.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Chester",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 53.198657,
+      "longitude": -2.898063
+    },
+    "hesa_id": "0011",
+    "gtr_id": "A7AF2001-3B9F-4618-AEDF-C2DDEE927102",
+    "view_name": "University of Chester"
+  },
+  {
+    "ukprn": "10007137",
+    "name": "THE UNIVERSITY OF CHICHESTER",
+    "sort_name": "Chichester, The University of ",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "BISHOP OTTER CAMPUS",
+      "locality": null,
+      "street": "COLLEGE LANE",
+      "town": "CHICHESTER",
+      "postcode": "PO19 6PE"
+    },
+    "website": "http://www.chi.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Chichester",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 50.844268,
+      "longitude": -0.774409
+    },
+    "hesa_id": "0082",
+    "gtr_id": "FA776DBE-78D5-49D0-AFA1-77BEC03EFF15",
+    "view_name": "The University of Chichester"
+  },
+  {
+    "ukprn": "10001478",
+    "name": "THE CITY UNIVERSITY",
+    "sort_name": "City University, The",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "NORTHAMPTON SQUARE",
+      "town": "LONDON",
+      "postcode": "EC1V 0HB"
+    },
+    "website": "http://www.city.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/City_University,_London",
+    "groups": [],
+    "location": {
+      "latitude": 51.527791,
+      "longitude": -0.102296
+    },
+    "hesa_id": "0115",
+    "gtr_id": "CD35D908-C2AF-4C14-9BC4-519C775CDB6E",
+    "view_name": "The City University"
+  },
+  {
+    "ukprn": "10001653",
+    "name": "THE CONSERVATOIRE FOR DANCE AND DRAMA",
+    "sort_name": "Conservatoire for Dance and Drama, The",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "TAVISTOCK HOUSE",
+      "locality": null,
+      "street": "TAVISTOCK SQUARE",
+      "town": "LONDON",
+      "postcode": "WC1H 9JJ"
+    },
+    "website": "http://www.cdd.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Conservatoire_for_Dance_and_Drama",
+    "groups": [],
+    "location": {
+      "latitude": 51.526207,
+      "longitude": -0.12909
+    },
+    "hesa_id": "0199",
+    "gtr_id": null,
+    "view_name": "The Conservatoire for Dance and Drama"
+  },
+  {
+    "ukprn": "10007761",
+    "name": "COURTAULD INSTITUTE OF ART",
+    "sort_name": "Courtauld Institute of Art",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "SOMERSET HOUSE",
+      "locality": null,
+      "street": "STRAND",
+      "town": "LONDON",
+      "postcode": "WC2R 0RN"
+    },
+    "website": "http://www.courtauld.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Courtauld_Institute_of_Art",
+    "groups": [],
+    "location": {
+      "latitude": 51.510734,
+      "longitude": -0.116912
+    },
+    "hesa_id": "0201",
+    "gtr_id": "4653EC09-AF10-4800-9609-4E40C5CFEF09",
+    "view_name": "Courtauld Institute of Art"
+  },
+  {
+    "ukprn": "10001726",
+    "name": "COVENTRY UNIVERSITY",
+    "sort_name": "Coventry University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "PRIORY STREET",
+      "town": "COVENTRY",
+      "postcode": "CV1 5FB"
+    },
+    "website": "http://www.coventry.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Coventry_University",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 52.408016,
+      "longitude": -1.505713
+    },
+    "hesa_id": "0056",
+    "gtr_id": "D60C85C3-0343-430E-81C7-B04058A4B1DF",
+    "view_name": "Coventry University"
+  },
+  {
+    "ukprn": "10007822",
+    "name": "CRANFIELD UNIVERSITY",
+    "sort_name": "Cranfield University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "CRANFIELD",
+      "street": "COLLEGE ROAD",
+      "town": "BEDFORD",
+      "postcode": "MK43 0AL"
+    },
+    "website": "http://www.cranfield.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Cranfield_University",
+    "groups": [],
+    "location": {
+      "latitude": 52.073929,
+      "longitude": -0.628735
+    },
+    "hesa_id": "0002",
+    "gtr_id": "F45A4578-F962-4EFA-9CC1-9F2FF4F760AE",
+    "view_name": "Cranfield University"
+  },
+  {
+    "ukprn": "10007842",
+    "name": "THE UNIVERSITY OF CUMBRIA",
+    "sort_name": "Cumbria, The University of ",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "FUSEHILL STREET",
+      "town": "CARLISLE",
+      "postcode": "CA1 2HH"
+    },
+    "website": "http://www.cumbria.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Cumbria",
+    "groups": [
+      "Million_Plus",
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 54.891124,
+      "longitude": -2.921482
+    },
+    "hesa_id": "0038",
+    "gtr_id": "ECA474B6-9AAC-445C-97E4-019D2A903C89",
+    "view_name": "The University of Cumbria"
+  },
+  {
+    "ukprn": "10001883",
+    "name": "DE MONTFORT UNIVERSITY",
+    "sort_name": "De Montfort University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "THE GATEWAY",
+      "town": "LEICESTER",
+      "postcode": "LE1 9BH"
+    },
+    "website": "http://www.dmu.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/De_Montfort_University",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 52.631833,
+      "longitude": -1.139356
+    },
+    "hesa_id": "0068",
+    "gtr_id": "DF259B19-FD17-4588-BFEF-AD08F1193451",
+    "view_name": "De Montfort University"
+  },
+  {
+    "ukprn": "10007851",
+    "name": "UNIVERSITY OF DERBY",
+    "sort_name": "Derby, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "KEDLESTON ROAD",
+      "town": "DERBY",
+      "postcode": "DE22 1GB"
+    },
+    "website": "http://www.derby.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Derby",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 52.938545,
+      "longitude": -1.496677
+    },
+    "hesa_id": "0057",
+    "gtr_id": "FDC92628-BF2E-4EEB-A9EB-2FDED0999959",
+    "view_name": "University of Derby"
+  },
+  {
+    "ukprn": "10007852",
+    "name": "UNIVERSITY OF DUNDEE",
+    "sort_name": "Dundee, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "PERTH ROAD",
+      "town": "DUNDEE",
+      "postcode": "DD1 4HN"
+    },
+    "website": "http://www.dundee.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Dundee",
+    "groups": [],
+    "location": {
+      "latitude": 56.4572,
+      "longitude": -2.97848
+    },
+    "hesa_id": "0172",
+    "gtr_id": "90051600-6EF2-4093-BA8C-2B4B6F550895",
+    "view_name": "University of Dundee"
+  },
+  {
+    "ukprn": "10007143",
+    "name": "UNIVERSITY OF DURHAM",
+    "sort_name": "Durham, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "PALATINE CENTRE",
+      "locality": null,
+      "street": "STOCKTON ROAD",
+      "town": "DURHAM",
+      "postcode": "DH1 3LE"
+    },
+    "website": "http://www.dur.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Durham_University",
+    "groups": [
+      "N8_Research_Partnership",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 54.768149,
+      "longitude": -1.571868
+    },
+    "hesa_id": "0116",
+    "gtr_id": "46B41008-0EB4-4E28-BBFB-E98366999EC5",
+    "view_name": "University of Durham"
+  },
+  {
+    "ukprn": "10007789",
+    "name": "UNIVERSITY OF EAST ANGLIA",
+    "sort_name": "East Anglia, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "NORWICH RESEARCH PARK",
+      "locality": null,
+      "street": "EARLHAM ROAD",
+      "town": "NORWICH",
+      "postcode": "NR4 7TJ"
+    },
+    "website": "http://www.uea.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_East_Anglia",
+    "groups": [
+      "1994_Group"
+    ],
+    "location": {
+      "latitude": 52.622394,
+      "longitude": 1.241412
+    },
+    "hesa_id": "0117",
+    "gtr_id": "88C5F7F9-8DCC-41C9-BC4F-F37DA01075C7",
+    "view_name": "University of East Anglia"
+  },
+  {
+    "ukprn": "10007144",
+    "name": "UNIVERSITY OF EAST LONDON",
+    "sort_name": "East London, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "EAST BUILDING 4",
+      "locality": null,
+      "street": "UNIVERSITY WAY",
+      "town": "LONDON",
+      "postcode": "E16 2RD"
+    },
+    "website": "http://www.uel.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_East_London",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 51.507396,
+      "longitude": 0.064797
+    },
+    "hesa_id": "0058",
+    "gtr_id": "1109E202-4FE3-40AC-B73E-7B37EF45241A",
+    "view_name": "University of East London"
+  },
+  {
+    "ukprn": "10007823",
+    "name": "EDGE HILL UNIVERSITY",
+    "sort_name": "Edge Hill University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "ST. HELENS ROAD",
+      "town": "ORMSKIRK",
+      "postcode": "L39 4QP"
+    },
+    "website": "http://www.edgehill.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Edge_Hill_University",
+    "groups": [],
+    "location": {
+      "latitude": 53.559906,
+      "longitude": -2.873372
+    },
+    "hesa_id": "0016",
+    "gtr_id": "4A64B819-B206-475E-9BCA-03F8C702E939",
+    "view_name": "Edge Hill University"
+  },
+  {
+    "ukprn": "10007772",
+    "name": "EDINBURGH NAPIER UNIVERSITY",
+    "sort_name": "Edinburgh Napier University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "SIGHTHILL CAMPUS 9",
+      "locality": null,
+      "street": "SIGHTHILL COURT",
+      "town": "EDINBURGH",
+      "postcode": "EH11 4BN"
+    },
+    "website": "http://www.napier.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Edinburgh_Napier_University",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 55.924071,
+      "longitude": -3.28847
+    },
+    "hesa_id": "0107",
+    "gtr_id": "0740327D-1A22-41B4-82F9-1CC65BB29610",
+    "view_name": "Edinburgh Napier University"
+  },
+  {
+    "ukprn": "10007790",
+    "name": "UNIVERSITY OF EDINBURGH",
+    "sort_name": "Edinburgh, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "9-15",
+      "locality": null,
+      "street": "CHAMBERS STREET",
+      "town": "EDINBURGH",
+      "postcode": "EH1 1HT"
+    },
+    "website": "http://www.ed.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Edinburgh",
+    "groups": [
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 55.948003,
+      "longitude": -3.188111
+    },
+    "hesa_id": "0167",
+    "gtr_id": "F0F2AC58-F3D5-4F25-8E51-6AF679C5EBFA",
+    "view_name": "University of Edinburgh"
+  },
+  {
+    "ukprn": "10007766",
+    "name": "INSTITUTE OF EDUCATION, UNIVERSITY OF LONDON",
+    "sort_name": "Education, University of London, Institute of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "20",
+      "locality": null,
+      "street": "BEDFORD WAY",
+      "town": "LONDON",
+      "postcode": "WC1H 0AL"
+    },
+    "website": "http://www.ioe.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Institute_of_Education",
+    "groups": [
+      "1994_Group"
+    ],
+    "location": {
+      "latitude": 51.523473,
+      "longitude": -0.128481
+    },
+    "hesa_id": "0133",
+    "gtr_id": "0D34D81A-A62C-4B11-8A90-ACB670C0AE91",
+    "view_name": "Institute of Education, University of London"
+  },
+  {
+    "ukprn": "10007791",
+    "name": "UNIVERSITY OF ESSEX",
+    "sort_name": "Essex, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "WIVENHOE PARK",
+      "town": "COLCHESTER",
+      "postcode": "CO4 3SQ"
+    },
+    "website": "http://www.essex.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Essex",
+    "groups": [
+      "1994_Group"
+    ],
+    "location": {
+      "latitude": 51.876569,
+      "longitude": 0.945058
+    },
+    "hesa_id": "0118",
+    "gtr_id": "5C29941F-8359-4D5C-9893-4C268A9DF1AC",
+    "view_name": "University of Essex"
+  },
+  {
+    "ukprn": "10007792",
+    "name": "UNIVERSITY OF EXETER",
+    "sort_name": "Exeter, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "STOCKER ROAD",
+      "town": "EXETER",
+      "postcode": "EX4 4PY"
+    },
+    "website": "http://www.exeter.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Exeter",
+    "groups": [
+      "GW4",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 50.735199,
+      "longitude": -3.53437
+    },
+    "hesa_id": "0119",
+    "gtr_id": "961756BF-E31F-4A13-836F-0A09BA02385C",
+    "view_name": "University of Exeter"
+  },
+  {
+    "ukprn": "10008640",
+    "name": "FALMOUTH UNIVERSITY",
+    "sort_name": "Falmouth, University College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "Woodlane Campus",
+      "locality": null,
+      "street": "Woodlane",
+      "town": "Falmouth",
+      "postcode": "TR11 4RH"
+    },
+    "website": "http://www.falmouth.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_College_Falmouth",
+    "groups": [],
+    "location": {
+      "latitude": 50.149168,
+      "longitude": -5.070901
+    },
+    "hesa_id": "0017",
+    "gtr_id": "E84FC550-A4CC-4B98-A6F9-D15A33829D83",
+    "view_name": "University College Falmouth"
+  },
+  {
+    "ukprn": "10007793",
+    "name": "UNIVERSITY OF SOUTH WALES/PRIFYSGOL DE CYMRU",
+    "sort_name": "Glamorgan / Prifysgol Morgannwg, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "TREFOREST",
+      "street": null,
+      "town": "PONTYPRIDD",
+      "postcode": "CF37 1DL"
+    },
+    "website": "http://www.southwales.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Glamorgan",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 51.588739,
+      "longitude": -3.325787
+    },
+    "hesa_id": "0090",
+    "gtr_id": "7B3A72B2-7C68-4D1C-A7ED-102C7805B561",
+    "view_name": "University of Glamorgan / Prifysgol Morgannwg"
+  },
+  {
+    "ukprn": "10007762",
+    "name": "GLASGOW CALEDONIAN UNIVERSITY",
+    "sort_name": "Glasgow Caledonian University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "CITY CAMPUS 70",
+      "locality": null,
+      "street": "COWCADDENS ROAD",
+      "town": "GLASGOW",
+      "postcode": "G4 0BA"
+    },
+    "website": "http://www.gcu.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Glasgow_Caledonian_University",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 55.866161,
+      "longitude": -4.250553
+    },
+    "hesa_id": "0106",
+    "gtr_id": "679E3226-7E46-4F18-90B6-0B4FE734C099",
+    "view_name": "Glasgow Caledonian University"
+  },
+  {
+    "ukprn": "10002681",
+    "name": "GLASGOW SCHOOL OF ART.",
+    "sort_name": "Glasgow School of Art",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "167",
+      "locality": null,
+      "street": "RENFREW STREET",
+      "town": "GLASGOW",
+      "postcode": "G3 6RQ"
+    },
+    "website": "http://www.gsa.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Glasgow_School_of_Art",
+    "groups": [],
+    "location": {
+      "latitude": 55.865953,
+      "longitude": -4.263391
+    },
+    "hesa_id": "0097",
+    "gtr_id": "A334C885-B5AA-4A42-8CDD-EB6A11B853A2",
+    "view_name": "Glasgow School of Art"
+  },
+  {
+    "ukprn": "10007794",
+    "name": "UNIVERSITY OF GLASGOW",
+    "sort_name": "Glasgow, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "UNIVERSITY AVENUE",
+      "town": "GLASGOW",
+      "postcode": "G12 8QQ"
+    },
+    "website": "http://www.gla.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Glasgow",
+    "groups": [
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 55.871746,
+      "longitude": -4.288345
+    },
+    "hesa_id": "0168",
+    "gtr_id": "D949B0B2-08E0-4BFC-963B-5E378E92BDDA",
+    "view_name": "University of Glasgow"
+  },
+  {
+    "ukprn": "10007145",
+    "name": "UNIVERSITY OF GLOUCESTERSHIRE",
+    "sort_name": "Gloucestershire, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "The Park",
+      "town": "Cheltenham",
+      "postcode": "GL50 2RH"
+    },
+    "website": "http://www.glos.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Gloucestershire",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 51.887504,
+      "longitude": -2.088781
+    },
+    "hesa_id": "0054",
+    "gtr_id": "FFAF7C9F-6946-4B94-B0CF-2EDE44020A94",
+    "view_name": "University of Gloucestershire"
+  },
+  {
+    "ukprn": "10007833",
+    "name": "GLYNDWR UNIVERSITY",
+    "sort_name": "Glyndwr University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "PLAS COCH",
+      "locality": null,
+      "street": "MOLD ROAD",
+      "town": "WREXHAM",
+      "postcode": "LL11 2AW"
+    },
+    "website": "http://www.glyndwr.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Glynd%C5%B5r_University",
+    "groups": [],
+    "location": {
+      "latitude": 53.052979,
+      "longitude": -3.00564
+    },
+    "hesa_id": "0087",
+    "gtr_id": "845C79D4-F696-49C1-BE40-C7E9B890AE0C",
+    "view_name": "Glyndwr University"
+  },
+  {
+    "ukprn": "10002718",
+    "name": "GOLDSMITHS' COLLEGE",
+    "sort_name": "Goldsmiths' College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "GOLDSMITHS COLLEGE 8",
+      "locality": null,
+      "street": "LEWISHAM WAY",
+      "town": "LONDON",
+      "postcode": "SE14 6NW"
+    },
+    "website": "http://www.gold.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Goldsmiths,_University_of_London",
+    "groups": [
+      "1994_Group"
+    ],
+    "location": {
+      "latitude": 51.474144,
+      "longitude": -0.035375
+    },
+    "hesa_id": "0131",
+    "gtr_id": "A9B1866C-EE3E-4D81-A83C-118745E9433E",
+    "view_name": "Goldsmiths' College"
+  },
+  {
+    "ukprn": "10007146",
+    "name": "UNIVERSITY OF GREENWICH",
+    "sort_name": "Greenwich, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "30",
+      "locality": null,
+      "street": "Park Row",
+      "town": "London",
+      "postcode": "SE10 9LS"
+    },
+    "website": "http://www.greenwich.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Greenwich",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 51.484493,
+      "longitude": -0.003891
+    },
+    "hesa_id": "0059",
+    "gtr_id": "2F667752-ABE0-4914-9C97-82F42CC11C60",
+    "view_name": "University of Greenwich"
+  },
+  {
+    "ukprn": "10007825",
+    "name": "GUILDHALL SCHOOL OF MUSIC & DRAMA",
+    "sort_name": "Guildhall School of Music and Drama",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "SILK STREET BARBICAN",
+      "town": "LONDON",
+      "postcode": "EC2Y 8DT"
+    },
+    "website": "http://www.gsmd.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Guildhall_School_of_Music_and_Drama",
+    "groups": [],
+    "location": {
+      "latitude": 51.519502,
+      "longitude": -0.092406
+    },
+    "hesa_id": "0208",
+    "gtr_id": "C43F49D5-9E05-4A01-AE8A-7C68B8AC37BF",
+    "view_name": "Guildhall School of Music and Drama"
+  },
+  {
+    "ukprn": "10040812",
+    "name": "HARPER ADAMS UNIVERSITY",
+    "sort_name": "Harper Adams University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "Edgmond",
+      "street": null,
+      "town": "Newport",
+      "postcode": "TF10 8NB"
+    },
+    "website": "http://www.harper-adams.ac.uk/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Harper_Adams_University",
+    "groups": [],
+    "location": {
+      "latitude": 52.780019,
+      "longitude": -2.42538
+    },
+    "hesa_id": "0018",
+    "gtr_id": "A9CA5E1C-DE53-4198-A3E4-F4764B5CB434",
+    "view_name": "Harper Adams University"
+  },
+  {
+    "ukprn": "10007764",
+    "name": "HERIOT-WATT UNIVERSITY",
+    "sort_name": "Heriot-Watt University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "RICCARTON",
+      "street": null,
+      "town": "CURRIE",
+      "postcode": "EH14 4AS"
+    },
+    "website": "http://www.hw.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Heriot-Watt_University",
+    "groups": [],
+    "location": {
+      "latitude": 55.909398,
+      "longitude": -3.320697
+    },
+    "hesa_id": "0171",
+    "gtr_id": "E5A82D2C-5AD4-488A-ACFF-566345A5D6DA",
+    "view_name": "Heriot-Watt University"
+  },
+  {
+    "ukprn": "10007147",
+    "name": "UNIVERSITY OF HERTFORDSHIRE",
+    "sort_name": "Hertfordshire, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "COLLEGE LANE",
+      "town": "HATFIELD",
+      "postcode": "AL10 9AB"
+    },
+    "website": "http://www.herts.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Hertfordshire",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 51.752882,
+      "longitude": -0.24215
+    },
+    "hesa_id": "0060",
+    "gtr_id": "5E589D68-A73C-42BB-892C-BC508C7B60CA",
+    "view_name": "University of Hertfordshire"
+  },
+  {
+    "ukprn": "10007765",
+    "name": "HEYTHROP COLLEGE",
+    "sort_name": "Heythrop College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "23",
+      "locality": null,
+      "street": "KENSINGTON SQUARE",
+      "town": "LONDON",
+      "postcode": "W8 5HN"
+    },
+    "website": "http://www.heythrop.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Heythrop_College",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 51.499884,
+      "longitude": -0.190884
+    },
+    "hesa_id": "0205",
+    "gtr_id": null,
+    "view_name": "Heythrop College"
+  },
+  {
+    "ukprn": "10007114",
+    "name": "UNIVERSITY OF THE HIGHLANDS AND ISLANDS",
+    "sort_name": "Highlands and Islands, University of the",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "12b",
+      "locality": null,
+      "street": "Ness Walk",
+      "town": "Inverness",
+      "postcode": "IV3 5SQ"
+    },
+    "website": "http://www.uhi.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_the_Highlands_%26_Islands",
+    "groups": [],
+    "location": {
+      "latitude": 57.469675,
+      "longitude": -4.230795
+    },
+    "hesa_id": "0196",
+    "gtr_id": "8BA3C264-769F-487E-B61A-2D4CB6A105B6",
+    "view_name": "University of the Highlands and Islands"
+  },
+  {
+    "ukprn": "10007148",
+    "name": "UNIVERSITY OF HUDDERSFIELD",
+    "sort_name": "Huddersfield, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "QUEENSGATE",
+      "town": "HUDDERSFIELD",
+      "postcode": "HD1 3DH"
+    },
+    "website": "http://www.hud.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Huddersfield",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 53.64373,
+      "longitude": -1.777712
+    },
+    "hesa_id": "0061",
+    "gtr_id": "DC934AED-9432-4385-AEAF-006EA2369001",
+    "view_name": "University of Huddersfield"
+  },
+  {
+    "ukprn": "10007149",
+    "name": "UNIVERSITY OF HULL",
+    "sort_name": "Hull, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "COTTINGHAM ROAD",
+      "town": "HULL",
+      "postcode": "HU6 7RX"
+    },
+    "website": "http://www.hull.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Hull",
+    "groups": [],
+    "location": {
+      "latitude": 53.769661,
+      "longitude": -0.367171
+    },
+    "hesa_id": "0120",
+    "gtr_id": "8A0FC07A-04CD-4F7A-9095-1D2E6C1D918F",
+    "view_name": "University of Hull"
+  },
+  {
+    "ukprn": "10003270",
+    "name": "IMPERIAL COLLEGE OF SCIENCE, TECHNOLOGY AND MEDICINE",
+    "sort_name": "Imperial College of Science, Technology and Medicine",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "FACULTY BUILDING",
+      "locality": null,
+      "street": "EXHIBITION ROAD",
+      "town": "LONDON",
+      "postcode": "SW7 2AZ"
+    },
+    "website": "http://www.imperial.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Imperial_College_London",
+    "groups": [
+      "Science_and_Engineering_South",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 51.500506,
+      "longitude": -0.178194
+    },
+    "hesa_id": "0132",
+    "gtr_id": "46387D84-F71E-4B7D-8C7D-9C288F113510",
+    "view_name": "Imperial College of Science, Technology and Medicine"
+  },
+  {
+    "ukprn": "10007767",
+    "name": "UNIVERSITY OF KEELE",
+    "sort_name": "Keele, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "KEELE",
+      "street": null,
+      "town": "NEWCASTLE",
+      "postcode": "ST5 5BG"
+    },
+    "website": "http://www.keele.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Keele_University",
+    "groups": [],
+    "location": {
+      "latitude": 53.003969,
+      "longitude": -2.274598
+    },
+    "hesa_id": "0121",
+    "gtr_id": "FC59975E-26E8-4A62-ABD8-A570DC6ABF06",
+    "view_name": "University of Keele"
+  },
+  {
+    "ukprn": "10007150",
+    "name": "UNIVERSITY OF KENT",
+    "sort_name": "Kent, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "THE REGISTRY",
+      "locality": null,
+      "street": null,
+      "town": "CANTERBURY",
+      "postcode": "CT2 7NZ"
+    },
+    "website": "http://www.kent.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Kent",
+    "groups": [
+      "NCUK"
+    ],
+    "location": {
+      "latitude": 51.298491,
+      "longitude": 1.070918
+    },
+    "hesa_id": "0122",
+    "gtr_id": "687D087F-AEDD-4BCE-8CF8-E895FC5E9B3D",
+    "view_name": "University of Kent"
+  },
+  {
+    "ukprn": "10003645",
+    "name": "KING'S COLLEGE LONDON",
+    "sort_name": "King's College London",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "STRAND",
+      "town": "LONDON",
+      "postcode": "WC2R 2LS"
+    },
+    "website": "http://www.kcl.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/King%27s_College_London",
+    "groups": [
+      "Science_and_Engineering_South",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 51.510734,
+      "longitude": -0.116912
+    },
+    "hesa_id": "0134",
+    "gtr_id": "318B5D98-4CB4-4B10-A876-08FC93071A56",
+    "view_name": "King's College London"
+  },
+  {
+    "ukprn": "10003678",
+    "name": "KINGSTON UNIVERSITY",
+    "sort_name": "Kingston University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "RIVER HOUSE 53-57",
+      "locality": null,
+      "street": "HIGH STREET",
+      "town": "KINGSTON UPON THAMES",
+      "postcode": "KT1 1LQ"
+    },
+    "website": "http://www.kingston.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Kingston_University",
+    "groups": [
+      "University_Alliance",
+      "NCUK"
+    ],
+    "location": {
+      "latitude": 51.406308,
+      "longitude": -0.307824
+    },
+    "hesa_id": "0063",
+    "gtr_id": "6E750E7A-C076-435E-8AB0-484F65D6C7AD",
+    "view_name": "Kingston University"
+  },
+  {
+    "ukprn": "10007768",
+    "name": "UNIVERSITY OF LANCASTER",
+    "sort_name": "Lancaster, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "UNIVERSITY HOUSE",
+      "locality": "BAILRIGG",
+      "street": null,
+      "town": "LANCASTER",
+      "postcode": "LA1 4YW"
+    },
+    "website": "http://www.lancs.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Lancaster_University",
+    "groups": [
+      "1994_Group",
+      "N8_Research_Partnership"
+    ],
+    "location": {
+      "latitude": 54.01048,
+      "longitude": -2.786905
+    },
+    "hesa_id": "0123",
+    "gtr_id": "F8C7F869-77D6-4859-96F1-3550A4951F6C",
+    "view_name": "University of Lancaster"
+  },
+  {
+    "ukprn": "10003854",
+    "name": "LEEDS COLLEGE OF ART",
+    "sort_name": "Leeds College of Art",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "BLENHEIM WALK",
+      "town": "LEEDS",
+      "postcode": "LS2 9AQ"
+    },
+    "website": "http://www.leeds-art.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Leeds_College_of_Art",
+    "groups": [],
+    "location": {
+      "latitude": 53.808463,
+      "longitude": -1.55178
+    },
+    "hesa_id": "0211",
+    "gtr_id": null,
+    "view_name": "Leeds College of Art"
+  },
+  {
+    "ukprn": "10034449",
+    "name": "LEEDS COLLEGE OF MUSIC",
+    "sort_name": "Leeds College of Music",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "3",
+      "locality": null,
+      "street": "QUARRY HILL",
+      "town": "LEEDS",
+      "postcode": "LS2 7PD"
+    },
+    "website": "http://www.lcm.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Leeds_College_of_Music",
+    "groups": [],
+    "location": {
+      "latitude": 53.798246,
+      "longitude": -1.531256
+    },
+    "hesa_id": null,
+    "gtr_id": null,
+    "view_name": "Leeds College of Music"
+  },
+  {
+    "ukprn": "10003861",
+    "name": "LEEDS METROPOLITAN UNIVERSITY",
+    "sort_name": "Leeds Metropolitan University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "CITY CAMPUS",
+      "locality": null,
+      "street": null,
+      "town": "LEEDS",
+      "postcode": "LS1 3HE"
+    },
+    "website": "http://www.leedsmet.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Leeds_Metropolitan_University",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 53.803662,
+      "longitude": -1.549143
+    },
+    "hesa_id": "0064",
+    "gtr_id": "2C135ED2-40D8-49ED-A792-C2E2B72DFB98",
+    "view_name": "Leeds Metropolitan University"
+  },
+  {
+    "ukprn": "10003863",
+    "name": "LEEDS TRINITY UNIVERSITY",
+    "sort_name": "Leeds Trinity University College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "HORSFORTH",
+      "street": "BROWNBERRIE LANE",
+      "town": "LEEDS",
+      "postcode": "LS18 5HD"
+    },
+    "website": "http://www.leedstrinity.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Leeds_Trinity_University_College",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 53.848573,
+      "longitude": -1.6481
+    },
+    "hesa_id": "0040",
+    "gtr_id": null,
+    "view_name": "Leeds Trinity University College"
+  },
+  {
+    "ukprn": "10007795",
+    "name": "UNIVERSITY OF LEEDS",
+    "sort_name": "Leeds, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "WOODHOUSE LANE",
+      "town": "LEEDS",
+      "postcode": "LS2 9JT"
+    },
+    "website": "http://www.leeds.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Leeds",
+    "groups": [
+      "N8_Research_Partnership",
+      "White_Rose_University_Consortium",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 53.808494,
+      "longitude": -1.552797
+    },
+    "hesa_id": "0124",
+    "gtr_id": "65E7B3BB-0570-4F2A-9415-C7D336AA6477",
+    "view_name": "University of Leeds"
+  },
+  {
+    "ukprn": "10007796",
+    "name": "UNIVERSITY OF LEICESTER",
+    "sort_name": "Leicester, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "UNIVERSITY ROAD",
+      "town": "LEICESTER",
+      "postcode": "LE1 7RH"
+    },
+    "website": "http://www.le.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Leicester",
+    "groups": [
+      "1994_Group",
+      "M5_Universities"
+    ],
+    "location": {
+      "latitude": 52.621937,
+      "longitude": -1.123802
+    },
+    "hesa_id": "0125",
+    "gtr_id": "C842A34F-18F7-454D-A259-FED802368496",
+    "view_name": "University of Leicester"
+  },
+  {
+    "ukprn": "10007151",
+    "name": "UNIVERSITY OF LINCOLN",
+    "sort_name": "Lincoln, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "CAMPUS WAY",
+      "town": "LINCOLN",
+      "postcode": "LN6 7TS"
+    },
+    "website": "http://www.lincoln.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Lincoln",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 53.228855,
+      "longitude": -0.549237
+    },
+    "hesa_id": "0062",
+    "gtr_id": "D64641C7-D9A6-4B41-9C8F-03F7396CB8DA",
+    "view_name": "University of Lincoln"
+  },
+  {
+    "ukprn": "10003956",
+    "name": "LIVERPOOL HOPE UNIVERSITY",
+    "sort_name": "Liverpool Hope University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "HOPE PARK",
+      "locality": null,
+      "street": "TAGGART AVENUE",
+      "town": "LIVERPOOL",
+      "postcode": "L16 9JD"
+    },
+    "website": "http://www.hope.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Liverpool_Hope_University",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 53.391491,
+      "longitude": -2.891936
+    },
+    "hesa_id": "0023",
+    "gtr_id": "B4833390-EB88-4440-ABE0-E80140B75D12",
+    "view_name": "Liverpool Hope University"
+  },
+  {
+    "ukprn": "10003945",
+    "name": "THE LIVERPOOL INSTITUTE FOR PERFORMING ARTS",
+    "sort_name": "Liverpool Institute for Performing Arts, The",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "Mount Street",
+      "town": "Liverpool",
+      "postcode": "L1 9HF"
+    },
+    "website": "http://www.lipa.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Liverpool_Institute_for_Performing_Arts",
+    "groups": [],
+    "location": {
+      "latitude": 53.399674,
+      "longitude": -2.972271
+    },
+    "hesa_id": "0209",
+    "gtr_id": null,
+    "view_name": "The Liverpool Institute for Performing Arts"
+  },
+  {
+    "ukprn": "10003957",
+    "name": "LIVERPOOL JOHN MOORES UNIVERSITY",
+    "sort_name": "Liverpool John Moores University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "RODNEY HOUSE 70",
+      "locality": null,
+      "street": "MOUNT PLEASANT",
+      "town": "LIVERPOOL",
+      "postcode": "L3 5UX"
+    },
+    "website": "http://www.ljmu.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Liverpool_John_Moores_University",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 53.403702,
+      "longitude": -2.973176
+    },
+    "hesa_id": "0065",
+    "gtr_id": "772A1E12-7175-46C0-B665-CE27930D15A8",
+    "view_name": "Liverpool John Moores University"
+  },
+  {
+    "ukprn": "10006842",
+    "name": "UNIVERSITY OF LIVERPOOL",
+    "sort_name": "Liverpool, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": "PO Box 147",
+      "building_name_number": null,
+      "locality": null,
+      "street": null,
+      "town": "LIVERPOOL",
+      "postcode": "L69 3BX"
+    },
+    "website": "http://www.liv.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Liverpool",
+    "groups": [
+      "N8_Research_Partnership",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 53.406416,
+      "longitude": -2.975554
+    },
+    "hesa_id": "0126",
+    "gtr_id": "A0A585E0-6B0D-4643-A3A6-47943B4CBFEF",
+    "view_name": "University of Liverpool"
+  },
+  {
+    "ukprn": "10007769",
+    "name": "LONDON BUSINESS SCHOOL",
+    "sort_name": "London Business School",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "SUSSEX PLACE",
+      "town": "LONDON",
+      "postcode": "NW1 4SA"
+    },
+    "website": "http://www.london.edu/",
+    "wikipedia": "http://en.wikipedia.org/wiki/London_Business_School",
+    "groups": [],
+    "location": {
+      "latitude": 51.526583,
+      "longitude": -0.161353
+    },
+    "hesa_id": "0135",
+    "gtr_id": "1211323E-1950-4CCC-8DCB-1490BD74D17F",
+    "view_name": "London Business School"
+  },
+  {
+    "ukprn": "10004048",
+    "name": "LONDON METROPOLITAN UNIVERSITY",
+    "sort_name": "London Metropolitan University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "166-220",
+      "locality": null,
+      "street": "HOLLOWAY ROAD",
+      "town": "LONDON",
+      "postcode": "N7 8DB"
+    },
+    "website": "http://www.londonmet.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/London_Metropolitan_University",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 51.551822,
+      "longitude": -0.11021
+    },
+    "hesa_id": "0202",
+    "gtr_id": "3A1483A5-3CFF-403D-8AB5-FAE5B8EB86B4",
+    "view_name": "London Metropolitan University"
+  },
+  {
+    "ukprn": "10004063",
+    "name": "LONDON SCHOOL OF ECONOMICS & POLITICAL SCIENCE",
+    "sort_name": "London School of Economics & Political Science",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "HOUGHTON STREET",
+      "town": "LONDON",
+      "postcode": "WC2A 2AE"
+    },
+    "website": "http://www.lse.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/London_School_of_Economics",
+    "groups": [
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 51.513968,
+      "longitude": -0.116707
+    },
+    "hesa_id": "0137",
+    "gtr_id": "EC177B1F-35EE-4B74-981D-E8382EE3D18C",
+    "view_name": "London School of Economics & Political Science"
+  },
+  {
+    "ukprn": "10007771",
+    "name": "LONDON SCHOOL OF HYGIENE AND TROPICAL MEDICINE",
+    "sort_name": "London School of Hygiene and Tropical Medicine",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "KEPPEL STREET",
+      "town": "LONDON",
+      "postcode": "WC1E 7HT"
+    },
+    "website": "http://www.lshtm.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/London_School_of_Hygiene_and_Tropical_Medicine",
+    "groups": [],
+    "location": {
+      "latitude": 51.520927,
+      "longitude": -0.130661
+    },
+    "hesa_id": "0138",
+    "gtr_id": "4EE756E0-F50C-413B-8A73-B2876EC01D01",
+    "view_name": "London School of Hygiene and Tropical Medicine"
+  },
+  {
+    "ukprn": "10004078",
+    "name": "LONDON SOUTH BANK UNIVERSITY",
+    "sort_name": "London South Bank University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "103",
+      "locality": null,
+      "street": "BOROUGH ROAD",
+      "town": "LONDON",
+      "postcode": "SE1 0AA"
+    },
+    "website": "http://www.lsbu.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/London_South_Bank_University",
+    "groups": [],
+    "location": {
+      "latitude": 51.49841,
+      "longitude": -0.10163
+    },
+    "hesa_id": "0076",
+    "gtr_id": "FBA10D69-BE5C-42A8-9DCF-4214809173FB",
+    "view_name": "London South Bank University"
+  },
+  {
+    "ukprn": "10007784",
+    "name": "UNIVERSITY COLLEGE LONDON",
+    "sort_name": "London, University College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "GOWER STREET",
+      "town": "LONDON",
+      "postcode": "WC1E 6BT"
+    },
+    "website": "http://www.ucl.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_College_London",
+    "groups": [
+      "Science_and_Engineering_South",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 51.524774,
+      "longitude": -0.133401
+    },
+    "hesa_id": "0149",
+    "gtr_id": "3A5E126D-C175-4730-9B7B-E6D8CF447F83",
+    "view_name": "University College London"
+  },
+  {
+    "ukprn": "10007797",
+    "name": "UNIVERSITY OF LONDON",
+    "sort_name": "London, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "SENATE HOUSE",
+      "locality": null,
+      "street": "MALET STREET",
+      "town": "LONDON",
+      "postcode": "WC1E 7HU"
+    },
+    "website": "http://www.lon.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_London",
+    "groups": [],
+    "location": {
+      "latitude": 51.520998,
+      "longitude": -0.127819
+    },
+    "hesa_id": "0151",
+    "gtr_id": "CB05C424-91BF-4B48-9472-E6F6226A6A05",
+    "view_name": "University of London"
+  },
+  {
+    "ukprn": "10007162",
+    "name": "UNIVERSITY OF THE ARTS, LONDON",
+    "sort_name": "London, University of the Arts",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "272",
+      "locality": null,
+      "street": "HIGH HOLBORN",
+      "town": "LONDON",
+      "postcode": "WC1V 7EY"
+    },
+    "website": "http://www.arts.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_the_Arts_London",
+    "groups": [],
+    "location": {
+      "latitude": 51.517742,
+      "longitude": -0.117099
+    },
+    "hesa_id": "0024",
+    "gtr_id": "8A16A43E-BC29-4E8D-8135-FF787BDF8D86",
+    "view_name": "University of the Arts, London"
+  },
+  {
+    "ukprn": "10004113",
+    "name": "LOUGHBOROUGH UNIVERSITY",
+    "sort_name": "Loughborough University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": null,
+      "town": "LOUGHBOROUGH",
+      "postcode": "LE11 3TU"
+    },
+    "website": "http://www.lboro.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Loughborough_University",
+    "groups": [
+      "1994_Group",
+      "M5_Universities"
+    ],
+    "location": {
+      "latitude": 52.764892,
+      "longitude": -1.229467
+    },
+    "hesa_id": "0152",
+    "gtr_id": "CAA9A40D-0226-4A4F-AC0D-D8299E30A1EF",
+    "view_name": "Loughborough University"
+  },
+  {
+    "ukprn": "10004180",
+    "name": "MANCHESTER METROPOLITAN UNIVERSITY",
+    "sort_name": "Manchester Metropolitan University, The",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "ALL SAINTS",
+      "locality": null,
+      "street": "GROSVENOR SQUARE",
+      "town": "MANCHESTER",
+      "postcode": "M15 6BH"
+    },
+    "website": "http://www.mmu.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Manchester_Metropolitan_University",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 53.470699,
+      "longitude": -2.239504
+    },
+    "hesa_id": "0066",
+    "gtr_id": "E594FDB4-DD6F-441F-90D6-C423A2916446",
+    "view_name": "The Manchester Metropolitan University"
+  },
+  {
+    "ukprn": "10007798",
+    "name": "THE UNIVERSITY OF MANCHESTER",
+    "sort_name": "Manchester, The University of ",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "OXFORD ROAD",
+      "town": "MANCHESTER",
+      "postcode": "M13 9PL"
+    },
+    "website": "http://www.manchester.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Manchester",
+    "groups": [
+      "N8_Research_Partnership",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 53.467943,
+      "longitude": -2.233222
+    },
+    "hesa_id": "0204",
+    "gtr_id": "E5AFE7E4-FF5D-4FF1-B50B-E04A6DF7D791",
+    "view_name": "The University of Manchester"
+  },
+  {
+    "ukprn": "10004351",
+    "name": "MIDDLESEX UNIVERSITY",
+    "sort_name": "Middlesex University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "THE BURROUGHS",
+      "town": "LONDON",
+      "postcode": "NW4 4BT"
+    },
+    "website": "http://www.mdx.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Middlesex_University",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 51.589717,
+      "longitude": -0.228415
+    },
+    "hesa_id": "0067",
+    "gtr_id": "AB979D25-DDBE-4C82-9D51-F38618FE37BD",
+    "view_name": "Middlesex University"
+  },
+  {
+    "ukprn": "10007799",
+    "name": "NEWCASTLE UNIVERSITY",
+    "sort_name": "Newcastle Upon Tyne, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "CLAREMONT ROAD",
+      "town": "NEWCASTLE UPON TYNE",
+      "postcode": "NE1 7RU"
+    },
+    "website": "http://www.ncl.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Newcastle_University",
+    "groups": [
+      "N8_Research_Partnership",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 54.980327,
+      "longitude": -1.615727
+    },
+    "hesa_id": "0154",
+    "gtr_id": "5E2B04DD-4A03-45ED-9892-61C5CCB8AC68",
+    "view_name": "University of Newcastle Upon Tyne"
+  },
+  {
+    "ukprn": "10007832",
+    "name": "NEWMAN UNIVERSITY",
+    "sort_name": "Newman University College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "GENNERS LANE",
+      "town": "BIRMINGHAM",
+      "postcode": "B32 3NT"
+    },
+    "website": "http://www.newman.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Newman_University_College",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 52.434137,
+      "longitude": -1.995022
+    },
+    "hesa_id": "0028",
+    "gtr_id": null,
+    "view_name": "Newman University College"
+  },
+  {
+    "ukprn": "10007138",
+    "name": "UNIVERSITY OF NORTHAMPTON,THE",
+    "sort_name": "Northampton, The University of ",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "UNIVERSITY DRIVE",
+      "town": "NORTHAMPTON",
+      "postcode": "NN2 5PH"
+    },
+    "website": "http://www.northampton.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Northampton",
+    "groups": [],
+    "location": {
+      "latitude": null,
+      "longitude": null
+    },
+    "hesa_id": "0027",
+    "gtr_id": "481D8333-88B8-4BF7-9DF2-5600BC827328",
+    "view_name": "The University of Northampton"
+  },
+  {
+    "ukprn": "10008816",
+    "name": "NORTHERN SCHOOL OF CONTEMPORARY DANCE",
+    "sort_name": "Northern School of Contemporary Dance",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "98",
+      "locality": null,
+      "street": "CHAPELTOWN ROAD",
+      "town": "LEEDS",
+      "postcode": "LS7 4BH"
+    },
+    "website": "http://www.nscd.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Chapeltown,_West_Yorkshire#Northern_School_of_Contemporary_Dance",
+    "groups": [],
+    "location": {
+      "latitude": 53.813246,
+      "longitude": -1.533291
+    },
+    "hesa_id": null,
+    "gtr_id": null,
+    "view_name": "Northern School of Contemporary Dance"
+  },
+  {
+    "ukprn": "10001282",
+    "name": "NORTHUMBRIA UNIVERSITY NEWCASTLE",
+    "sort_name": "Northumbria at Newcastle, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "ELLISON BUILDING",
+      "locality": null,
+      "street": "ELLISON ROAD",
+      "town": "Newcastle Upon Tyne",
+      "postcode": "NE1 8ST"
+    },
+    "website": "http://www.northumbria.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Northumbria_University",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 54.976769,
+      "longitude": -1.607512
+    },
+    "hesa_id": "0069",
+    "gtr_id": "EF390CF0-ECD3-47D8-B9A8-7602AF319BEE",
+    "view_name": "University of Northumbria at Newcastle"
+  },
+  {
+    "ukprn": "10004775",
+    "name": "NORWICH UNIVERSITY OF THE ARTS",
+    "sort_name": "Norwich University College of the Arts",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "3",
+      "locality": null,
+      "street": "REDWELL STREET",
+      "town": "NORWICH",
+      "postcode": "NR2 4SN"
+    },
+    "website": "http://www.nua.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Norwich_University_College_of_the_Arts",
+    "groups": [],
+    "location": {
+      "latitude": 52.630313,
+      "longitude": 1.2966
+    },
+    "hesa_id": "0190",
+    "gtr_id": "4E4178A7-8BDF-4990-8D4A-67DB8A9695F3",
+    "view_name": "Norwich University College of the Arts"
+  },
+  {
+    "ukprn": "10004797",
+    "name": "NOTTINGHAM TRENT UNIVERSITY",
+    "sort_name": "Nottingham Trent University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "BURTON STREET",
+      "town": "NOTTINGHAM",
+      "postcode": "NG1 4BU"
+    },
+    "website": "http://www.ntu.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Nottingham_Trent_University",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 52.956383,
+      "longitude": -1.152002
+    },
+    "hesa_id": "0071",
+    "gtr_id": "1529782F-9068-4364-888E-46E4FC4881F5",
+    "view_name": "Nottingham Trent University"
+  },
+  {
+    "ukprn": "10007154",
+    "name": "UNIVERSITY OF NOTTINGHAM, THE",
+    "sort_name": "Nottingham, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "UNIVERSITY PARK",
+      "town": "NOTTINGHAM",
+      "postcode": "NG7 2RD"
+    },
+    "website": "http://www.nottingham.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Nottingham",
+    "groups": [
+      "M5_Universities",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 52.941271,
+      "longitude": -1.186477
+    },
+    "hesa_id": "0155",
+    "gtr_id": "936D002F-A8D1-4A93-AE5D-825ED0903D8D",
+    "view_name": "University of Nottingham"
+  },
+  {
+    "ukprn": "10007773",
+    "name": "OPEN UNIVERSITY(THE)",
+    "sort_name": "Open University(The)",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "WALTON HALL",
+      "street": null,
+      "town": "MILTON KEYNES",
+      "postcode": "MK7 6AA"
+    },
+    "website": "http://www.open.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/The_Open_University",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 52.024924,
+      "longitude": -0.709726
+    },
+    "hesa_id": "0001",
+    "gtr_id": "89E6D9CB-DAF8-40A2-A9EF-B330A5A7FC24",
+    "view_name": "Open University(The)"
+  },
+  {
+    "ukprn": "10004930",
+    "name": "OXFORD BROOKES UNIVERSITY",
+    "sort_name": "Oxford Brookes University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "HEADINGTON",
+      "street": "GIPSY LANE",
+      "town": "OXFORD",
+      "postcode": "OX3 0BP"
+    },
+    "website": "http://www.brookes.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Oxford_Brookes_University",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 51.754386,
+      "longitude": -1.223181
+    },
+    "hesa_id": "0072",
+    "gtr_id": "CEB496D0-8DC8-4905-8F65-D1ACDAD75C9B",
+    "view_name": "Oxford Brookes University"
+  },
+  {
+    "ukprn": "10007774",
+    "name": "UNIVERSITY OF OXFORD",
+    "sort_name": "Oxford, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "UNIVERSITY OFFICES",
+      "locality": null,
+      "street": "WELLINGTON SQUARE",
+      "town": "OXFORD",
+      "postcode": "OX1 2JD"
+    },
+    "website": "http://www.ox.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Oxford",
+    "groups": [
+      "Science_and_Engineering_South",
+      "Russell_Group",
+      "Oxbridge"
+    ],
+    "location": {
+      "latitude": 51.757644,
+      "longitude": -1.262868
+    },
+    "hesa_id": "0156",
+    "gtr_id": "B1F0E8FE-FE3C-49ED-9C96-1ED75312A8A0",
+    "view_name": "University of Oxford"
+  },
+  {
+    "ukprn": "10007801",
+    "name": "PLYMOUTH UNIVERSITY",
+    "sort_name": "Plymouth, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "DRAKE CIRCUS",
+      "town": "PLYMOUTH",
+      "postcode": "PL4 8AA"
+    },
+    "website": "http://www.plymouth.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Plymouth",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 50.375186,
+      "longitude": -4.138393
+    },
+    "hesa_id": "0073",
+    "gtr_id": "7801F008-7C77-45E7-90E9-4345B47D138E",
+    "view_name": "University of Plymouth"
+  },
+  {
+    "ukprn": "10007155",
+    "name": "UNIVERSITY OF PORTSMOUTH",
+    "sort_name": "Portsmouth, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "UNIVERSITY HOUSE",
+      "locality": null,
+      "street": "WINSTON CHURCHILL AVENUE",
+      "town": "PORTSMOUTH",
+      "postcode": "PO1 2UP"
+    },
+    "website": "http://www.port.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Portsmouth",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 50.795266,
+      "longitude": -1.093571
+    },
+    "hesa_id": "0074",
+    "gtr_id": "955C55E8-783E-4842-BB2C-2D275A3CAF82",
+    "view_name": "University of Portsmouth"
+  },
+  {
+    "ukprn": "10007856",
+    "name": "PRIFYSGOL ABERYSTWYTH",
+    "sort_name": "Prifysgol Aberystwyth",
+    "alias": null,
+    "address": {
+      "flat_name_number": "PO BOX 2",
+      "building_name_number": null,
+      "locality": null,
+      "street": null,
+      "town": "ABERYSTWYTH",
+      "postcode": "SY23 2AX"
+    },
+    "website": "http://www.aber.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Aberystwyth_University",
+    "groups": [
+      "ABSA"
+    ],
+    "location": {
+      "latitude": 52.403488,
+      "longitude": -4.043595
+    },
+    "hesa_id": "0177",
+    "gtr_id": "E4757A6E-7326-472B-9979-B47D77A65446",
+    "view_name": "Prifysgol Aberystwyth"
+  },
+  {
+    "ukprn": "10005337",
+    "name": "QUEEN MARGARET UNIVERSITY, EDINBURGH",
+    "sort_name": "Queen Margaret University, Edinburgh",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "QUEEN MARGARET UNIVERSITY DRIVE",
+      "town": "MUSSELBURGH",
+      "postcode": "EH21 6UU"
+    },
+    "website": "http://www.qmu.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Queen_Margaret_University",
+    "groups": [],
+    "location": {
+      "latitude": 55.931304,
+      "longitude": -3.073062
+    },
+    "hesa_id": "0100",
+    "gtr_id": "3AF70AC4-19B0-4B79-8A06-D63F374FC0E7",
+    "view_name": "Queen Margaret University, Edinburgh"
+  },
+  {
+    "ukprn": "10007775",
+    "name": "QUEEN MARY UNIVERSITY OF LONDON",
+    "sort_name": "Queen Mary and Westfield College, University of London",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "327",
+      "locality": null,
+      "street": "MILE END ROAD",
+      "town": "LONDON",
+      "postcode": "E1 4NS"
+    },
+    "website": "http://www.qmul.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Queen_Mary,_University_of_London",
+    "groups": [
+      "Science_and_Engineering_South",
+      "NCUK",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 51.523412,
+      "longitude": -0.040505
+    },
+    "hesa_id": "0139",
+    "gtr_id": "D5337A10-AC8A-402A-8164-C5F9CC6B0140",
+    "view_name": "Queen Mary and Westfield College, University of London"
+  },
+  {
+    "ukprn": "10005343",
+    "name": "QUEEN'S UNIVERSITY OF BELFAST",
+    "sort_name": "Queen's University of Belfast, The",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "UNIVERSITY ROAD",
+      "town": "BELFAST",
+      "postcode": "BT7 1NN"
+    },
+    "website": "http://www.qub.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Queen%27s_University_Belfast",
+    "groups": [
+      "NCUK",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 54.5839,
+      "longitude": -5.9348
+    },
+    "hesa_id": "0184",
+    "gtr_id": "6DF12A24-BEFF-40FA-9A8E-D79B6BFDF346",
+    "view_name": "The Queen's University of Belfast"
+  },
+  {
+    "ukprn": "10005389",
+    "name": "RAVENSBOURNE",
+    "sort_name": "Ravensbourne Limited",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "6",
+      "locality": null,
+      "street": "PENROSE WAY",
+      "town": "LONDON",
+      "postcode": "SE10 0EW"
+    },
+    "website": "http://www.rave.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Ravensbourne_College_of_Design_and_Communication",
+    "groups": [],
+    "location": {
+      "latitude": 51.501478,
+      "longitude": 0.005266
+    },
+    "hesa_id": "0030",
+    "gtr_id": null,
+    "view_name": "Ravensbourne Limited"
+  },
+  {
+    "ukprn": "10007802",
+    "name": "UNIVERSITY OF READING",
+    "sort_name": "Reading, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "WHITEKNIGHTS HOUSE",
+      "locality": "WHITEKNIGHTS",
+      "street": null,
+      "town": "READING",
+      "postcode": "RG6 6UR"
+    },
+    "website": "http://www.reading.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Reading",
+    "groups": [
+      "1994_Group"
+    ],
+    "location": {
+      "latitude": 51.440564,
+      "longitude": -0.947088
+    },
+    "hesa_id": "0157",
+    "gtr_id": "E89C3602-0FB4-4044-A918-58966B8A10B2",
+    "view_name": "University of Reading"
+  },
+  {
+    "ukprn": "10005500",
+    "name": "THE ROBERT GORDON UNIVERSITY",
+    "sort_name": "Robert Gordon University, The",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "CENTRAL SERVICES BUILDING",
+      "locality": null,
+      "street": "GARTHDEE ROAD",
+      "town": "ABERDEEN",
+      "postcode": "AB10 7FY"
+    },
+    "website": "http://www.rgu.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Robert_Gordon_University",
+    "groups": [],
+    "location": {
+      "latitude": 57.118078,
+      "longitude": -2.143673
+    },
+    "hesa_id": "0104",
+    "gtr_id": "2F26B195-F498-4990-934B-D53B09569D15",
+    "view_name": "The Robert Gordon University"
+  },
+  {
+    "ukprn": "10007776",
+    "name": "ROEHAMPTON UNIVERSITY",
+    "sort_name": "Roehampton University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "ERASMUS HOUSE",
+      "locality": null,
+      "street": "ROEHAMPTON LANE",
+      "town": "LONDON",
+      "postcode": "SW15 5PJ"
+    },
+    "website": "http://www.roehampton.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Roehampton_University",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 51.455119,
+      "longitude": -0.245983
+    },
+    "hesa_id": "0031",
+    "gtr_id": "0107329B-F086-4C36-8652-5AF6752EC6DC",
+    "view_name": "Roehampton University"
+  },
+  {
+    "ukprn": "10005523",
+    "name": "ROSE BRUFORD COLLEGE",
+    "sort_name": "Rose Bruford College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "Lamorbey Park Burnt Oak Lane",
+      "town": "Sidcup",
+      "postcode": "DA15 9DF"
+    },
+    "website": "http://www.bruford.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Rose_Bruford_College",
+    "groups": [],
+    "location": {
+      "latitude": 51.439004,
+      "longitude": 0.106805
+    },
+    "hesa_id": "0032",
+    "gtr_id": null,
+    "view_name": "Rose Bruford College"
+  },
+  {
+    "ukprn": "10007835",
+    "name": "ROYAL ACADEMY OF MUSIC",
+    "sort_name": "Royal Academy of Music",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "MARYLEBONE ROAD",
+      "town": "LONDON",
+      "postcode": "NW1 5HT"
+    },
+    "website": "http://www.ram.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Royal_Academy_of_Music",
+    "groups": [],
+    "location": {
+      "latitude": 51.523617,
+      "longitude": -0.151727
+    },
+    "hesa_id": "0033",
+    "gtr_id": "A3F70448-95D2-4ECC-8535-97876FA5F5A4",
+    "view_name": "Royal Academy of Music"
+  },
+  {
+    "ukprn": "10005545",
+    "name": "ROYAL AGRICULTURAL UNIVERSITY",
+    "sort_name": "Royal Agricultural College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "Stroud Road",
+      "town": "Cirencester",
+      "postcode": "GL7 6JS"
+    },
+    "website": "http://www.rac.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Royal_Agricultural_College",
+    "groups": [],
+    "location": {
+      "latitude": 51.709495,
+      "longitude": -1.994995
+    },
+    "hesa_id": "0195",
+    "gtr_id": null,
+    "view_name": "Royal Agricultural College"
+  },
+  {
+    "ukprn": "10003324",
+    "name": "INSTITUTE OF CANCER RESEARCH: ROYAL CANCER HOSPITAL (THE)",
+    "sort_name": "Royal Cancer Hospital (The), Institute of Cancer Research: ",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "123",
+      "locality": null,
+      "street": "OLD BROMPTON ROAD",
+      "town": "LONDON",
+      "postcode": "SW7 3RP"
+    },
+    "website": "http://www.icr.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Institute_of_Cancer_Research",
+    "groups": [],
+    "location": {
+      "latitude": 51.490713,
+      "longitude": -0.181668
+    },
+    "hesa_id": "0188",
+    "gtr_id": "744CEC19-DBB5-412F-8B63-3BAD72B719C7",
+    "view_name": "Institute of Cancer Research: Royal Cancer Hospital (The)"
+  },
+  {
+    "ukprn": "10007777",
+    "name": "ROYAL COLLEGE OF ART(THE)",
+    "sort_name": "Royal College of Art(The)",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "KENSINGTON GORE",
+      "town": "LONDON",
+      "postcode": "SW7 2EU"
+    },
+    "website": "http://www.rca.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Royal_College_of_Art",
+    "groups": [],
+    "location": {
+      "latitude": 51.501355,
+      "longitude": -0.178449
+    },
+    "hesa_id": "0003",
+    "gtr_id": "952043EA-E747-4132-B064-2CE0F7E61E93",
+    "view_name": "Royal College of Art(The)"
+  },
+  {
+    "ukprn": "10007778",
+    "name": "ROYAL COLLEGE OF MUSIC",
+    "sort_name": "Royal College of Music",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "PRINCE CONSORT ROAD",
+      "town": "LONDON",
+      "postcode": "SW7 2BS"
+    },
+    "website": "http://www.rcm.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Royal_College_of_Music",
+    "groups": [],
+    "location": {
+      "latitude": 51.499281,
+      "longitude": -0.176889
+    },
+    "hesa_id": "0034",
+    "gtr_id": "71C6280E-F75C-4B1B-A182-F7E3F5FF0FB0",
+    "view_name": "Royal College of Music"
+  },
+  {
+    "ukprn": "10005561",
+    "name": "ROYAL CONSERVATOIRE OF SCOTLAND",
+    "sort_name": "Royal Conservatoire of Scotland",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "100",
+      "locality": null,
+      "street": "RENFREW STREET",
+      "town": "GLASGOW",
+      "postcode": "G2 3DB"
+    },
+    "website": "http://www.rcs.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Royal_Conservatoire_of_Scotland",
+    "groups": [],
+    "location": {
+      "latitude": 55.86614,
+      "longitude": -4.257632
+    },
+    "hesa_id": "0101",
+    "gtr_id": null,
+    "view_name": "Royal Conservatoire of Scotland"
+  },
+  {
+    "ukprn": "10005553",
+    "name": "ROYAL HOLLOWAY COLLEGE AND BEDFORD NEW COLLEGE",
+    "sort_name": "Royal Holloway College and Bedford New College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "EGHAM HILL",
+      "town": "EGHAM",
+      "postcode": "TW20 0EX"
+    },
+    "website": "http://www.rhul.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Royal_Holloway,_University_of_London",
+    "groups": [
+      "1994_Group"
+    ],
+    "location": {
+      "latitude": 51.425323,
+      "longitude": -0.567199
+    },
+    "hesa_id": "0141",
+    "gtr_id": "A6D6F944-7BD0-49D0-8F3D-1D5B15E2E134",
+    "view_name": "Royal Holloway College and Bedford New College"
+  },
+  {
+    "ukprn": "10007837",
+    "name": "ROYAL NORTHERN COLLEGE OF MUSIC",
+    "sort_name": "Royal Northern College of Music",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "124",
+      "locality": null,
+      "street": "OXFORD ROAD",
+      "town": "MANCHESTER",
+      "postcode": "M13 9RD"
+    },
+    "website": "http://www.rncm.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Royal_Northern_College_of_Music",
+    "groups": [],
+    "location": {
+      "latitude": 53.468583,
+      "longitude": -2.236946
+    },
+    "hesa_id": "0035",
+    "gtr_id": "111974F8-A619-4611-8D9D-0FF01DE98D8A",
+    "view_name": "Royal Northern College of Music"
+  },
+  {
+    "ukprn": "10007779",
+    "name": "THE ROYAL VETERINARY COLLEGE",
+    "sort_name": "Royal Veterinary College, The",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "ROYAL COLLEGE STREET",
+      "town": "LONDON",
+      "postcode": "NW1 0TU"
+    },
+    "website": "http://www.rvc.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Royal_Veterinary_College",
+    "groups": [],
+    "location": {
+      "latitude": 51.536862,
+      "longitude": -0.133498
+    },
+    "hesa_id": "0143",
+    "gtr_id": "1AB05DA1-4DD6-4843-B416-D7D9441EBFFB",
+    "view_name": "The Royal Veterinary College"
+  },
+  {
+    "ukprn": "10007838",
+    "name": "ROYAL WELSH COLLEGE OF MUSIC AND DRAMA LIMITED",
+    "sort_name": "Royal Welsh College of Music and Drama Limited",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "NORTH ROAD",
+      "town": "CARDIFF",
+      "postcode": "CF10 3ER"
+    },
+    "website": "http://www.rwcmd.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Royal_Welsh_College_of_Music_%26_Drama",
+    "groups": [],
+    "location": {
+      "latitude": 51.485645,
+      "longitude": -3.183865
+    },
+    "hesa_id": null,
+    "gtr_id": null,
+    "view_name": "Royal Welsh College of Music and Drama Limited"
+  },
+  {
+    "ukprn": "10007156",
+    "name": "UNIVERSITY OF SALFORD, THE",
+    "sort_name": "Salford, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "FARADAY HOUSE 43",
+      "locality": null,
+      "street": "CRESCENT",
+      "town": "SALFORD",
+      "postcode": "M5 4WT"
+    },
+    "website": "http://www.salford.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Salford",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 53.483558,
+      "longitude": -2.270665
+    },
+    "hesa_id": "0158",
+    "gtr_id": "ED6ACD61-0140-4C05-B93D-2C6A42CA753B",
+    "view_name": "University of Salford"
+  },
+  {
+    "ukprn": "10007780",
+    "name": "SCHOOL OF ORIENTAL AND AFRICAN STUDIES",
+    "sort_name": "School of Oriental and African Studies",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "10",
+      "locality": null,
+      "street": "THORNHAUGH STREET",
+      "town": "LONDON",
+      "postcode": "WC1H 0XG"
+    },
+    "website": "http://www.soas.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/School_of_Oriental_and_African_Studies",
+    "groups": [
+      "1994_Group"
+    ],
+    "location": {
+      "latitude": 51.522352,
+      "longitude": -0.129233
+    },
+    "hesa_id": "0146",
+    "gtr_id": "B1B0C694-8B41-4FDC-A4F0-8B18407D793B",
+    "view_name": "School of Oriental and African Studies"
+  },
+  {
+    "ukprn": "10007781",
+    "name": "SCHOOL OF PHARMACY UNIVERSITY OF LONDON(THE)",
+    "sort_name": "School of Pharmacy University of London(The)",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "29-39",
+      "locality": null,
+      "street": "BRUNSWICK SQUARE",
+      "town": "LONDON",
+      "postcode": "WC1N 1AX"
+    },
+    "website": "http://www.pharmacy.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/School_of_Pharmacy,_University_of_London",
+    "groups": [],
+    "location": {
+      "latitude": 51.525085,
+      "longitude": -0.122432
+    },
+    "hesa_id": null,
+    "gtr_id": "FAD72F10-05DD-4B4D-89F4-0475C2A79E10",
+    "view_name": "School of Pharmacy University of London(The)"
+  },
+  {
+    "ukprn": "10005790",
+    "name": "SHEFFIELD HALLAM UNIVERSITY",
+    "sort_name": "Sheffield Hallam University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "CITY CAMPUS",
+      "locality": null,
+      "street": "POND STREET",
+      "town": "SHEFFIELD",
+      "postcode": "S1 1WB"
+    },
+    "website": "http://www.shu.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Sheffield_Hallam_University",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 53.379212,
+      "longitude": -1.465255
+    },
+    "hesa_id": "0075",
+    "gtr_id": "52FDE897-E62F-4388-A588-9382D1E7C2D3",
+    "view_name": "Sheffield Hallam University"
+  },
+  {
+    "ukprn": "10007157",
+    "name": "UNIVERSITY OF SHEFFIELD",
+    "sort_name": "Sheffield, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "WESTERN BANK",
+      "town": "SHEFFIELD",
+      "postcode": "S10 2TN"
+    },
+    "website": "http://www.shef.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Sheffield",
+    "groups": [
+      "N8_Research_Partnership",
+      "White_Rose_University_Consortium",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 53.381409,
+      "longitude": -1.488709
+    },
+    "hesa_id": "0159",
+    "gtr_id": "03D8AFBB-3EA5-4885-B036-BD4F9F4F9849",
+    "view_name": "University of Sheffield"
+  },
+  {
+    "ukprn": "10006022",
+    "name": "SOUTHAMPTON SOLENT UNIVERSITY",
+    "sort_name": "Southampton Solent University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "EAST PARK TERRACE",
+      "town": "SOUTHAMPTON",
+      "postcode": "SO14 0YN"
+    },
+    "website": "http://www.solent.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Southampton_Solent_University",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 50.907738,
+      "longitude": -1.400157
+    },
+    "hesa_id": "0037",
+    "gtr_id": "DD18D9A8-0FE2-4857-A405-7F41C183F65D",
+    "view_name": "Southampton Solent University"
+  },
+  {
+    "ukprn": "10007158",
+    "name": "UNIVERSITY OF SOUTHAMPTON",
+    "sort_name": "Southampton, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "UNIVERSITY ROAD",
+      "town": "SOUTHAMPTON",
+      "postcode": "SO17 1BJ"
+    },
+    "website": "http://www.soton.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Southampton",
+    "groups": [
+      "Science_and_Engineering_South",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 50.93418,
+      "longitude": -1.395675
+    },
+    "hesa_id": "0160",
+    "gtr_id": "30A429E3-83B7-4E41-99C0-14A144F07DFE",
+    "view_name": "University of Southampton"
+  },
+  {
+    "ukprn": "10005700",
+    "name": "SRUC",
+    "sort_name": "Sruc",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "KING'S BUILDINGS WEST MAINS ROAD",
+      "town": "EDINBURGH",
+      "postcode": "EH9 3JG"
+    },
+    "website": "http://www.sruc.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Scotland%27s_Rural_University_College",
+    "groups": [],
+    "location": {
+      "latitude": 55.921607,
+      "longitude": -3.176533
+    },
+    "hesa_id": "0175",
+    "gtr_id": "ADA27054-A467-49BE-A71E-358C6062A9E3",
+    "view_name": "Sruc"
+  },
+  {
+    "ukprn": "10007803",
+    "name": "UNIVERSITY OF ST ANDREWS",
+    "sort_name": "St Andrews, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "COLLEGE GATE",
+      "locality": null,
+      "street": "NORTH STREET",
+      "town": "ST. ANDREWS",
+      "postcode": "KY16 9AJ"
+    },
+    "website": "http://www.st-andrews.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_St_Andrews",
+    "groups": [],
+    "location": {
+      "latitude": 56.341205,
+      "longitude": -2.793016
+    },
+    "hesa_id": "0173",
+    "gtr_id": "C0E4FAD2-3C8B-410A-B6DF-3B9B9E433060",
+    "view_name": "University of St Andrews"
+  },
+  {
+    "ukprn": "10007782",
+    "name": "ST. GEORGE'S, UNIVERSITY OF LONDON",
+    "sort_name": "St George's Hospital Medical School",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "CRANMER TERRACE",
+      "town": "LONDON",
+      "postcode": "SW17 0RE"
+    },
+    "website": "http://www.sgul.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/St_George%27s,_University_of_London",
+    "groups": [],
+    "location": {
+      "latitude": 51.427985,
+      "longitude": -0.173355
+    },
+    "hesa_id": "0145",
+    "gtr_id": "F325BF32-08AE-4621-8057-E5D6613B7308",
+    "view_name": "St George's Hospital Medical School"
+  },
+  {
+    "ukprn": "10037449",
+    "name": "UNIVERSITY OF ST MARK & ST JOHN",
+    "sort_name": "St Mark & St John, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "DERRIFORD",
+      "street": "DERRIFORD ROAD",
+      "town": "PLYMOUTH",
+      "postcode": "PL6 8BH"
+    },
+    "website": "http:///",
+    "wikipedia": "https://en.wikipedia.org/wiki/University_of_St_Mark_%26_St_John",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 50.421023,
+      "longitude": -4.110286
+    },
+    "hesa_id": "0014",
+    "gtr_id": null,
+    "view_name": "University of St Mark & St John"
+  },
+  {
+    "ukprn": "10008026",
+    "name": "ST MARY'S UNIVERSITY COLLEGE",
+    "sort_name": "St Mary's University College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "191",
+      "locality": null,
+      "street": "FALLS ROAD",
+      "town": "BELFAST",
+      "postcode": "BT12 6FE"
+    },
+    "website": "http://www.stmarys-belfast.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/St._Mary%27s_University_College_%28Belfast%29",
+    "groups": [],
+    "location": {
+      "latitude": 54.592,
+      "longitude": -5.9613
+    },
+    "hesa_id": "0194",
+    "gtr_id": "F8A38BAB-5A5C-44BA-BC24-8114AD09C832",
+    "view_name": "St Mary's University College"
+  },
+  {
+    "ukprn": "10007843",
+    "name": "ST MARY'S UNIVERSITY, TWICKENHAM",
+    "sort_name": "St Mary's University College, Twickenham",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "WALDEGRAVE ROAD",
+      "town": "TWICKENHAM",
+      "postcode": "TW1 4SX"
+    },
+    "website": "http://www.smuc.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/St._Mary%27s_University_College_%28Twickenham%29",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 51.437438,
+      "longitude": -0.335292
+    },
+    "hesa_id": "0039",
+    "gtr_id": "F8A38BAB-5A5C-44BA-BC24-8114AD09C832",
+    "view_name": "St Mary's University College, Twickenham"
+  },
+  {
+    "ukprn": "10006299",
+    "name": "STAFFORDSHIRE UNIVERSITY",
+    "sort_name": "Staffordshire University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "COLLEGE ROAD",
+      "town": "STOKE-ON-TRENT",
+      "postcode": "ST4 2DE"
+    },
+    "website": "http://www.staffs.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Staffordshire_University",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 53.010097,
+      "longitude": -2.182605
+    },
+    "hesa_id": "0077",
+    "gtr_id": "E277EDD9-0ADD-44E4-B8A1-709121CA7E7D",
+    "view_name": "Staffordshire University"
+  },
+  {
+    "ukprn": "10007804",
+    "name": "UNIVERSITY OF STIRLING",
+    "sort_name": "Stirling, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": null,
+      "town": "STIRLING",
+      "postcode": "FK9 4LA"
+    },
+    "website": "http://www.stir.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Stirling",
+    "groups": [],
+    "location": {
+      "latitude": 56.149207,
+      "longitude": -3.926787
+    },
+    "hesa_id": "0174",
+    "gtr_id": "C7510606-A36F-4725-A89B-9D592374972A",
+    "view_name": "University of Stirling"
+  },
+  {
+    "ukprn": "10008010",
+    "name": "STRANMILLIS UNIVERSITY COLLEGE",
+    "sort_name": "Stranmillis University College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "STRANMILLIS ROAD",
+      "town": "BELFAST",
+      "postcode": "BT9 5DY"
+    },
+    "website": "http://www.stran.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Stranmillis_University_College",
+    "groups": [],
+    "location": {
+      "latitude": 54.5733,
+      "longitude": -5.9352
+    },
+    "hesa_id": "0193",
+    "gtr_id": null,
+    "view_name": "Stranmillis University College"
+  },
+  {
+    "ukprn": "10007805",
+    "name": "UNIVERSITY OF STRATHCLYDE",
+    "sort_name": "Strathclyde, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "MCCANCE BUILDING 16",
+      "locality": null,
+      "street": "RICHMOND STREET",
+      "town": "GLASGOW",
+      "postcode": "G1 1XQ"
+    },
+    "website": "http://www.strath.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Strathclyde",
+    "groups": [],
+    "location": {
+      "latitude": 55.861363,
+      "longitude": -4.244586
+    },
+    "hesa_id": "0169",
+    "gtr_id": "5BB4F8BF-B4E0-4EAF-9AF5-885E19D64850",
+    "view_name": "University of Strathclyde"
+  },
+  {
+    "ukprn": "10014001",
+    "name": "UNIVERSITY CAMPUS SUFFOLK LTD",
+    "sort_name": "Suffolk Ltd, University Campus",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "WATERFRONT BUILDING 19-21",
+      "locality": null,
+      "street": "NEPTUNE QUAY",
+      "town": "IPSWICH",
+      "postcode": "IP4 1QJ"
+    },
+    "website": "http://www.ucs.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_Campus_Suffolk",
+    "groups": [],
+    "location": {
+      "latitude": 52.052585,
+      "longitude": 1.162554
+    },
+    "hesa_id": "0210",
+    "gtr_id": null,
+    "view_name": "University Campus Suffolk Ltd"
+  },
+  {
+    "ukprn": "10007159",
+    "name": "UNIVERSITY OF SUNDERLAND",
+    "sort_name": "Sunderland, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "CHESTER ROAD",
+      "town": "SUNDERLAND",
+      "postcode": "SR1 3SD"
+    },
+    "website": "http://www.sunderland.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Sunderland",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 54.904502,
+      "longitude": -1.391361
+    },
+    "hesa_id": "0078",
+    "gtr_id": "CDD64036-C7C4-4924-8321-6076FB363042",
+    "view_name": "University of Sunderland"
+  },
+  {
+    "ukprn": "10007160",
+    "name": "UNIVERSITY OF SURREY",
+    "sort_name": "Surrey, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": null,
+      "town": "GUILDFORD",
+      "postcode": "GU2 7XH"
+    },
+    "website": "http://www.surrey.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Surrey",
+    "groups": [],
+    "location": {
+      "latitude": 51.242568,
+      "longitude": -0.587925
+    },
+    "hesa_id": "0161",
+    "gtr_id": "67B34D05-3A52-4A09-8FF9-F2398D60E246",
+    "view_name": "University of Surrey"
+  },
+  {
+    "ukprn": "10007806",
+    "name": "UNIVERSITY OF SUSSEX",
+    "sort_name": "Sussex, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "SUSSEX HOUSE",
+      "locality": "FALMER",
+      "street": "SOUTHERN RING ROAD",
+      "town": "BRIGHTON",
+      "postcode": "BN1 9RH"
+    },
+    "website": "http://www.sussex.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Sussex",
+    "groups": [
+      "1994_Group"
+    ],
+    "location": {
+      "latitude": 50.864464,
+      "longitude": -0.087049
+    },
+    "hesa_id": "0162",
+    "gtr_id": "A8967420-49D3-4509-9912-25FB3EC75B74",
+    "view_name": "University of Sussex"
+  },
+  {
+    "ukprn": "10007846",
+    "name": "SWANSEA METROPOLITAN UNIVERSITY",
+    "sort_name": "Swansea Metropolitan University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "MOUNT PLEASANT CAMPUS",
+      "locality": null,
+      "street": "MOUNT PLEASANT",
+      "town": "SWANSEA",
+      "postcode": "SA1 6ED"
+    },
+    "website": "http://www.smu.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Swansea_Metropolitan_University",
+    "groups": [],
+    "location": {
+      "latitude": 51.624658,
+      "longitude": -3.949446
+    },
+    "hesa_id": null,
+    "gtr_id": "CCF88354-9859-4D4C-802D-B954DBE36678",
+    "view_name": "Swansea Metropolitan University"
+  },
+  {
+    "ukprn": "10007855",
+    "name": "SWANSEA UNIVERSITY",
+    "sort_name": "Swansea University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "SINGLETON PARK",
+      "town": "SWANSEA",
+      "postcode": "SA2 8PP"
+    },
+    "website": "http://www.swan.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Swansea_University",
+    "groups": [],
+    "location": {
+      "latitude": 51.609622,
+      "longitude": -3.980649
+    },
+    "hesa_id": "0180",
+    "gtr_id": "AB307619-D4FA-427E-A042-09DBEBA84669",
+    "view_name": "Swansea University"
+  },
+  {
+    "ukprn": "10007161",
+    "name": "TEESSIDE UNIVERSITY",
+    "sort_name": "Teesside University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "BOROUGH ROAD",
+      "town": "MIDDLESBROUGH",
+      "postcode": "TS1 3BA"
+    },
+    "website": "http://www.tees.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Teesside_University",
+    "groups": [
+      "University_Alliance"
+    ],
+    "location": {
+      "latitude": 54.572089,
+      "longitude": -1.234709
+    },
+    "hesa_id": "0079",
+    "gtr_id": "B5FF76C6-FFAD-4E1F-9279-7452750B94B7",
+    "view_name": "Teesside University"
+  },
+  {
+    "ukprn": "10008017",
+    "name": "TRINITY LABAN CONSERVATOIRE OF MUSIC AND DANCE LTD",
+    "sort_name": "Trinity Laban Conservatoire of Music and Dance Ltd",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "KING CHARLES COURT",
+      "locality": null,
+      "street": "OLD ROYAL NAVAL COLLEGE KING WILLIAM WALK",
+      "town": "LONDON",
+      "postcode": "SE10 9JF"
+    },
+    "website": "http://www.trinitylaban.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Trinity_Laban_Conservatoire_of_Music_and_Dance",
+    "groups": [],
+    "location": {
+      "latitude": 51.483596,
+      "longitude": -0.007171
+    },
+    "hesa_id": "0041",
+    "gtr_id": "F88BB9CC-B3CD-41A5-9C65-D32749225F60",
+    "view_name": "Trinity Laban Conservatoire of Music and Dance Ltd"
+  },
+  {
+    "ukprn": "10007807",
+    "name": "UNIVERSITY OF ULSTER",
+    "sort_name": "Ulster, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "CROMORE ROAD",
+      "town": "COLERAINE",
+      "postcode": "BT52 1SA"
+    },
+    "website": "http://www.ulster.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Ulster",
+    "groups": [
+      "NCUK"
+    ],
+    "location": {
+      "latitude": 55.1468,
+      "longitude": -6.6725
+    },
+    "hesa_id": "0185",
+    "gtr_id": "245EB81A-808F-4697-BAED-263C20266B74",
+    "view_name": "University of Ulster"
+  },
+  {
+    "ukprn": "10006427",
+    "name": "UNIVERSITY FOR THE CREATIVE ARTS",
+    "sort_name": "University for the Creative Arts",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "FALKNER ROAD",
+      "town": "FARNHAM",
+      "postcode": "GU9 7DS"
+    },
+    "website": "http://www.ucreative.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_for_the_Creative_Arts",
+    "groups": [],
+    "location": {
+      "latitude": 51.215767,
+      "longitude": -0.805496
+    },
+    "hesa_id": "0206",
+    "gtr_id": "98D800A0-BF72-4D50-8A96-2EA2B60B01D1",
+    "view_name": "University for the Creative Arts"
+  },
+  {
+    "ukprn": "10008574",
+    "name": "UNIVERSITY OF WALES PRIFYSGOL CYMRU",
+    "sort_name": "Wales Prifysgol Cymru, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "KING EDWARD VII AVENUE",
+      "town": "CARDIFF",
+      "postcode": "CF10 3NS"
+    },
+    "website": "http://www.wales.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Wales",
+    "groups": [],
+    "location": {
+      "latitude": 51.485538,
+      "longitude": -3.181039
+    },
+    "hesa_id": "0186",
+    "gtr_id": "E7910513-EA16-41B2-A0C0-7F49C936A4BF",
+    "view_name": "University of Wales Prifysgol Cymru"
+  },
+  {
+    "ukprn": "10007858",
+    "name": "UNIVERSITY OF WALES: TRINITY SAINT DAVID",
+    "sort_name": "Wales: Trinity Saint David, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "COLLEGE ROAD",
+      "town": "CARMARTHEN",
+      "postcode": "SA31 3EP"
+    },
+    "website": "http://www.trinitysaintdavid.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Wales,_Trinity_Saint_David",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 51.858379,
+      "longitude": -4.328723
+    },
+    "hesa_id": "0176",
+    "gtr_id": null,
+    "view_name": "University of Wales: Trinity Saint David"
+  },
+  {
+    "ukprn": "10007163",
+    "name": "UNIVERSITY OF WARWICK",
+    "sort_name": "Warwick, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "UNIVERSITY HOUSE",
+      "locality": null,
+      "street": "GIBBET HILL ROAD",
+      "town": "COVENTRY",
+      "postcode": "CV4 7AL"
+    },
+    "website": "http://www.warwick.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Warwick",
+    "groups": [
+      "M5_Universities",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 52.380079,
+      "longitude": -1.561687
+    },
+    "hesa_id": "0163",
+    "gtr_id": "B6FB652A-60C3-48DD-9A33-075D1F759B48",
+    "view_name": "University of Warwick"
+  },
+  {
+    "ukprn": "10006566",
+    "name": "UNIVERSITY OF WEST LONDON",
+    "sort_name": "West London, The University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "ST. MARYS ROAD",
+      "town": "LONDON",
+      "postcode": "W5 5RF"
+    },
+    "website": "http://www.uwl.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_West_London",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 51.50661,
+      "longitude": -0.30339
+    },
+    "hesa_id": "0080",
+    "gtr_id": "7B7DD8F3-EC06-4C09-8E26-051B2D57EF46",
+    "view_name": "The University of West London"
+  },
+  {
+    "ukprn": "10007800",
+    "name": "UNIVERSITY OF THE WEST OF SCOTLAND",
+    "sort_name": "West of Scotland, University of the",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "HIGH STREET",
+      "town": "PAISLEY",
+      "postcode": "PA1 2BE"
+    },
+    "website": "http://www.uws.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_the_West_of_Scotland",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 55.843669,
+      "longitude": -4.428479
+    },
+    "hesa_id": "0105",
+    "gtr_id": "6786BBB0-D64D-4D47-B725-7AD417D4ED4F",
+    "view_name": "University of the West of Scotland"
+  },
+  {
+    "ukprn": "10007165",
+    "name": "THE UNIVERSITY OF WESTMINSTER",
+    "sort_name": "Westminster, The University of ",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": "309",
+      "locality": null,
+      "street": "REGENT STREET",
+      "town": "LONDON",
+      "postcode": "W1B 2HW"
+    },
+    "website": "http://www.westminster.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Westminster",
+    "groups": [],
+    "location": {
+      "latitude": 51.516794,
+      "longitude": -0.143341
+    },
+    "hesa_id": "0083",
+    "gtr_id": "BD856F04-3042-4F92-8D66-1B101801FEB8",
+    "view_name": "The University of Westminster"
+  },
+  {
+    "ukprn": "10003614",
+    "name": "UNIVERSITY OF WINCHESTER",
+    "sort_name": "Winchester, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "SPARKFORD ROAD",
+      "town": "WINCHESTER",
+      "postcode": "SO22 4NR"
+    },
+    "website": "http://www.winchester.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Winchester",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 51.060033,
+      "longitude": -1.326928
+    },
+    "hesa_id": "0021",
+    "gtr_id": "4B87FBC4-8055-43E8-B493-B2FED8A31423",
+    "view_name": "University of Winchester"
+  },
+  {
+    "ukprn": "10007166",
+    "name": "UNIVERSITY OF WOLVERHAMPTON",
+    "sort_name": "Wolverhampton, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "WULFRUNA STREET",
+      "town": "WOLVERHAMPTON",
+      "postcode": "WV1 1LY"
+    },
+    "website": "http://www.wlv.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Wolverhampton",
+    "groups": [
+      "Million_Plus"
+    ],
+    "location": {
+      "latitude": 52.588308,
+      "longitude": -2.128159
+    },
+    "hesa_id": "0085",
+    "gtr_id": "1A3C4B4D-A492-43D4-BD25-729BD718D1E9",
+    "view_name": "University of Wolverhampton"
+  },
+  {
+    "ukprn": "10007139",
+    "name": "UNIVERSITY OF WORCESTER, THE",
+    "sort_name": "Worcester, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "HENWICK GROVE",
+      "town": "WORCESTER",
+      "postcode": "WR2 6AJ"
+    },
+    "website": "http://www.worc.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_Worcester",
+    "groups": [],
+    "location": {
+      "latitude": 52.197568,
+      "longitude": -2.243038
+    },
+    "hesa_id": "0046",
+    "gtr_id": "7DA3D9E3-6EAB-4E67-A95B-DEFFE718A68C",
+    "view_name": "University of Worcester"
+  },
+  {
+    "ukprn": "10007657",
+    "name": "WRITTLE COLLEGE",
+    "sort_name": "Writtle College",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "WRITTLE",
+      "street": "LORDSHIP ROAD",
+      "town": "CHELMSFORD",
+      "postcode": "CM1 3RR"
+    },
+    "website": "http://www.writtle.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/Writtle_College",
+    "groups": [],
+    "location": {
+      "latitude": 51.737004,
+      "longitude": 0.428134
+    },
+    "hesa_id": "0189",
+    "gtr_id": "76B58011-5BD1-409B-9FB3-CD15133B1E77",
+    "view_name": "Writtle College"
+  },
+  {
+    "ukprn": "10007713",
+    "name": "YORK ST JOHN UNIVERSITY",
+    "sort_name": "York St John University",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": null,
+      "street": "LORD MAYORS WALK",
+      "town": "YORK",
+      "postcode": "YO31 7EX"
+    },
+    "website": "http://www.yorksj.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/York_St_John_University",
+    "groups": [
+      "Cathedrals_Group"
+    ],
+    "location": {
+      "latitude": 53.965263,
+      "longitude": -1.08029
+    },
+    "hesa_id": "0013",
+    "gtr_id": "E3A7C679-6D40-45AA-A211-20EB6C28AC37",
+    "view_name": "York St John University"
+  },
+  {
+    "ukprn": "10007167",
+    "name": "UNIVERSITY OF YORK",
+    "sort_name": "York, University of",
+    "alias": null,
+    "address": {
+      "flat_name_number": null,
+      "building_name_number": null,
+      "locality": "HESLINGTON",
+      "street": null,
+      "town": "YORK",
+      "postcode": "YO10 5DD"
+    },
+    "website": "http://www.york.ac.uk/",
+    "wikipedia": "http://en.wikipedia.org/wiki/University_of_York",
+    "groups": [
+      "N8_Research_Partnership",
+      "White_Rose_University_Consortium",
+      "Russell_Group"
+    ],
+    "location": {
+      "latitude": 53.948437,
+      "longitude": -1.053553
+    },
+    "hesa_id": "0164",
+    "gtr_id": "8319F78A-DCBD-49F6-BE00-78E1CD75CDA9",
+    "view_name": "University of York"
+  }
+]

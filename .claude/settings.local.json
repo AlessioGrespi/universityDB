@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.officeforstudents.org.uk)",
+      "WebFetch(domain:www.hesa.ac.uk)",
+      "WebFetch(domain:explore-education-statistics.service.gov.uk)",
+      "WebFetch(domain:www.get-information-schools.service.gov.uk)",
+      "WebFetch(domain:learning-provider.data.ac.uk)",
+      "WebFetch(domain:get-information-schools.service.gov.uk)",
+      "WebFetch(domain:register-api.officeforstudents.org.uk)",
+      "WebFetch(domain:gtr.ukri.org)",
+      "WebFetch(domain:results2021.ref.ac.uk)",
+      "WebFetch(domain:api.education.gov.uk)",
+      "WebFetch(domain:digital.ucas.com)",
+      "WebFetch(domain:discoveruni.gov.uk)",
+      "WebFetch(domain:www.ucas.com)",
+      "WebFetch(domain:www.copy.ai)",
+      "WebFetch(domain:www.navattic.com)",
+      "WebFetch(domain:anythingdb.com)"
+    ]
+  }
+}

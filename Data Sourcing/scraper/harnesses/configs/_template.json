@@ -1,0 +1,12 @@
+{
+  "university": "example",
+  "selectors": {
+    "title": { "css": "h1.course-title", "attribute": "text" },
+    "length": { "css": ".course-duration", "attribute": "text" },
+    "fees_uk": { "css": ".fees-uk .amount", "attribute": "text" },
+    "fees_international": { "css": ".fees-international .amount", "attribute": "text" }
+  },
+  "wait_for": "h1",
+  "wait_timeout": 10,
+  "actions_before": []
+}

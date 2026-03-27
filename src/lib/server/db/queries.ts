@@ -1,7 +1,14 @@
-import { eq, desc, sql, count, inArray, ilike, and, type SQL } from 'drizzle-orm';
+import { eq, desc, asc, sql, count, inArray, ilike, and, type SQL } from 'drizzle-orm';
 import { db } from '$lib/server/db';
 import * as schema from '$lib/server/db/schema';
-import type { University, Course, TefRating } from '$lib/types';
+import type {
+	University,
+	Course,
+	CourseOption,
+	TefRating,
+	EntryRequirements,
+	SocCode
+} from '$lib/types';
 
 // ─── Mappers ─────────────────────────────────────────────────────────────────
 
@@ -12,21 +19,116 @@ function mapUniversity(row: typeof schema.universities.$inferSelect): University
 		logoUrl: row.logoUrl ?? row.imageUrl ?? '',
 		bannerUrl: row.imageUrl ?? undefined,
 		website: row.website ?? '',
+		wikipediaUrl: row.wikipediaUrl ?? undefined,
 		address: [row.addressLine1, row.addressLine2, row.addressLine3, row.town]
 			.filter(Boolean)
 			.join(', '),
+		town: row.town ?? '',
 		postcode: row.postcode ?? '',
+		country: row.country,
 		lat: row.latitude ?? 0,
 		lng: row.longitude ?? 0,
-		foundedYear: row.founded ?? 0,
-		studentCount: row.studentCount ?? 0,
+		foundedYear: row.founded ?? null,
+		studentCount: row.studentCount ?? null,
 		groups: row.groups ?? [],
 		tefRating: (row.tefRating as TefRating) ?? null,
-		totalPublications: row.worksCount ?? 0,
-		hIndex: row.hIndex ?? 0,
+		worksCount: row.worksCount ?? null,
+		citedByCount: row.citedByCount ?? null,
+		hIndex: row.hIndex ?? null,
 		contactEmail: row.contactEmail ?? undefined,
-		contactPhone: row.contactPhone ?? undefined,
-		region: row.town ?? ''
+		contactPhone: row.contactPhone ?? undefined
+	};
+}
+
+function mapEntryRequirements(raw: Record<string, string> | null | undefined): EntryRequirements {
+	if (!raw || Object.keys(raw).length === 0) return {};
+	return {
+		aLevel: raw.a_level ?? raw.aLevels ?? undefined,
+		ucasPoints: raw.ucas_points ?? raw.ucasTariff ?? undefined,
+		scottishHigher: raw.scottish_higher ?? undefined,
+		scottishAdvancedHigher: raw.scottish_advanced_higher ?? undefined,
+		btec: raw.btec ?? undefined
+	};
+}
+
+// UK Integrated Masters are undergraduate degrees despite the "M" prefix.
+// UCAS data mislabels most of them as Postgraduate.
+const INTEGRATED_MASTER_PREFIXES = [
+	'MEng',
+	'MChem',
+	'MPhys',
+	'MSci',
+	'Msci',
+	'MComp',
+	'MMath',
+	'MBiol',
+	'MBiochem',
+	'MBiolSci',
+	'MBiomedSci',
+	'MGeol',
+	'MGeog',
+	'MArch',
+	'MNatSci',
+	'MEarthSci',
+	'MEarthPhys',
+	'MChemPhys',
+	'MEnv',
+	'MEnvSci',
+	'MMorse',
+	'MPharmSci',
+	'MPhysPhil',
+	'MMet',
+	'MMarBiol',
+	'MInf',
+	'MLang',
+	'MChiro',
+	'MMathStat',
+	'MOptom',
+	'MCompu',
+	'MHist',
+	'MPharm',
+	'MVetPhys',
+	'MZool',
+	'MArts',
+	'MLibArts'
+];
+
+function isIntegratedMasters(qualification: string): boolean {
+	if (!qualification) return false;
+	const base = qualification.replace(/\s*\(.*\)$/, '');
+	return INTEGRATED_MASTER_PREFIXES.includes(base);
+}
+
+function correctScheme(
+	scheme: string,
+	qualification: string
+): 'Undergraduate' | 'Postgraduate' | 'Undergraduate (Integrated Masters)' {
+	if (scheme === 'Postgraduate' && isIntegratedMasters(qualification)) {
+		return 'Undergraduate (Integrated Masters)';
+	}
+	return scheme as 'Undergraduate' | 'Postgraduate';
+}
+
+/** Extract a readable short qualification from full_qualification, e.g. "MSc" from "Master of Science - MSc" */
+function displayQualification(qualification: string, fullQualification?: string | null): string {
+	if (!fullQualification) return qualification;
+	// Full qualification often ends with "- ShortForm", extract it
+	const dashMatch = fullQualification.match(/- (.+)$/);
+	if (dashMatch) return dashMatch[1];
+	return fullQualification;
+}
+
+function mapOption(opt: typeof schema.courseOptions.$inferSelect): CourseOption {
+	return {
+		qualification: displayQualification(opt.qualification ?? '', opt.fullQualification),
+		fullQualification: opt.fullQualification ?? undefined,
+		studyMode: opt.studyMode ?? 'Full-time',
+		duration: opt.duration ?? '',
+		startDate: opt.startDate ?? undefined,
+		campusLocation: opt.location ?? undefined,
+		entryRequirements: mapEntryRequirements(opt.entryRequirements as Record<string, string> | null),
+		nssScore: opt.nssScore ? Number(opt.nssScore) : undefined,
+		averageGraduateSalary: opt.avgSalary ?? undefined
 	};
 }
 
@@ -34,41 +136,51 @@ function mapCourse(
 	course: typeof schema.courses.$inferSelect,
 	university: { name: string; slug: string },
 	option: typeof schema.courseOptions.$inferSelect | null,
-	subjectNames: string[]
+	subjectNames: string[],
+	socCodes?: SocCode[],
+	allRawOptions?: (typeof schema.courseOptions.$inferSelect)[]
 ): Course {
-	const entryReqs = (option?.entryRequirements as Record<string, string>) ?? {};
+	const entryReqs = mapEntryRequirements(
+		option?.entryRequirements as Record<string, string> | null
+	);
+	const qual = option?.qualification ?? '';
+	const fullQual = option?.fullQualification ?? undefined;
 	return {
 		slug: course.slug,
 		title: course.title,
 		description: course.summary ?? '',
 		universityName: university.name,
 		universitySlug: university.slug,
-		scheme: course.scheme as 'Undergraduate' | 'Postgraduate',
+		scheme: correctScheme(course.scheme, qual),
 		subjects: subjectNames,
-		qualification: option?.qualification ?? '',
-		studyMode: (option?.studyMode ?? 'Full-time') as 'Full-time' | 'Part-time',
+		qualification: displayQualification(qual, fullQual),
+		fullQualification: fullQual,
+		studyMode: option?.studyMode ?? 'Full-time',
 		duration: option?.duration ?? '',
 		startDate: option?.startDate ?? undefined,
+		academicYear: course.academicYear ?? undefined,
 		campusLocation: option?.location ?? undefined,
-		entryRequirements: {
-			aLevels: entryReqs.aLevels ?? entryReqs.entryReq_al ?? undefined,
-			ucasTariff: entryReqs.ucasTariff ?? entryReqs.ucasPoints ?? undefined
-		},
+		entryRequirements: entryReqs,
 		nssScore: option?.nssScore ? Number(option.nssScore) : undefined,
-		averageGraduateSalary: option?.avgSalary ?? undefined
+		averageGraduateSalary: option?.avgSalary ?? undefined,
+		socCodes: socCodes ?? undefined,
+		ucasCourseId: course.ucasCourseId ?? undefined,
+		allOptions: allRawOptions && allRawOptions.length > 1 ? allRawOptions.map(mapOption) : undefined
 	};
 }
 
 // ─── Batch helpers ───────────────────────────────────────────────────────────
 
 async function batchCourseDetails(courseIds: number[]) {
-	if (courseIds.length === 0) return { optionsByCourse: new Map(), subjectsByCourse: new Map() };
+	if (courseIds.length === 0)
+		return {
+			optionsByCourse: new Map(),
+			allOptionsByCourse: new Map(),
+			subjectsByCourse: new Map()
+		};
 
 	const [allOptions, allSubjects] = await Promise.all([
-		db
-			.select()
-			.from(schema.courseOptions)
-			.where(inArray(schema.courseOptions.courseId, courseIds)),
+		db.select().from(schema.courseOptions).where(inArray(schema.courseOptions.courseId, courseIds)),
 		db
 			.select({
 				courseId: schema.courseSubjects.courseId,
@@ -80,8 +192,19 @@ async function batchCourseDetails(courseIds: number[]) {
 	]);
 
 	const optionsByCourse = new Map<number, (typeof allOptions)[0]>();
+	const allOptionsByCourse = new Map<number, typeof allOptions>();
 	for (const opt of allOptions) {
-		if (!optionsByCourse.has(opt.courseId)) {
+		// Track all options
+		if (!allOptionsByCourse.has(opt.courseId)) {
+			allOptionsByCourse.set(opt.courseId, []);
+		}
+		allOptionsByCourse.get(opt.courseId)!.push(opt);
+
+		// Pick primary option (prefer Full-time)
+		const existing = optionsByCourse.get(opt.courseId);
+		if (!existing) {
+			optionsByCourse.set(opt.courseId, opt);
+		} else if (opt.studyMode === 'Full-time' && existing.studyMode !== 'Full-time') {
 			optionsByCourse.set(opt.courseId, opt);
 		}
 	}
@@ -94,7 +217,37 @@ async function batchCourseDetails(courseIds: number[]) {
 		subjectsByCourse.get(sub.courseId)!.push(sub.subjectName);
 	}
 
-	return { optionsByCourse, subjectsByCourse };
+	return { optionsByCourse, allOptionsByCourse, subjectsByCourse };
+}
+
+async function batchSocCodes(courseIds: number[]): Promise<Map<number, SocCode[]>> {
+	if (courseIds.length === 0) return new Map();
+
+	const rows = await db
+		.select({
+			courseId: schema.courseSocCodes.courseId,
+			code: schema.socCodes.code,
+			name: schema.socCodes.name,
+			weight: schema.courseSocCodes.weight
+		})
+		.from(schema.courseSocCodes)
+		.innerJoin(schema.socCodes, eq(schema.courseSocCodes.socCodeId, schema.socCodes.id))
+		.where(inArray(schema.courseSocCodes.courseId, courseIds))
+		.orderBy(desc(schema.courseSocCodes.weight));
+
+	const byCourse = new Map<number, SocCode[]>();
+	for (const row of rows) {
+		if (!byCourse.has(row.courseId)) {
+			byCourse.set(row.courseId, []);
+		}
+		byCourse.get(row.courseId)!.push({
+			code: row.code,
+			name: row.name,
+			weight: row.weight ?? 0
+		});
+	}
+
+	return byCourse;
 }
 
 // ─── Query Functions ─────────────────────────────────────────────────────────
@@ -123,7 +276,8 @@ export async function getFeaturedUniversities(limit = 6) {
 	const rows = await db
 		.select()
 		.from(schema.universities)
-		.orderBy(desc(schema.universities.worksCount))
+		.where(sql`${schema.universities.studentCount} IS NOT NULL`)
+		.orderBy(desc(schema.universities.studentCount))
 		.limit(limit);
 
 	return rows.map(mapUniversity);
@@ -161,19 +315,42 @@ export interface CourseSearchParams {
 	qualification?: string;
 	studyMode?: string;
 	scheme?: string;
+	sort?: string;
 	limit?: number;
 	offset?: number;
 }
 
 export async function searchCourses(params: CourseSearchParams) {
-	const { q, university, subject, qualification, studyMode, scheme, limit = 50, offset = 0 } = params;
+	const {
+		q,
+		university,
+		subject,
+		qualification,
+		studyMode,
+		scheme,
+		sort,
+		limit = 50,
+		offset = 0
+	} = params;
 
 	// Build WHERE conditions
 	const conditions: SQL[] = [];
 	if (q) {
-		conditions.push(
-			sql`(${ilike(schema.courses.title, `%${q}%`)} OR ${ilike(schema.universities.name, `%${q}%`)})`
-		);
+		// Split query into words so "robotics loughborough" matches
+		// courses with "robotics" in title AND "loughborough" in university name
+		const words = q.trim().split(/\s+/).filter(Boolean);
+		if (words.length === 1) {
+			conditions.push(
+				sql`(${ilike(schema.courses.title, `%${words[0]}%`)} OR ${ilike(schema.universities.name, `%${words[0]}%`)})`
+			);
+		} else {
+			// Each word must appear in either the title or university name
+			for (const word of words) {
+				conditions.push(
+					sql`(${ilike(schema.courses.title, `%${word}%`)} OR ${ilike(schema.universities.name, `%${word}%`)})`
+				);
+			}
+		}
 	}
 	if (university) conditions.push(eq(schema.universities.slug, university));
 	if (scheme) conditions.push(eq(schema.courses.scheme, scheme));
@@ -191,9 +368,7 @@ export async function searchCourses(params: CourseSearchParams) {
 
 	// Qualification + studyMode filter via subquery on courseOptions
 	if (qualification || studyMode) {
-		const optConditions: SQL[] = [
-			sql`${schema.courseOptions.courseId} = ${schema.courses.id}`
-		];
+		const optConditions: SQL[] = [sql`${schema.courseOptions.courseId} = ${schema.courses.id}`];
 		if (qualification) optConditions.push(eq(schema.courseOptions.qualification, qualification));
 		if (studyMode) optConditions.push(eq(schema.courseOptions.studyMode, studyMode));
 
@@ -207,6 +382,9 @@ export async function searchCourses(params: CourseSearchParams) {
 
 	const where = conditions.length > 0 ? and(...conditions) : undefined;
 
+	const courseOrder =
+		sort === 'university' ? asc(schema.universities.name) : asc(schema.courses.title);
+
 	const [courseRows, [{ total }]] = await Promise.all([
 		db
 			.select({
@@ -217,7 +395,7 @@ export async function searchCourses(params: CourseSearchParams) {
 			.from(schema.courses)
 			.innerJoin(schema.universities, eq(schema.courses.universityId, schema.universities.id))
 			.where(where)
-			.orderBy(schema.courses.title)
+			.orderBy(courseOrder)
 			.limit(limit)
 			.offset(offset),
 		db
@@ -243,7 +421,7 @@ export async function searchCourses(params: CourseSearchParams) {
 }
 
 export async function getCourseFilterOptions() {
-	const [subjects, qualifications] = await Promise.all([
+	const [subjects, qualifications, studyModes] = await Promise.all([
 		db
 			.select({
 				name: schema.subjects.name,
@@ -258,14 +436,20 @@ export async function getCourseFilterOptions() {
 			.selectDistinct({ qualification: schema.courseOptions.qualification })
 			.from(schema.courseOptions)
 			.where(sql`${schema.courseOptions.qualification} IS NOT NULL`)
-			.orderBy(schema.courseOptions.qualification)
+			.orderBy(schema.courseOptions.qualification),
+		db
+			.selectDistinct({ studyMode: schema.courseOptions.studyMode })
+			.from(schema.courseOptions)
+			.where(sql`${schema.courseOptions.studyMode} IS NOT NULL`)
+			.orderBy(schema.courseOptions.studyMode)
 	]);
 
 	return {
 		subjects: subjects.map((s) => ({ name: s.name, slug: s.slug, courseCount: s.courseCount })),
 		qualifications: qualifications
 			.map((q) => q.qualification)
-			.filter((q): q is string => q !== null)
+			.filter((q): q is string => q !== null),
+		studyModes: studyModes.map((s) => s.studyMode).filter((s): s is string => s !== null)
 	};
 }
 
@@ -274,14 +458,19 @@ export interface UniversitySearchParams {
 	tef?: string;
 	group?: string;
 	region?: string;
+	sort?: string;
+	type?: string;
 }
 
 export async function searchUniversities(params: UniversitySearchParams) {
-	const { q, tef, group, region } = params;
+	const { q, tef, group, region, sort, type } = params;
 	const conditions: SQL[] = [];
 
 	if (q) {
 		conditions.push(ilike(schema.universities.name, `%${q}%`));
+	}
+	if (type) {
+		conditions.push(eq(schema.universities.institutionType, type));
 	}
 	if (tef) {
 		conditions.push(eq(schema.universities.tefRating, tef));
@@ -295,11 +484,20 @@ export async function searchUniversities(params: UniversitySearchParams) {
 
 	const where = conditions.length > 0 ? and(...conditions) : undefined;
 
-	const rows = await db
-		.select()
-		.from(schema.universities)
-		.where(where)
-		.orderBy(sql`coalesce(${schema.universities.sortName}, ${schema.universities.name})`);
+	function getOrderBy(s: string | undefined) {
+		switch (s) {
+			case 'students':
+				return desc(schema.universities.studentCount);
+			case 'founded':
+				return asc(schema.universities.founded);
+			case 'research':
+				return desc(schema.universities.citedByCount);
+			default:
+				return sql`coalesce(${schema.universities.sortName}, ${schema.universities.name})`;
+		}
+	}
+
+	const rows = await db.select().from(schema.universities).where(where).orderBy(getOrderBy(sort));
 
 	return rows.map(mapUniversity);
 }
@@ -356,14 +554,18 @@ export async function getCourseBySlug(slug: string) {
 
 	if (!row) return null;
 
-	const { optionsByCourse, subjectsByCourse } = await batchCourseDetails([row.course.id]);
+	const [{ optionsByCourse, allOptionsByCourse, subjectsByCourse }, socCodeMap] = await Promise.all(
+		[batchCourseDetails([row.course.id]), batchSocCodes([row.course.id])]
+	);
 
 	return {
 		course: mapCourse(
 			row.course,
 			{ name: row.universityName, slug: row.universitySlug },
 			optionsByCourse.get(row.course.id) ?? null,
-			subjectsByCourse.get(row.course.id) ?? []
+			subjectsByCourse.get(row.course.id) ?? [],
+			socCodeMap.get(row.course.id),
+			allOptionsByCourse.get(row.course.id)
 		),
 		universityId: row.course.universityId,
 		courseId: row.course.id,
@@ -447,24 +649,38 @@ export async function getRelatedCourses(
 }
 
 export async function getStats() {
-	const [[uniCount], [courseCount], [academicCount], [projectCount]] = await Promise.all([
+	const [
+		[uniCount],
+		[totalInstitutions],
+		[courseCount],
+		[academicCount],
+		[projectCount],
+		[subjectCount]
+	] = await Promise.all([
+		db
+			.select({ value: count() })
+			.from(schema.universities)
+			.where(eq(schema.universities.institutionType, 'university')),
 		db.select({ value: count() }).from(schema.universities),
 		db.select({ value: count() }).from(schema.courses),
 		db.select({ value: count() }).from(schema.academics),
-		db.select({ value: count() }).from(schema.researchProjects)
+		db.select({ value: count() }).from(schema.researchProjects),
+		db.select({ value: count() }).from(schema.subjects)
 	]);
 
 	return {
 		universities: formatCount(uniCount?.value ?? 0),
+		institutions: formatCount(totalInstitutions?.value ?? 0),
 		courses: formatCount(courseCount?.value ?? 0),
 		academics: formatCount(academicCount?.value ?? 0),
-		researchProjects: formatCount(projectCount?.value ?? 0)
+		researchProjects: formatCount(projectCount?.value ?? 0),
+		subjects: formatCount(subjectCount?.value ?? 0)
 	};
 }
 
 function formatCount(n: number): string {
 	if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M+`;
-	if (n >= 1_000) return `${(n / 1_000).toFixed(0).replace(/\.0$/, '')},000+`;
+	if (n >= 1_000) return `${Math.floor(n / 1_000)}k+`;
 	return n.toLocaleString('en-GB');
 }
 
@@ -488,6 +704,39 @@ export async function getPopularSubjects(limit = 8) {
 	}));
 }
 
+export async function getCoursesBySlugs(slugs: string[]) {
+	if (slugs.length === 0) return [];
+
+	const courseRows = await db
+		.select({
+			course: schema.courses,
+			universityName: schema.universities.name,
+			universitySlug: schema.universities.slug,
+			tefRating: schema.universities.tefRating
+		})
+		.from(schema.courses)
+		.innerJoin(schema.universities, eq(schema.courses.universityId, schema.universities.id))
+		.where(inArray(schema.courses.slug, slugs));
+
+	const courseIds = courseRows.map((r) => r.course.id);
+	const { optionsByCourse, subjectsByCourse } = await batchCourseDetails(courseIds);
+
+	const courses = courseRows.map((row) => ({
+		...mapCourse(
+			row.course,
+			{ name: row.universityName, slug: row.universitySlug },
+			optionsByCourse.get(row.course.id) ?? null,
+			subjectsByCourse.get(row.course.id) ?? []
+		),
+		tefRating: row.tefRating as string | null
+	}));
+
+	// Preserve the order of the input slugs
+	return slugs
+		.map((slug) => courses.find((c) => c.slug === slug))
+		.filter((c): c is (typeof courses)[0] => c !== undefined);
+}
+
 export async function getUniversityIdBySlug(slug: string) {
 	const [row] = await db
 		.select({ id: schema.universities.id })
@@ -496,4 +745,13 @@ export async function getUniversityIdBySlug(slug: string) {
 		.limit(1);
 
 	return row?.id ?? null;
+}
+
+export async function getUniversityCourseCount(universityId: number) {
+	const [row] = await db
+		.select({ value: count() })
+		.from(schema.courses)
+		.where(eq(schema.courses.universityId, universityId));
+
+	return row?.value ?? 0;
 }

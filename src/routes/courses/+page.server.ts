@@ -8,11 +8,22 @@ export const load: PageServerLoad = async ({ url }) => {
 	const qualification = url.searchParams.get('qualification') || undefined;
 	const studyMode = url.searchParams.get('studyMode') || undefined;
 	const scheme = url.searchParams.get('scheme') || undefined;
+	const sort = url.searchParams.get('sort') || undefined;
 	const page = Math.max(1, Number(url.searchParams.get('page')) || 1);
 	const limit = 50;
 
 	const [{ courses, total }, filterOptions] = await Promise.all([
-		searchCourses({ q, university, subject, qualification, studyMode, scheme, limit, offset: (page - 1) * limit }),
+		searchCourses({
+			q,
+			university,
+			subject,
+			qualification,
+			studyMode,
+			scheme,
+			sort,
+			limit,
+			offset: (page - 1) * limit
+		}),
 		getCourseFilterOptions()
 	]);
 
@@ -21,7 +32,7 @@ export const load: PageServerLoad = async ({ url }) => {
 		total,
 		page,
 		limit,
-		filters: { q, university, subject, qualification, studyMode, scheme },
+		filters: { q, university, subject, qualification, studyMode, scheme, sort },
 		filterOptions
 	};
 };

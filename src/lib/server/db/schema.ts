@@ -23,6 +23,7 @@ export const universities = pgTable(
 		name: text('name').notNull(),
 		sortName: text('sort_name'),
 		slug: text('slug').notNull().unique(),
+		institutionType: text('institution_type'), // 'university', 'college', 'conservatoire', 'specialist', 'other'
 		country: text('country').notNull().default('GB'),
 		website: text('website'),
 		wikipediaUrl: text('wikipedia_url'),
@@ -372,6 +373,28 @@ export const refResults = pgTable(
 		createdAt: timestamp('created_at', { withTimezone: true }).defaultNow()
 	},
 	(t) => [index('ref_uni_uoa_idx').on(t.universityId, t.uoaNumber)]
+);
+
+// ─── SOC Codes (Standard Occupational Classification) ────────────────────────
+
+export const socCodes = pgTable('soc_codes', {
+	id: serial('id').primaryKey(),
+	code: text('code').notNull(),
+	name: text('name').notNull()
+});
+
+export const courseSocCodes = pgTable(
+	'course_soc_codes',
+	{
+		courseId: integer('course_id')
+			.notNull()
+			.references(() => courses.id, { onDelete: 'cascade' }),
+		socCodeId: integer('soc_code_id')
+			.notNull()
+			.references(() => socCodes.id, { onDelete: 'cascade' }),
+		weight: integer('weight')
+	},
+	(t) => [primaryKey({ columns: [t.courseId, t.socCodeId] })]
 );
 
 // ─── University Stats by Year ─────────────────────────────────────────────────

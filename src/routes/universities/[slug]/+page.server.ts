@@ -2,7 +2,8 @@ import type { PageServerLoad } from './$types';
 import {
 	getUniversityBySlug,
 	getUniversityIdBySlug,
-	getCoursesByUniversityId
+	getCoursesByUniversityId,
+	getUniversityCourseCount
 } from '$lib/server/db/queries';
 import { error } from '@sveltejs/kit';
 
@@ -14,10 +15,16 @@ export const load: PageServerLoad = async ({ params }) => {
 	}
 
 	const universityId = await getUniversityIdBySlug(params.slug);
-	const courses = universityId ? await getCoursesByUniversityId(universityId, 10) : [];
+	const [courses, totalCourses] = universityId
+		? await Promise.all([
+				getCoursesByUniversityId(universityId, 10),
+				getUniversityCourseCount(universityId)
+			])
+		: [[], 0];
 
 	return {
 		university,
-		courses
+		courses,
+		totalCourses
 	};
 };

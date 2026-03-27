@@ -6,15 +6,17 @@ export const load: PageServerLoad = async ({ url }) => {
 	const tef = url.searchParams.get('tef') || undefined;
 	const group = url.searchParams.get('group') || undefined;
 	const region = url.searchParams.get('region') || undefined;
+	const sort = url.searchParams.get('sort') || undefined;
+	const type = url.searchParams.get('type') || undefined;
 
 	const [universities, filterOptions] = await Promise.all([
-		searchUniversities({ q, tef, group, region }),
+		searchUniversities({ q, tef, group, region, sort, type }),
 		getUniversityFilterOptions()
 	]);
 
 	return {
 		universities,
-		filters: { q, tef, group, region },
+		filters: { q, tef, group, region, sort, type },
 		filterOptions
 	};
 };

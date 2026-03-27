@@ -29,19 +29,18 @@
 	}
 </script>
 
-<div class="sticky top-16 z-40 bg-white/80 backdrop-blur-md border-b border-surface-200 py-4">
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+<div class="sticky top-16 z-40 border-b border-surface-200 bg-white/80 py-4 backdrop-blur-md">
+	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+		<div class="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
 			<div class="w-full sm:max-w-xs">
 				<SearchBar placeholder={searchPlaceholder} onSearch={handleSearchInput} />
 			</div>
 			<div class="flex flex-wrap gap-2">
 				{#each filters as filter}
 					<select
-						class="appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 text-sm text-surface-700 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all cursor-pointer"
+						class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
 						value={filterValues[filter.key] ?? ''}
-						onchange={(e) =>
-							handleFilterChange(filter.key, (e.target as HTMLSelectElement).value)}
+						onchange={(e) => handleFilterChange(filter.key, (e.target as HTMLSelectElement).value)}
 					>
 						<option value="">{filter.label}</option>
 						{#each filter.options as option}

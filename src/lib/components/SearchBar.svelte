@@ -27,7 +27,7 @@
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 20 20"
 		fill="currentColor"
-		class="size-5 absolute top-1/2 -translate-y-1/2 text-surface-400 {size === 'large'
+		class="absolute top-1/2 size-5 -translate-y-1/2 text-surface-400 {size === 'large'
 			? 'left-4'
 			: 'left-3'}"
 	>
@@ -43,9 +43,9 @@
 		bind:value
 		onkeydown={handleKeydown}
 		oninput={handleInput}
-		class="w-full bg-white border border-surface-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all {size ===
+		class="w-full border border-surface-300 bg-white transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 {size ===
 		'large'
-			? 'h-14 text-lg pl-12 pr-6 rounded-xl'
-			: 'h-10 text-sm pl-10 pr-4 rounded-lg'}"
+			? 'h-14 rounded-xl pr-6 pl-12 text-lg'
+			: 'h-10 rounded-lg pr-4 pl-10 text-sm'}"
 	/>
 </div>

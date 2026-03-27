@@ -19,6 +19,7 @@ Each university has:
 - **Contact email and phone** (from UCAS)
 
 ### Research profile (per university)
+
 - **Total publications count** (e.g. Oxford: 576,903)
 - **Total citation count** (e.g. Oxford: 59 million)
 - **h-index**
@@ -27,6 +28,7 @@ Each university has:
 - **Associated research centres/institutes**
 
 ### Teaching quality (TEF)
+
 - **TEF rating** — Gold / Silver / Bronze / Requires Improvement
 - **Completion rates** — with benchmark comparison
 - **Continuation rates** — students staying on course
@@ -34,6 +36,7 @@ Each university has:
 - All split by: full-time / part-time / apprenticeship, undergrad / postgrad
 
 ### Research quality (REF 2021)
+
 - **Quality profile per subject area** — % rated 4\*, 3\*, 2\*, 1\*
 - **Sub-profiles**: Outputs, Impact, Environment
 - **Staff submitted** (FTE) per subject
@@ -52,6 +55,7 @@ Each course has:
 - **Subjects** with CAH classification codes (can be used for filtering/grouping)
 
 ### Per course option (a course can have multiple options)
+
 - **Qualification** — BSc (Hons), MA (Hons), MSc, PgCert, etc.
 - **Full qualification name** — e.g. "Master of Arts (with Honours)"
 - **Study mode** — Full-time, Part-time
@@ -67,6 +71,7 @@ Each course has:
 - **Average graduate salary** (mainly populated for undergrad)
 
 ### What's NOT available for courses
+
 - Individual **modules/units** within a course — no centralised data source exists for this
 - **Tuition fees** — not in the UCAS data
 - **Acceptance rates** — not publicly available at course level
@@ -112,12 +117,14 @@ Each project has:
 ## Supplementary / Enrichment Data
 
 ### From Wikidata
+
 - University **founding dates**
 - **Student counts**
 - **Logo images**
 - Linkable IDs to other databases (ROR, GeoNames)
 
 ### From OpenAlex (institutions)
+
 - **Image/thumbnail URLs** for universities
 - **Alternative names** and acronyms
 - **Linked repositories** (e.g. Oxford University Research Archive)

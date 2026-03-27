@@ -18,7 +18,9 @@
 </script>
 
 <span
-	class="inline-flex items-center px-2.5 py-0.5 rounded-badge text-xs font-medium {variantClasses[variant]}"
+	class="inline-flex items-center rounded-badge px-2.5 py-0.5 text-xs font-medium {variantClasses[
+		variant
+	]}"
 >
 	{label}
 </span>

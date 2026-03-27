@@ -35,20 +35,35 @@
 
 	let avatarColor = $derived(hashName(university.name));
 	let initial = $derived(university.name.charAt(0).toUpperCase());
+	let hasLogo = $derived(!!university.logoUrl);
+	let logoFailed = $state(false);
 </script>
 
 <a
 	href="/universities/{university.slug}"
-	class="group block rounded-card border border-surface-200 bg-white p-6 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200"
+	class="group block rounded-card border border-surface-200 bg-white p-6 shadow-card transition-all duration-200 hover:-translate-y-1 hover:shadow-card-hover"
 >
 	<div class="flex items-center gap-4">
-		<div
-			class="size-12 rounded-full flex items-center justify-center text-white font-bold text-lg {avatarColor}"
-		>
-			{initial}
-		</div>
+		{#if hasLogo && !logoFailed}
+			<div
+				class="flex size-12 shrink-0 items-center justify-center rounded-lg border border-surface-100 bg-white p-1"
+			>
+				<img
+					src={university.logoUrl}
+					alt="{university.name} logo"
+					class="max-h-full max-w-full object-contain"
+					onerror={() => (logoFailed = true)}
+				/>
+			</div>
+		{:else}
+			<div
+				class="flex size-12 shrink-0 items-center justify-center rounded-lg text-lg font-bold text-white {avatarColor}"
+			>
+				{initial}
+			</div>
+		{/if}
 		<h3
-			class="text-lg font-semibold text-surface-800 group-hover:text-primary-600 transition-colors"
+			class="text-lg font-semibold text-surface-800 transition-colors group-hover:text-primary-600"
 		>
 			{university.name}
 		</h3>
@@ -67,39 +82,47 @@
 				clip-rule="evenodd"
 			/>
 		</svg>
-		<span>{university.region}</span>
-		<span>·</span>
-		<span>Est. {university.foundedYear}</span>
+		<span>{university.town || university.address || 'United Kingdom'}</span>
+		{#if university.foundedYear}
+			<span>·</span>
+			<span>Est. {university.foundedYear}</span>
+		{/if}
 	</div>
 
-	<div class="mt-4 flex items-center gap-3">
-		<span class="flex items-center gap-1 text-sm text-surface-600">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 16 16"
-				fill="currentColor"
-				class="size-4 shrink-0"
-			>
-				<path
-					d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z"
-				/>
-			</svg>
-			{formatNumber(university.studentCount)} students
-		</span>
-		<span class="flex items-center gap-1 text-sm text-surface-600">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 16 16"
-				fill="currentColor"
-				class="size-4 shrink-0"
-			>
-				<path
-					d="M2 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4Zm2.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm4 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm-4 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm4 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"
-				/>
-			</svg>
-			{formatNumber(university.totalPublications)} publications
-		</span>
-	</div>
+	{#if university.studentCount || university.worksCount}
+		<div class="mt-4 flex items-center gap-3">
+			{#if university.studentCount}
+				<span class="flex items-center gap-1 text-sm text-surface-600">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 16 16"
+						fill="currentColor"
+						class="size-4 shrink-0"
+					>
+						<path
+							d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z"
+						/>
+					</svg>
+					{formatNumber(university.studentCount)} students
+				</span>
+			{/if}
+			{#if university.worksCount}
+				<span class="flex items-center gap-1 text-sm text-surface-600">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 16 16"
+						fill="currentColor"
+						class="size-4 shrink-0"
+					>
+						<path
+							d="M2 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4Zm2.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm4 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm-4 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm4 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"
+						/>
+					</svg>
+					{formatNumber(university.worksCount)} publications
+				</span>
+			{/if}
+		</div>
+	{/if}
 
 	<div class="mt-4 flex flex-wrap gap-2">
 		{#if university.tefRating && tefVariantMap[university.tefRating]}

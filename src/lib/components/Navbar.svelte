@@ -1,83 +1,142 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import { commandPaletteOpen } from '$lib/stores/search';
+	import { shortlist, shortlistCount } from '$lib/stores/shortlist';
+	import { compareList, compareCount } from '$lib/stores/compare';
+
 	let mobileMenuOpen = $state(false);
-	let tooltipLink = $state<string | null>(null);
-	let tooltipTimeout = $state<ReturnType<typeof setTimeout> | null>(null);
+	function openSearch() {
+		$commandPaletteOpen = true;
+	}
 
 	const navLinks = [
-		{ label: 'Universities', href: '/universities', disabled: false },
-		{ label: 'Courses', href: '/courses', disabled: false },
-		{ label: 'Academics', href: '#', disabled: true },
-		{ label: 'Research', href: '#', disabled: true }
+		{ label: 'Universities', href: '/universities' },
+		{ label: 'Courses', href: '/courses' }
 	];
 
-	function showTooltip(label: string) {
-		if (tooltipTimeout) clearTimeout(tooltipTimeout);
-		tooltipLink = label;
-		tooltipTimeout = setTimeout(() => {
-			tooltipLink = null;
-		}, 1200);
+	function isActive(href: string): boolean {
+		return $page.url.pathname.startsWith(href);
 	}
 </script>
 
-<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-surface-200">
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="flex items-center justify-between h-16">
+<nav class="fixed top-0 z-50 w-full border-b border-surface-200 bg-white/80 backdrop-blur-md">
+	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+		<div class="flex h-16 items-center justify-between">
 			<!-- Logo -->
 			<a href="/" class="text-xl font-bold text-surface-900">
 				University<span class="text-primary-500">DB</span>
 			</a>
 
 			<!-- Center nav links (desktop) -->
-			<div class="hidden md:flex items-center gap-8">
+			<div class="hidden items-center gap-8 md:flex">
 				{#each navLinks as link}
-					<div class="relative">
-						{#if link.disabled}
-							<button
-								type="button"
-								class="text-sm font-medium opacity-50 cursor-not-allowed text-surface-600"
-								onclick={() => showTooltip(link.label)}
-							>
-								{link.label}
-							</button>
-							{#if tooltipLink === link.label}
-								<div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1.5 rounded-lg bg-surface-800 text-white text-xs font-medium whitespace-nowrap shadow-lg animate-fade-in">
-									Data not pulled yet
-									<div class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-surface-800 rotate-45"></div>
-								</div>
-							{/if}
-						{:else}
-							<a
-								href={link.href}
-								class="text-sm font-medium text-surface-600 hover:text-primary-600 transition-colors"
-							>
-								{link.label}
-							</a>
-						{/if}
-					</div>
+					<a
+						href={link.href}
+						class="text-sm font-medium transition-colors {isActive(link.href)
+							? 'border-b-2 border-primary-500 pb-0.5 text-primary-600'
+							: 'text-surface-600 hover:text-primary-600'}"
+					>
+						{link.label}
+					</a>
 				{/each}
 			</div>
 
 			<!-- Right side -->
 			<div class="flex items-center gap-2">
-				<!-- Search icon (desktop) -->
+				<!-- Search button (desktop) -->
 				<button
-					class="hidden md:flex items-center justify-center w-9 h-9 text-surface-400 hover:text-primary-600 transition-colors"
+					onclick={() => openSearch()}
+					class="hidden cursor-pointer items-center gap-2 rounded-lg border border-surface-200 bg-surface-50 px-3 py-1.5 text-sm text-surface-400 transition-all hover:border-surface-300 hover:text-surface-600 md:flex"
 					aria-label="Search"
 				>
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<circle cx="11" cy="11" r="8"></circle>
-						<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+					<svg
+						class="h-4 w-4"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						viewBox="0 0 24 24"
+					>
+						<circle cx="11" cy="11" r="8" />
+						<line x1="21" y1="21" x2="16.65" y2="16.65" />
 					</svg>
+					<span>Search...</span>
+					<kbd
+						class="ml-2 rounded border border-surface-200 bg-white px-1.5 py-0.5 text-[11px] font-medium text-surface-400"
+					>
+						&#8984;K
+					</kbd>
 				</button>
+
+				<!-- Shortlist button -->
+				<a
+					href="/shortlist"
+					class="relative flex h-9 w-9 items-center justify-center rounded-lg text-surface-500 transition-all hover:bg-surface-50 hover:text-primary-600"
+					aria-label="Shortlist"
+				>
+					<svg
+						class="h-5 w-5"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+						/>
+					</svg>
+					{#if $shortlistCount > 0}
+						<span
+							class="absolute -top-0.5 -right-0.5 flex h-4.5 w-4.5 min-w-[18px] items-center justify-center rounded-full bg-primary-600 text-[10px] leading-none font-bold text-white"
+						>
+							{$shortlistCount}
+						</span>
+					{/if}
+				</a>
+
+				<!-- Compare button -->
+				{#if $compareCount > 0}
+					<a
+						href="/compare?courses={$compareList.join(',')}"
+						class="hidden items-center gap-1.5 rounded-lg border border-primary-200 bg-primary-50 px-3 py-1.5 text-sm font-medium text-primary-700 transition-all hover:bg-primary-100 md:flex"
+						aria-label="Compare courses"
+					>
+						<svg
+							class="h-4 w-4"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+							/>
+						</svg>
+						Compare ({$compareCount})
+					</a>
+				{/if}
 
 				<!-- Hamburger button (mobile) -->
 				<button
-					class="md:hidden flex items-center justify-center w-9 h-9 text-surface-600 hover:text-primary-600 transition-colors"
+					class="flex h-9 w-9 items-center justify-center text-surface-600 transition-colors hover:text-primary-600 md:hidden"
 					onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
 					aria-label="Toggle menu"
 					aria-expanded={mobileMenuOpen}
 				>
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
 						{#if mobileMenuOpen}
 							<line x1="18" y1="6" x2="6" y2="18"></line>
 							<line x1="6" y1="6" x2="18" y2="18"></line>
@@ -94,31 +153,57 @@
 
 	<!-- Mobile dropdown panel -->
 	{#if mobileMenuOpen}
-		<div class="md:hidden bg-white border-b border-surface-200 px-4 py-4 flex flex-col gap-3">
+		<div class="flex flex-col gap-3 border-b border-surface-200 bg-white px-4 py-4 md:hidden">
+			<!-- Mobile search button -->
+			<button
+				onclick={() => {
+					mobileMenuOpen = false;
+					openSearch();
+				}}
+				class="flex items-center gap-2 text-sm font-medium text-surface-600 transition-colors hover:text-primary-600"
+			>
+				<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+					<circle cx="11" cy="11" r="8" />
+					<line x1="21" y1="21" x2="16.65" y2="16.65" />
+				</svg>
+				Search...
+			</button>
 			{#each navLinks as link}
-				{#if link.disabled}
-					<button
-						type="button"
-						class="text-sm font-medium text-left opacity-50 text-surface-600 flex items-center gap-2"
-						onclick={() => showTooltip(link.label)}
-					>
-						{link.label}
-						{#if tooltipLink === link.label}
-							<span class="text-xs font-medium text-primary-600 bg-primary-50 px-2 py-0.5 rounded-full">
-								Data not pulled yet
-							</span>
-						{/if}
-					</button>
-				{:else}
-					<a
-						href={link.href}
-						class="text-sm font-medium text-surface-600 hover:text-primary-600 transition-colors"
-						onclick={() => (mobileMenuOpen = false)}
-					>
-						{link.label}
-					</a>
-				{/if}
+				<a
+					href={link.href}
+					class="text-sm font-medium transition-colors {isActive(link.href)
+						? 'font-semibold text-primary-600'
+						: 'text-surface-600 hover:text-primary-600'}"
+					onclick={() => (mobileMenuOpen = false)}
+				>
+					{link.label}
+				</a>
 			{/each}
+			<a
+				href="/shortlist"
+				class="flex items-center gap-2 text-sm font-medium transition-colors {isActive('/shortlist')
+					? 'font-semibold text-primary-600'
+					: 'text-surface-600 hover:text-primary-600'}"
+				onclick={() => (mobileMenuOpen = false)}
+			>
+				Shortlist
+				{#if $shortlistCount > 0}
+					<span
+						class="inline-flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-primary-600 text-[10px] font-bold text-white"
+					>
+						{$shortlistCount}
+					</span>
+				{/if}
+			</a>
+			{#if $compareCount > 0}
+				<a
+					href="/compare?courses={$compareList.join(',')}"
+					class="text-sm font-medium text-primary-600 transition-colors hover:text-primary-700"
+					onclick={() => (mobileMenuOpen = false)}
+				>
+					Compare ({$compareCount})
+				</a>
+			{/if}
 		</div>
 	{/if}
 </nav>

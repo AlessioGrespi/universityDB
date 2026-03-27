@@ -28,7 +28,7 @@
 	<title>UniversityDB - Discover Your Perfect University Course</title>
 	<meta
 		name="description"
-		content="Explore 50,000+ courses across 166 UK universities. Compare entry requirements, satisfaction scores, and graduate outcomes."
+		content="Explore courses across UK universities. Compare entry requirements, graduate outcomes, and career prospects."
 	/>
 </svelte:head>
 
@@ -43,8 +43,8 @@
 		</h1>
 
 		<p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-surface-500 sm:text-xl">
-			Explore 50,000+ courses across 166 UK universities. Compare entry requirements, satisfaction
-			scores, and graduate outcomes.
+			Explore {data.stats.courses} courses across {data.stats.universities} UK universities. Compare entry
+			requirements, graduate outcomes, and career prospects.
 		</p>
 
 		<div class="mx-auto mt-8 max-w-2xl">
@@ -74,9 +74,9 @@
 	<div class="mx-auto max-w-5xl px-4">
 		<div class="grid grid-cols-2 gap-8 md:grid-cols-4">
 			<StatCard value={data.stats.universities} label="Universities" />
+			<StatCard value={data.stats.institutions} label="Total Institutions" />
 			<StatCard value={data.stats.courses} label="Courses" />
-			<StatCard value={data.stats.academics} label="Academics" />
-			<StatCard value={data.stats.researchProjects} label="Research Projects" />
+			<StatCard value={data.stats.subjects} label="Subjects" />
 		</div>
 	</div>
 </section>
@@ -120,7 +120,7 @@
 					class="group relative rounded-card border border-surface-200 bg-white p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-card-hover"
 				>
 					<span
-						class="absolute right-4 top-4 text-primary-500 opacity-0 transition-opacity group-hover:opacity-100"
+						class="absolute top-4 right-4 text-primary-500 opacity-0 transition-opacity group-hover:opacity-100"
 						>&rarr;</span
 					>
 					<span class="text-base font-semibold text-surface-800">{subject.name}</span>

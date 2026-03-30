@@ -74,3 +74,37 @@ export interface Course {
 }
 
 export type TefRating = 'Gold' | 'Silver' | 'Bronze' | 'Requires Improvement' | null;
+
+// ─── Quiz Types ──────────────────────────────────────────────────────────────
+
+export type QuizScheme = 'Undergraduate' | 'Postgraduate';
+export type QuizStudyMode = 'Full-time' | 'Part-time' | null;
+
+export type QuizPriority =
+	| 'satisfaction'
+	| 'salary'
+	| 'research'
+	| 'teaching'
+	| 'prestige'
+	| 'location';
+
+export interface QuizAnswers {
+	scheme: QuizScheme | null;
+	subjectClusters: string[];
+	ucasPoints: number | null;
+	degreeClass: string | null;
+	priorities: QuizPriority[];
+	regions: string[];
+	studyMode: QuizStudyMode;
+	email: string | null;
+}
+
+export interface ScoredCourse extends Course {
+	matchScore: number;
+	eligibility: 'likely' | 'stretch' | 'ambitious' | null;
+	universityTefRating: TefRating;
+	universityGroups: string[];
+	universityTown: string;
+	universityLat: number;
+	universityLng: number;
+}

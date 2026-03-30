@@ -11,7 +11,8 @@
 
 	const navLinks = [
 		{ label: 'Universities', href: '/universities' },
-		{ label: 'Courses', href: '/courses' }
+		{ label: 'Courses', href: '/courses' },
+		{ label: 'Quiz', href: '/quiz' }
 	];
 
 	function isActive(href: string): boolean {

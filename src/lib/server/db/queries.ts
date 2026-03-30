@@ -7,8 +7,13 @@ import type {
 	CourseOption,
 	TefRating,
 	EntryRequirements,
-	SocCode
+	SocCode,
+	QuizAnswers,
+	QuizPriority,
+	ScoredCourse
 } from '$lib/types';
+import { getCahPrefixesForClusters } from '$lib/data/subject-clusters';
+import { regions as regionData, distanceMiles } from '$lib/data/regions';
 
 // ─── Mappers ─────────────────────────────────────────────────────────────────
 
@@ -754,4 +759,308 @@ export async function getUniversityCourseCount(universityId: number) {
 		.where(eq(schema.courses.universityId, universityId));
 
 	return row?.value ?? 0;
+}
+
+// ─── Quiz Scoring Engine ────────────────────────────────────────────────────
+
+interface RawQuizRow {
+	course: typeof schema.courses.$inferSelect;
+	option: typeof schema.courseOptions.$inferSelect;
+	universityName: string;
+	universitySlug: string;
+	universityTown: string | null;
+	universityLat: number | null;
+	universityLng: number | null;
+	universityTefRating: string | null;
+	universityGroups: string[] | null;
+	universityHIndex: number | null;
+}
+
+function parseUcasPoints(raw: Record<string, string> | null | undefined): number | null {
+	if (!raw) return null;
+	const pts = raw.ucas_points ?? raw.ucasTariff;
+	if (!pts) return null;
+	const num = parseInt(pts, 10);
+	return isNaN(num) ? null : num;
+}
+
+export async function getQuizResults(answers: QuizAnswers): Promise<ScoredCourse[]> {
+	// Phase 1: Build filter conditions
+	const conditions: SQL[] = [];
+
+	// Scheme filter — include integrated masters for UG
+	if (answers.scheme === 'Undergraduate') {
+		conditions.push(
+			sql`(${schema.courses.scheme} = 'Undergraduate' OR ${schema.courses.scheme} = 'Postgraduate')`
+		);
+	} else if (answers.scheme === 'Postgraduate') {
+		conditions.push(eq(schema.courses.scheme, 'Postgraduate'));
+	}
+
+	// Subject cluster filter via CAH codes
+	if (answers.subjectClusters.length > 0) {
+		const cahPrefixes = getCahPrefixesForClusters(answers.subjectClusters);
+		if (cahPrefixes.length > 0) {
+			const likeConditions = cahPrefixes.map(
+				(p) => sql`${schema.subjects.cahCode} LIKE ${p + '%'}`
+			);
+			conditions.push(
+				sql`${schema.courses.id} IN (
+					SELECT ${schema.courseSubjects.courseId} FROM ${schema.courseSubjects}
+					INNER JOIN ${schema.subjects} ON ${schema.courseSubjects.subjectId} = ${schema.subjects.id}
+					WHERE (${sql.join(likeConditions, sql` OR `)})
+				)`
+			);
+		}
+	}
+
+	// Study mode filter
+	if (answers.studyMode) {
+		conditions.push(eq(schema.courseOptions.studyMode, answers.studyMode));
+	}
+
+	// Region filter via bounding boxes
+	if (answers.regions.length > 0) {
+		const selectedRegions = regionData.filter((r) => answers.regions.includes(r.id));
+		if (selectedRegions.length > 0) {
+			const regionConditions = selectedRegions.map((r) => {
+				const [south, west, north, east] = r.bounds;
+				return sql`(${schema.universities.latitude} BETWEEN ${south} AND ${north} AND ${schema.universities.longitude} BETWEEN ${west} AND ${east})`;
+			});
+			conditions.push(sql`(${sql.join(regionConditions, sql` OR `)})`);
+		}
+	}
+
+	const where = conditions.length > 0 ? and(...conditions) : undefined;
+
+	// Fetch candidate courses with their primary option and university data
+	const rows: RawQuizRow[] = await db
+		.select({
+			course: schema.courses,
+			option: schema.courseOptions,
+			universityName: schema.universities.name,
+			universitySlug: schema.universities.slug,
+			universityTown: schema.universities.town,
+			universityLat: schema.universities.latitude,
+			universityLng: schema.universities.longitude,
+			universityTefRating: schema.universities.tefRating,
+			universityGroups: schema.universities.groups,
+			universityHIndex: schema.universities.hIndex
+		})
+		.from(schema.courses)
+		.innerJoin(schema.courseOptions, eq(schema.courses.id, schema.courseOptions.courseId))
+		.innerJoin(schema.universities, eq(schema.courses.universityId, schema.universities.id))
+		.where(where)
+		.limit(2000);
+
+	// For UG scheme, fix integrated masters: keep only if qualification is integrated
+	let filtered = rows;
+	if (answers.scheme === 'Undergraduate') {
+		filtered = rows.filter(
+			(r) =>
+				r.course.scheme === 'Undergraduate' ||
+				(r.course.scheme === 'Postgraduate' && isIntegratedMasters(r.option.qualification ?? ''))
+		);
+	}
+
+	// Deduplicate: keep one option per course (prefer Full-time)
+	const courseMap = new Map<number, RawQuizRow>();
+	for (const row of filtered) {
+		const existing = courseMap.get(row.course.id);
+		if (!existing) {
+			courseMap.set(row.course.id, row);
+		} else if (row.option.studyMode === 'Full-time' && existing.option.studyMode !== 'Full-time') {
+			courseMap.set(row.course.id, row);
+		}
+	}
+
+	const candidates = [...courseMap.values()];
+
+	// Entry requirements filter (generous: allow up to +16 stretch)
+	let eligibleCandidates = candidates;
+	if (answers.ucasPoints !== null) {
+		eligibleCandidates = candidates.filter((r) => {
+			const reqPoints = parseUcasPoints(
+				r.option.entryRequirements as Record<string, string> | null
+			);
+			if (reqPoints === null) return true; // no requirement = include
+			return answers.ucasPoints! + 16 >= reqPoints; // allow stretch
+		});
+		// If too few results after filtering, fall back to all candidates
+		if (eligibleCandidates.length < 5) eligibleCandidates = candidates;
+	}
+
+	// Phase 2: Score and rank
+	// Collect stats for normalisation
+	const salaries = eligibleCandidates
+		.map((r) => r.option.avgSalary)
+		.filter((s): s is number => s !== null);
+	const minSalary = Math.min(...(salaries.length ? salaries : [0]));
+	const maxSalary = Math.max(...(salaries.length ? salaries : [1]));
+	const salaryRange = maxSalary - minSalary || 1;
+
+	const hIndexes = eligibleCandidates
+		.map((r) => r.universityHIndex)
+		.filter((h): h is number => h !== null);
+	const minH = Math.min(...(hIndexes.length ? hIndexes : [0]));
+	const maxH = Math.max(...(hIndexes.length ? hIndexes : [1]));
+	const hRange = maxH - minH || 1;
+
+	// Priority weights
+	const weights: Record<QuizPriority, number> = {
+		satisfaction: 0,
+		salary: 0,
+		research: 0,
+		teaching: 0,
+		prestige: 0,
+		location: 0
+	};
+	const priorityWeights = [0.5, 0.3, 0.2];
+	for (let i = 0; i < answers.priorities.length && i < 3; i++) {
+		weights[answers.priorities[i]] = priorityWeights[i];
+	}
+
+	// Region center for location scoring
+	let regionCenter: { lat: number; lng: number } | null = null;
+	if (answers.regions.length > 0) {
+		const selectedRegions = regionData.filter((r) => answers.regions.includes(r.id));
+		if (selectedRegions.length > 0) {
+			regionCenter = {
+				lat: selectedRegions.reduce((s, r) => s + r.lat, 0) / selectedRegions.length,
+				lng: selectedRegions.reduce((s, r) => s + r.lng, 0) / selectedRegions.length
+			};
+		}
+	}
+
+	// Get subject names for all courses
+	const courseIds = eligibleCandidates.map((r) => r.course.id);
+	const subjectRows =
+		courseIds.length > 0
+			? await db
+					.select({
+						courseId: schema.courseSubjects.courseId,
+						subjectName: schema.subjects.name
+					})
+					.from(schema.courseSubjects)
+					.innerJoin(schema.subjects, eq(schema.courseSubjects.subjectId, schema.subjects.id))
+					.where(inArray(schema.courseSubjects.courseId, courseIds))
+			: [];
+	const subjectsByCourse = new Map<number, string[]>();
+	for (const row of subjectRows) {
+		if (!subjectsByCourse.has(row.courseId)) subjectsByCourse.set(row.courseId, []);
+		subjectsByCourse.get(row.courseId)!.push(row.subjectName);
+	}
+
+	// Score each candidate
+	const scored: ScoredCourse[] = eligibleCandidates.map((r) => {
+		// Dimension scores (0-1)
+		const nss = r.option.nssScore ? Number(r.option.nssScore) / 100 : 0.5;
+		const salary = r.option.avgSalary ? (r.option.avgSalary - minSalary) / salaryRange : 0.3;
+		const research = r.universityHIndex ? (r.universityHIndex - minH) / hRange : 0.3;
+
+		let teaching = 0.2;
+		if (r.universityTefRating === 'Gold') teaching = 1.0;
+		else if (r.universityTefRating === 'Silver') teaching = 0.7;
+		else if (r.universityTefRating === 'Bronze') teaching = 0.4;
+
+		let prestige = 0.3;
+		const groups = r.universityGroups ?? [];
+		if (groups.includes('Russell Group')) prestige = 1.0;
+		else if (groups.length > 0) prestige = 0.6;
+
+		let location = 0.5;
+		if (regionCenter && r.universityLat && r.universityLng) {
+			const dist = distanceMiles(
+				regionCenter.lat,
+				regionCenter.lng,
+				r.universityLat,
+				r.universityLng
+			);
+			if (dist <= 30) location = 1.0;
+			else if (dist >= 200) location = 0.0;
+			else location = 1.0 - (dist - 30) / 170;
+		}
+
+		const dimensionScores: Record<QuizPriority, number> = {
+			satisfaction: nss,
+			salary,
+			research,
+			teaching,
+			prestige,
+			location
+		};
+
+		let score = 0;
+		for (const priority of Object.keys(weights) as QuizPriority[]) {
+			score += weights[priority] * dimensionScores[priority];
+		}
+		// Normalise to 0-100
+		const matchScore = Math.round(Math.min(100, Math.max(0, score * 100)));
+
+		// Eligibility
+		let eligibility: ScoredCourse['eligibility'] = null;
+		if (answers.ucasPoints !== null) {
+			const reqPoints = parseUcasPoints(
+				r.option.entryRequirements as Record<string, string> | null
+			);
+			if (reqPoints !== null) {
+				if (answers.ucasPoints >= reqPoints) eligibility = 'likely';
+				else if (answers.ucasPoints >= reqPoints - 16) eligibility = 'stretch';
+				else eligibility = 'ambitious';
+			}
+		}
+
+		const entryReqs = mapEntryRequirements(
+			r.option.entryRequirements as Record<string, string> | null
+		);
+		const qual = r.option.qualification ?? '';
+		const fullQual = r.option.fullQualification ?? undefined;
+
+		return {
+			slug: r.course.slug,
+			title: r.course.title,
+			description: r.course.summary ?? '',
+			universityName: r.universityName,
+			universitySlug: r.universitySlug,
+			scheme: correctScheme(r.course.scheme, qual),
+			subjects: subjectsByCourse.get(r.course.id) ?? [],
+			qualification: displayQualification(qual, fullQual),
+			fullQualification: fullQual,
+			studyMode: r.option.studyMode ?? 'Full-time',
+			duration: r.option.duration ?? '',
+			startDate: r.option.startDate ?? undefined,
+			academicYear: r.course.academicYear ?? undefined,
+			campusLocation: r.option.location ?? undefined,
+			entryRequirements: entryReqs,
+			nssScore: r.option.nssScore ? Number(r.option.nssScore) : undefined,
+			averageGraduateSalary: r.option.avgSalary ?? undefined,
+			matchScore,
+			eligibility,
+			universityTefRating: (r.universityTefRating as TefRating) ?? null,
+			universityGroups: r.universityGroups ?? [],
+			universityTown: r.universityTown ?? '',
+			universityLat: r.universityLat ?? 0,
+			universityLng: r.universityLng ?? 0
+		};
+	});
+
+	// Sort by match score descending
+	scored.sort((a, b) => b.matchScore - a.matchScore);
+
+	return scored.slice(0, 20);
+}
+
+export async function saveQuizSubmission(
+	email: string | null,
+	answers: QuizAnswers,
+	topCourses: string[]
+): Promise<string> {
+	const shareToken = Math.random().toString(36).substring(2, 10) + Date.now().toString(36);
+	await db.insert(schema.quizSubmissions).values({
+		email,
+		answers,
+		topCourses,
+		shareToken
+	});
+	return shareToken;
 }

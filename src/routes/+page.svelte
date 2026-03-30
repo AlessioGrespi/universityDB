@@ -81,6 +81,38 @@
 	</div>
 </section>
 
+<!-- Quiz CTA -->
+<section class="px-4 py-16 sm:py-20">
+	<div class="mx-auto max-w-3xl">
+		<div
+			class="relative overflow-hidden rounded-card border border-primary-200 bg-gradient-to-br from-primary-50 to-white p-8 sm:p-10"
+		>
+			<div class="text-center">
+				<div class="mb-3 text-4xl">🎯</div>
+				<h2 class="text-2xl font-bold text-surface-900 sm:text-3xl">Not sure where to start?</h2>
+				<p class="mx-auto mt-3 max-w-md text-surface-500">
+					Take our 90-second quiz and get personalised course recommendations based on your
+					interests, grades, and priorities.
+				</p>
+				<a
+					href="/quiz"
+					class="mt-6 inline-flex items-center gap-2 rounded-button bg-primary-600 px-8 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-700 hover:shadow-card-hover"
+				>
+					Find Your Course
+					<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M13 7l5 5m0 0l-5 5m5-5H6"
+						/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
 <!-- Featured Universities -->
 <section class="px-4 py-16 sm:py-20">
 	<div class="mx-auto max-w-7xl">

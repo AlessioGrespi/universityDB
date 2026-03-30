@@ -397,6 +397,21 @@ export const courseSocCodes = pgTable(
 	(t) => [primaryKey({ columns: [t.courseId, t.socCodeId] })]
 );
 
+// ─── Quiz Submissions ────────────────────────────────────────────────────────
+
+export const quizSubmissions = pgTable(
+	'quiz_submissions',
+	{
+		id: serial('id').primaryKey(),
+		email: text('email'),
+		answers: jsonb('answers').notNull(),
+		topCourses: text('top_courses').array(),
+		shareToken: text('share_token').unique(),
+		createdAt: timestamp('created_at', { withTimezone: true }).defaultNow()
+	},
+	(t) => [index('quiz_sub_email_idx').on(t.email), index('quiz_sub_token_idx').on(t.shareToken)]
+);
+
 // ─── University Stats by Year ─────────────────────────────────────────────────
 
 export const universityStatsByYear = pgTable(

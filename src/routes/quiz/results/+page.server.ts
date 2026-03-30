@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import { getQuizResults, saveQuizSubmission } from '$lib/server/db/queries';
+import { getQuizResults /* saveQuizSubmission */ } from '$lib/server/db/queries';
 import { paramsToAnswers } from '$lib/stores/quiz';
 import { subjectClusters } from '$lib/data/subject-clusters';
 
@@ -13,13 +13,13 @@ export const load: PageServerLoad = async ({ url }) => {
 
 	const results = await getQuizResults(answers);
 
-	// Save submission if email provided
-	if (answers.email) {
-		const topSlugs = results.slice(0, 5).map((r) => r.slug);
-		await saveQuizSubmission(answers.email, answers, topSlugs).catch(() => {
-			// non-critical, don't fail the page
-		});
-	}
+	// Email saving disabled — email sending not configured yet
+	// if (answers.email) {
+	// 	const topSlugs = results.slice(0, 5).map((r) => r.slug);
+	// 	await saveQuizSubmission(answers.email, answers, topSlugs).catch(() => {
+	// 		// non-critical, don't fail the page
+	// 	});
+	// }
 
 	// Build summary text
 	const clusterLabels = subjectClusters

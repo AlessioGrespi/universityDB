@@ -9,19 +9,11 @@
 
 	const topResults = $derived(data.results.slice(0, 5));
 	const remainingResults = $derived(data.results.slice(5));
-	const hasEmail = $derived(!!data.answers.email);
-	let showGated = $state(false);
-
-	let emailForGate = $state('');
-	let gateError = $state('');
-
-	function unlockResults() {
-		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailForGate.trim())) {
-			gateError = 'Please enter a valid email';
-			return;
-		}
-		showGated = true;
-	}
+	// Email gate disabled — email sending not configured yet
+	// const hasEmail = $derived(!!data.answers.email);
+	// let showGated = $state(false);
+	// let emailForGate = $state('');
+	// let gateError = $state('');
 
 	function shareUrl(): string {
 		if (!browser) return '';
@@ -82,63 +74,16 @@
 			{/each}
 		</div>
 
-		<!-- Email gate / remaining results -->
+		<!-- Remaining results (email gate disabled) -->
 		{#if remainingResults.length > 0}
-			{#if hasEmail || showGated}
-				<div class="mt-8 space-y-4">
-					<h2 class="text-sm font-semibold tracking-wider text-surface-400 uppercase">
-						Worth Exploring
-					</h2>
-					{#each remainingResults as course, i}
-						<ResultCard {course} rank={i + 6} />
-					{/each}
-				</div>
-			{:else}
-				<!-- Gated section -->
-				<div class="relative mt-8">
-					<!-- Blurred preview -->
-					<div class="pointer-events-none space-y-4 blur-sm select-none" aria-hidden="true">
-						{#each remainingResults.slice(0, 3) as course, i}
-							<ResultCard {course} rank={i + 6} />
-						{/each}
-					</div>
-
-					<!-- Unlock overlay -->
-					<div class="absolute inset-0 flex items-center justify-center">
-						<div
-							class="rounded-card border border-surface-200 bg-white p-8 text-center shadow-card-hover"
-						>
-							<h3 class="text-lg font-semibold text-surface-800">
-								Unlock {remainingResults.length} more matches
-							</h3>
-							<p class="mt-1 text-sm text-surface-500">
-								Enter your email to see all your recommendations.
-							</p>
-							<div class="mt-4 flex gap-2">
-								<input
-									type="email"
-									placeholder="you@example.com"
-									bind:value={emailForGate}
-									oninput={() => (gateError = '')}
-									onkeydown={(e) => {
-										if (e.key === 'Enter') unlockResults();
-									}}
-									class="flex-1 rounded-button border border-surface-300 px-3 py-2 text-sm text-surface-800 placeholder-surface-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none"
-								/>
-								<button
-									class="rounded-button bg-primary-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-700"
-									onclick={unlockResults}
-								>
-									Unlock
-								</button>
-							</div>
-							{#if gateError}
-								<p class="mt-1 text-xs text-error">{gateError}</p>
-							{/if}
-						</div>
-					</div>
-				</div>
-			{/if}
+			<div class="mt-8 space-y-4">
+				<h2 class="text-sm font-semibold tracking-wider text-surface-400 uppercase">
+					Worth Exploring
+				</h2>
+				{#each remainingResults as course, i}
+					<ResultCard {course} rank={i + 6} />
+				{/each}
+			</div>
 		{/if}
 
 		<!-- Share + Actions -->

@@ -6,7 +6,7 @@
 	import StepPriorities from '$lib/components/quiz/StepPriorities.svelte';
 	import StepLocation from '$lib/components/quiz/StepLocation.svelte';
 	import StepStudyMode from '$lib/components/quiz/StepStudyMode.svelte';
-	import StepEmail from '$lib/components/quiz/StepEmail.svelte';
+	// import StepEmail from '$lib/components/quiz/StepEmail.svelte';
 	import { quizStep } from '$lib/stores/quiz';
 
 	const step = $derived($quizStep);
@@ -29,7 +29,9 @@
 		<StepLocation />
 	{:else if step === 6}
 		<StepStudyMode />
+	<!-- Email step disabled — email sending not configured yet
 	{:else if step === 7}
 		<StepEmail />
+	-->
 	{/if}
 </QuizShell>

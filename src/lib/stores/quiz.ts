@@ -3,7 +3,7 @@ import { browser } from '$app/environment';
 import type { QuizAnswers, QuizPriority, QuizScheme, QuizStudyMode } from '$lib/types';
 
 const STORAGE_KEY = 'universitydb-quiz';
-const TOTAL_STEPS = 7;
+const TOTAL_STEPS = 6; // Was 7 — email step disabled
 
 function defaultAnswers(): QuizAnswers {
 	return {

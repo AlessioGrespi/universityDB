@@ -1,12 +1,15 @@
 <script lang="ts">
 	import type { QuizStudyMode } from '$lib/types';
-	import { quizAnswers, setStudyMode, nextStep } from '$lib/stores/quiz';
+	import { quizAnswers, setStudyMode, answersToParams } from '$lib/stores/quiz';
+	import { goto } from '$app/navigation';
 
 	const answers = $derived($quizAnswers);
 
 	function select(mode: QuizStudyMode) {
 		setStudyMode(mode);
-		nextStep();
+		// Skip email step — go straight to results
+		const params = answersToParams({ ...$quizAnswers, studyMode: mode });
+		goto(`/quiz/results?${params}`);
 	}
 </script>
 

@@ -81,7 +81,13 @@
 		<!-- Bottom bar -->
 		<div class="mt-10 border-t border-surface-700/50 pt-6">
 			<p class="text-sm text-surface-500">
-				&copy; {new Date().getFullYear()} UniversityDB. Built with open data.
+				&copy; {new Date().getFullYear()} UniversityDB. Built with open data. A
+				<a
+					href="https://grespi.tech"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-surface-400 transition-colors hover:text-white">Grespi</a
+				> project.
 			</p>
 		</div>
 	</div>

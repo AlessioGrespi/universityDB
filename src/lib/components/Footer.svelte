@@ -86,7 +86,7 @@
 					href="https://grespi.tech"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="text-surface-400 transition-colors hover:text-white">Grespi</a
+					class="text-surface-400 transition-colors hover:text-white">Grespi Technology</a
 				> project.
 			</p>
 		</div>

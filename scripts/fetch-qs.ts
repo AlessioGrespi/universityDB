@@ -22,9 +22,13 @@ function downloadFromKaggle() {
 	console.log('Downloading QS dataset from Kaggle...');
 	try {
 		mkdirSync(OUT_DIR, { recursive: true });
-		execFileSync('kaggle', ['datasets', 'download', '-d', KAGGLE_DATASET, '--unzip', '-p', OUT_DIR], {
-			stdio: 'inherit'
-		});
+		execFileSync(
+			'kaggle',
+			['datasets', 'download', '-d', KAGGLE_DATASET, '--unzip', '-p', OUT_DIR],
+			{
+				stdio: 'inherit'
+			}
+		);
 
 		// Find the downloaded CSV (name may vary)
 		const files = readdirSync(OUT_DIR).filter((f) => f.endsWith('.csv'));
@@ -100,8 +104,7 @@ function main() {
 
 	// Normalize — column names vary by dataset, so we try common patterns
 	const data = rows.map((r) => {
-		const rankStr =
-			r['Rank (2026)'] || r['2026 Rank'] || r['Rank'] || r['RANK'] || r['rank'] || '';
+		const rankStr = r['Rank (2026)'] || r['2026 Rank'] || r['Rank'] || r['RANK'] || r['rank'] || '';
 		const rank = parseInt(rankStr.replace(/[^0-9]/g, '')) || null;
 
 		return {
@@ -114,8 +117,7 @@ function main() {
 				r['university'] ||
 				r['Name'] ||
 				'',
-			country:
-				r['Country/Territory'] || r['Location'] || r['country'] || r['Country'] || '',
+			country: r['Country/Territory'] || r['Location'] || r['country'] || r['Country'] || '',
 			region: r['Region'] || '',
 			size: r['Size'] || '',
 			focus: r['Focus'] || '',

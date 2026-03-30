@@ -21,3 +21,10 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Debug artifacts
+.playwright-mcp/
+*.png
+
+# Claude Code
+.claude/settings.local.json

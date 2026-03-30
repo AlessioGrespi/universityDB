@@ -22,9 +22,13 @@ function downloadFromKaggle() {
 	console.log('Downloading US News dataset from Kaggle...');
 	try {
 		mkdirSync(OUT_DIR, { recursive: true });
-		execFileSync('kaggle', ['datasets', 'download', '-d', KAGGLE_DATASET, '--unzip', '-p', OUT_DIR], {
-			stdio: 'inherit'
-		});
+		execFileSync(
+			'kaggle',
+			['datasets', 'download', '-d', KAGGLE_DATASET, '--unzip', '-p', OUT_DIR],
+			{
+				stdio: 'inherit'
+			}
+		);
 
 		// Find the downloaded CSV
 		const files = readdirSync(OUT_DIR).filter((f) => f.endsWith('.csv'));
@@ -114,13 +118,10 @@ function main() {
 			enrollment:
 				parseInt((r['enrollment'] || r['totalEnrollment'] || '').replace(/,/g, '')) || null,
 			tuitionInState:
-				parseInt((r['tuitionAndFees'] || r['inStateTuition'] || '').replace(/[$,]/g, '')) ||
-				null,
-			tuitionOutState:
-				parseInt((r['outOfStateTuition'] || '').replace(/[$,]/g, '')) || null,
+				parseInt((r['tuitionAndFees'] || r['inStateTuition'] || '').replace(/[$,]/g, '')) || null,
+			tuitionOutState: parseInt((r['outOfStateTuition'] || '').replace(/[$,]/g, '')) || null,
 			acceptanceRate:
-				parseFloat((r['acceptanceRate'] || r['admissionRate'] || '').replace(/%/, '')) ||
-				null,
+				parseFloat((r['acceptanceRate'] || r['admissionRate'] || '').replace(/%/, '')) || null,
 			satAvg: parseInt(r['satAvg'] || r['satComposite'] || '') || null,
 			actAvg: parseInt(r['actAvg'] || r['actComposite'] || '') || null,
 			graduationRate:

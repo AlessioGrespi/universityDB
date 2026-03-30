@@ -71,7 +71,17 @@ async function main() {
 	mkdirSync(dirname(OUT_FILE), { recursive: true });
 	writeFileSync(
 		OUT_FILE,
-		JSON.stringify({ source: 'ARWU', year: parseInt(year), fetchedAt: new Date().toISOString(), count: data.length, data }, null, 2)
+		JSON.stringify(
+			{
+				source: 'ARWU',
+				year: parseInt(year),
+				fetchedAt: new Date().toISOString(),
+				count: data.length,
+				data
+			},
+			null,
+			2
+		)
 	);
 
 	console.log(`Wrote ${data.length} entries to ${OUT_FILE}`);

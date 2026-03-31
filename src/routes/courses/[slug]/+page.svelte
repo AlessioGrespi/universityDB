@@ -70,13 +70,15 @@
 		`${displayQualification} in ${course.title} at ${course.universityName}. ${course.studyMode}${course.duration ? `, ${course.duration}` : ''}. ${course.entryRequirements.aLevel ? `Entry: ${course.entryRequirements.aLevel}. ` : ''}${course.averageGraduateSalary ? `Avg. graduate salary: \u00A3${course.averageGraduateSalary.toLocaleString('en-GB')}.` : ''}`
 	);
 
-	let courseUrl = $derived(
-		course.ucasCourseId
-			? `https://www.ucas.com/explore/search/providers/courses/${course.ucasCourseId}`
-			: university
-				? ensureUrl(university.website)
-				: '#'
-	);
+	// UCAS click-through disabled — course IDs in the DB are broken
+	// let courseUrl = $derived(
+	// 	course.ucasCourseId
+	// 		? `https://www.ucas.com/explore/search/providers/courses/${course.ucasCourseId}`
+	// 		: university
+	// 			? ensureUrl(university.website)
+	// 			: '#'
+	// );
+	let courseUrl = $derived(university ? ensureUrl(university.website) : '#');
 
 	function formatSalary(n: number): string {
 		return '\u00A3' + n.toLocaleString('en-GB');
@@ -595,7 +597,7 @@
 										d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
 									/>
 								</svg>
-								{course.ucasCourseId ? 'View on UCAS' : 'Visit university website'}
+								Visit university website
 							</a>
 						</div>
 					</div>

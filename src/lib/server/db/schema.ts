@@ -397,6 +397,18 @@ export const courseSocCodes = pgTable(
 	(t) => [primaryKey({ columns: [t.courseId, t.socCodeId] })]
 );
 
+// ─── Search Synonyms ─────────────────────────────────────────────────────────
+
+export const searchSynonyms = pgTable(
+	'search_synonyms',
+	{
+		id: serial('id').primaryKey(),
+		term: text('term').notNull(),
+		expandsTo: text('expands_to').notNull()
+	},
+	(t) => [index('synonym_term_idx').on(t.term)]
+);
+
 // ─── Quiz Submissions ────────────────────────────────────────────────────────
 
 export const quizSubmissions = pgTable(

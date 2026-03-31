@@ -1,4 +1,4 @@
-import { eq, desc, asc, sql, count, inArray, ilike, and, type SQL } from 'drizzle-orm';
+import { eq, desc, asc, sql, count, inArray, ilike, and, or, type SQL } from 'drizzle-orm';
 import { db } from '$lib/server/db';
 import * as schema from '$lib/server/db/schema';
 import type {
@@ -14,6 +14,31 @@ import type {
 } from '$lib/types';
 import { getCahPrefixesForClusters } from '$lib/data/subject-clusters';
 import { regions as regionData, distanceMiles } from '$lib/data/regions';
+
+/** In-memory synonym map, loaded once from DB. Keys are lowercase terms. */
+let synonymMap: Map<string, string[]> | null = null;
+
+async function getSynonymMap(): Promise<Map<string, string[]>> {
+	if (synonymMap) return synonymMap;
+	const rows = await db
+		.select({ term: schema.searchSynonyms.term, expandsTo: schema.searchSynonyms.expandsTo })
+		.from(schema.searchSynonyms);
+	synonymMap = new Map();
+	for (const { term, expandsTo } of rows) {
+		const key = term.toLowerCase();
+		const existing = synonymMap.get(key);
+		if (existing) existing.push(expandsTo);
+		else synonymMap.set(key, [expandsTo]);
+	}
+	return synonymMap;
+}
+
+/** Look up synonym expansions for a term. Returns the original term plus any expansions. */
+export async function expandWithSynonyms(term: string): Promise<string[]> {
+	const map = await getSynonymMap();
+	const expansions = map.get(term.toLowerCase());
+	return expansions ? [term, ...expansions] : [term];
+}
 
 // ─── Mappers ─────────────────────────────────────────────────────────────────
 
@@ -344,17 +369,18 @@ export async function searchCourses(params: CourseSearchParams) {
 		// Split query into words so "robotics loughborough" matches
 		// courses with "robotics" in title AND "loughborough" in university name
 		const words = q.trim().split(/\s+/).filter(Boolean);
-		if (words.length === 1) {
-			conditions.push(
-				sql`(${ilike(schema.courses.title, `%${words[0]}%`)} OR ${ilike(schema.universities.name, `%${words[0]}%`)})`
-			);
-		} else {
-			// Each word must appear in either the title or university name
-			for (const word of words) {
-				conditions.push(
-					sql`(${ilike(schema.courses.title, `%${word}%`)} OR ${ilike(schema.universities.name, `%${word}%`)})`
-				);
-			}
+
+		// Expand each word with synonyms (e.g. "drones" → ["drones", "aerial robotics"])
+		const expandedWords = await Promise.all(words.map((w) => expandWithSynonyms(w)));
+
+		for (const terms of expandedWords) {
+			// Each word (+ its synonyms) must match in title, summary, or university name
+			const wordConditions = terms.flatMap((t) => [
+				ilike(schema.courses.title, `%${t}%`),
+				ilike(schema.courses.summary, `%${t}%`),
+				ilike(schema.universities.name, `%${t}%`)
+			]);
+			conditions.push(sql`(${or(...wordConditions)})`);
 		}
 	}
 	if (university) conditions.push(eq(schema.universities.slug, university));

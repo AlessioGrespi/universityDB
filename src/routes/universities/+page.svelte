@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Badge from '$lib/components/Badge.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { navigating } from '$app/stores';
@@ -49,13 +50,10 @@
 	let isSearching = $derived(!!$navigating);
 </script>
 
-<svelte:head>
-	<title>Universities & Institutions | UniversityDB</title>
-	<meta
-		name="description"
-		content="Browse UK universities, colleges, and institutions with entry requirements, TEF ratings, and student counts."
-	/>
-</svelte:head>
+<Seo
+	title="UK Universities & Institutions — Browse {data.universities.length}+ Institutions"
+	description="Browse UK universities, colleges, and institutions. Compare TEF ratings, student counts, research output, and entry requirements. Find your perfect university."
+/>
 
 <div class="bg-gradient-to-b from-primary-50 to-white px-4 py-8 sm:py-12">
 	<div class="mx-auto max-w-7xl">

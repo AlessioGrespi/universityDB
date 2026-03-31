@@ -2,6 +2,7 @@
 	import SearchBar from '$lib/components/SearchBar.svelte';
 	import StatCard from '$lib/components/StatCard.svelte';
 	import UniversityCard from '$lib/components/UniversityCard.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 
 	let { data } = $props();
 
@@ -22,14 +23,49 @@
 	function formatCount(count: number): string {
 		return count.toLocaleString();
 	}
+
+	function jsonLdTag(data: Record<string, unknown>): string {
+		return `<script type="application/ld+json">${JSON.stringify(data)}<\/script>`;
+	}
+
+	let websiteJsonLd = $derived(
+		jsonLdTag({
+			'@context': 'https://schema.org',
+			'@type': 'WebSite',
+			name: 'UniversityDB',
+			description:
+				'UK university course directory. Compare entry requirements, graduate outcomes, and career prospects.',
+			potentialAction: {
+				'@type': 'SearchAction',
+				target: {
+					'@type': 'EntryPoint',
+					urlTemplate: '/courses?q={search_term_string}'
+				},
+				'query-input': 'required name=search_term_string'
+			}
+		})
+	);
+
+	let orgJsonLd = $derived(
+		jsonLdTag({
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'UniversityDB',
+			description: 'UK university course directory and comparison platform.',
+			url: '/'
+		})
+	);
 </script>
 
+<Seo
+	title="UniversityDB — Discover Your Perfect University Course"
+	description="Explore {data.stats.courses.toLocaleString()} courses across {data.stats
+		.universities} UK universities. Compare entry requirements, graduate outcomes, and career prospects to find your ideal degree."
+/>
+
 <svelte:head>
-	<title>UniversityDB - Discover Your Perfect University Course</title>
-	<meta
-		name="description"
-		content="Explore courses across UK universities. Compare entry requirements, graduate outcomes, and career prospects."
-	/>
+	{@html websiteJsonLd}
+	{@html orgJsonLd}
 </svelte:head>
 
 <!-- Hero Section -->

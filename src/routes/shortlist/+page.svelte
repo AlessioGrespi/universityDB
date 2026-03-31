@@ -2,12 +2,14 @@
 	import { shortlist, removeFromShortlist, clearShortlist } from '$lib/stores/shortlist';
 	import { compareList, toggleCompare, compareCount } from '$lib/stores/compare';
 	import Badge from '$lib/components/Badge.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 </script>
 
-<svelte:head>
-	<title>My Shortlist | UniversityDB</title>
-	<meta name="description" content="Your saved university courses shortlist on UniversityDB." />
-</svelte:head>
+<Seo
+	title="My Shortlist"
+	description="Your saved university courses shortlist on UniversityDB."
+	noindex={true}
+/>
 
 <div class="bg-gradient-to-b from-primary-50 to-white px-4 py-8 sm:py-12">
 	<div class="mx-auto max-w-7xl">

@@ -3,6 +3,7 @@
 	import Badge from '$lib/components/Badge.svelte';
 	import CourseCard from '$lib/components/CourseCard.svelte';
 	import StatCard from '$lib/components/StatCard.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 
 	let { data } = $props();
 
@@ -94,21 +95,82 @@
 	let showResearch = $derived(hasCredibleResearchData(university));
 	let hasStats = $derived(!!university.studentCount || showResearch || !!university.foundedYear);
 
+	let seoDescription = $derived(
+		`${university.name}${university.town ? ` in ${university.town}` : ''}, UK. ${university.studentCount ? `${university.studentCount.toLocaleString()} students. ` : ''}${university.tefRating ? `TEF ${university.tefRating}. ` : ''}Browse ${totalCourses} courses, entry requirements, and research output.`
+	);
+
 	function ensureUrl(url: string): string {
 		if (!url) return '#';
 		if (url.startsWith('http://') || url.startsWith('https://')) return url;
 		return 'https://' + url;
 	}
+
+	function jsonLdTag(data: Record<string, unknown>): string {
+		return `<script type="application/ld+json">${JSON.stringify(data)}<\/script>`;
+	}
+
+	let uniJsonLd = $derived(
+		jsonLdTag({
+			'@context': 'https://schema.org',
+			'@type': 'EducationalOrganization',
+			name: university.name,
+			url: university.website ? ensureUrl(university.website) : undefined,
+			logo: university.logoUrl || undefined,
+			description: aboutText.join(' '),
+			foundingDate: university.foundedYear ? String(university.foundedYear) : undefined,
+			address: {
+				'@type': 'PostalAddress',
+				streetAddress: university.address || undefined,
+				addressLocality: university.town || undefined,
+				postalCode: university.postcode || undefined,
+				addressCountry: 'GB'
+			},
+			...(university.lat && university.lng
+				? {
+						geo: {
+							'@type': 'GeoCoordinates',
+							latitude: university.lat,
+							longitude: university.lng
+						}
+					}
+				: {}),
+			...(university.contactEmail ? { email: university.contactEmail } : {}),
+			...(university.contactPhone ? { telephone: university.contactPhone } : {}),
+			...(university.tefRating
+				? {
+						hasCredential: {
+							'@type': 'EducationalOccupationalCredential',
+							credentialCategory: 'TEF Rating',
+							name: `Teaching Excellence Framework: ${university.tefRating}`
+						}
+					}
+				: {}),
+			numberOfStudents: university.studentCount || undefined
+		})
+	);
+
+	let breadcrumbJsonLd = $derived(
+		jsonLdTag({
+			'@context': 'https://schema.org',
+			'@type': 'BreadcrumbList',
+			itemListElement: [
+				{ '@type': 'ListItem', position: 1, name: 'Universities', item: '/universities' },
+				{ '@type': 'ListItem', position: 2, name: university.name }
+			]
+		})
+	);
 </script>
 
+<Seo
+	title="{university.name} — Courses, Entry Requirements & Stats"
+	description={seoDescription}
+	image={university.logoUrl || undefined}
+	imageAlt="{university.name} logo"
+/>
+
 <svelte:head>
-	<title>{university.name} — UniversityDB</title>
-	<meta
-		name="description"
-		content="{university.name} — {university.town
-			? university.town + ', '
-			: ''}UK. View courses, entry requirements, and research output."
-	/>
+	{@html uniJsonLd}
+	{@html breadcrumbJsonLd}
 </svelte:head>
 
 <!-- Hero / Header -->

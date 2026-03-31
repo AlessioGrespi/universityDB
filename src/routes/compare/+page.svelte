@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Badge from '$lib/components/Badge.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import { compareList, removeFromCompare, clearCompare } from '$lib/stores/compare';
 	import { goto } from '$app/navigation';
 
@@ -105,13 +106,11 @@
 	);
 </script>
 
-<svelte:head>
-	<title>Compare Courses | UniversityDB</title>
-	<meta
-		name="description"
-		content="Compare university courses side by side — entry requirements, graduate outcomes, and more."
-	/>
-</svelte:head>
+<Seo
+	title="Compare Courses Side by Side"
+	description="Compare university courses side by side — entry requirements, graduate outcomes, and more."
+	noindex={true}
+/>
 
 <div class="bg-gradient-to-b from-primary-50 to-white px-4 py-8 sm:py-12">
 	<div class="mx-auto max-w-7xl">

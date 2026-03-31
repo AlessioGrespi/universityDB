@@ -1,14 +1,12 @@
 <script lang="ts">
 	import { resetQuiz } from '$lib/stores/quiz';
+	import Seo from '$lib/components/Seo.svelte';
 </script>
 
-<svelte:head>
-	<title>Course Recommender Quiz | UniversityDB</title>
-	<meta
-		name="description"
-		content="Find your perfect university course in under 90 seconds. Our personalised quiz matches you with courses based on your interests, grades, and priorities."
-	/>
-</svelte:head>
+<Seo
+	title="Course Recommender Quiz — Find Your Perfect Degree"
+	description="Find your perfect university course in under 90 seconds. Our personalised quiz matches you with courses based on your interests, grades, and priorities."
+/>
 
 <div
 	class="mx-auto flex min-h-[calc(100vh-4rem)] max-w-3xl flex-col items-center justify-center px-4 py-16 text-center"

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Badge from '$lib/components/Badge.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { navigating } from '$app/stores';
@@ -107,13 +108,10 @@
 	let hasUcasFilter = $derived(!!myUcasPoints && !isNaN(parseInt(myUcasPoints, 10)));
 </script>
 
-<svelte:head>
-	<title>Courses | UniversityDB</title>
-	<meta
-		name="description"
-		content="Search and compare university courses across the UK. Filter by subject, qualification, and entry requirements."
-	/>
-</svelte:head>
+<Seo
+	title="Search {data.total.toLocaleString()} UK University Courses"
+	description="Search and compare {data.total.toLocaleString()} university courses across the UK. Filter by subject, qualification, study mode, and entry requirements. Compare graduate salaries and student satisfaction."
+/>
 
 <div class="bg-gradient-to-b from-primary-50 to-white px-4 py-8 sm:py-12">
 	<div class="mx-auto max-w-7xl">

@@ -29,7 +29,7 @@
 		<StepLocation />
 	{:else if step === 6}
 		<StepStudyMode />
-	<!-- Email step disabled — email sending not configured yet
+		<!-- Email step disabled — email sending not configured yet
 	{:else if step === 7}
 		<StepEmail />
 	-->

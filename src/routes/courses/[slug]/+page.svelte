@@ -2,6 +2,7 @@
 	import type { Course, University } from '$lib/types';
 	import Badge from '$lib/components/Badge.svelte';
 	import CourseCard from '$lib/components/CourseCard.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import { shortlist, toggleShortlist } from '$lib/stores/shortlist';
 	import { compareList, toggleCompare } from '$lib/stores/compare';
 
@@ -65,6 +66,10 @@
 	});
 	let hasMultipleOptions = $derived(uniqueOptions.length > 1);
 
+	let seoDescription = $derived(
+		`${displayQualification} in ${course.title} at ${course.universityName}. ${course.studyMode}${course.duration ? `, ${course.duration}` : ''}. ${course.entryRequirements.aLevel ? `Entry: ${course.entryRequirements.aLevel}. ` : ''}${course.averageGraduateSalary ? `Avg. graduate salary: \u00A3${course.averageGraduateSalary.toLocaleString('en-GB')}.` : ''}`
+	);
+
 	let courseUrl = $derived(
 		course.ucasCourseId
 			? `https://www.ucas.com/explore/search/providers/courses/${course.ucasCourseId}`
@@ -98,14 +103,73 @@
 			.replace(/\n- /g, '</p><li class="ml-4 list-disc">')
 			.replace(/\n\n/g, '</p><p>');
 	}
+
+	function jsonLdTag(data: Record<string, unknown>): string {
+		return `<script type="application/ld+json">${JSON.stringify(data)}<\/script>`;
+	}
+
+	let courseJsonLd = $derived(
+		jsonLdTag({
+			'@context': 'https://schema.org',
+			'@type': 'Course',
+			name: course.title,
+			description: course.description || seoDescription,
+			provider: {
+				'@type': 'EducationalOrganization',
+				name: course.universityName,
+				url: university ? ensureUrl(university.website) : undefined
+			},
+			educationalLevel: course.scheme,
+			educationalCredentialAwarded: displayQualification,
+			timeRequired: course.duration || undefined,
+			courseMode: course.studyMode || undefined,
+			...(course.subjects.length > 0
+				? { about: course.subjects.map((s) => ({ '@type': 'Thing', name: s })) }
+				: {}),
+			...(course.averageGraduateSalary
+				? {
+						occupationalCredentialAwarded: {
+							'@type': 'EducationalOccupationalCredential',
+							credentialCategory: displayQualification
+						},
+						hasCourseInstance: {
+							'@type': 'CourseInstance',
+							courseMode: course.studyMode,
+							courseWorkload: course.duration
+						}
+					}
+				: {}),
+			offers: {
+				'@type': 'Offer',
+				category: course.scheme,
+				availability: 'https://schema.org/InStock'
+			}
+		})
+	);
+
+	let breadcrumbJsonLd = $derived(
+		jsonLdTag({
+			'@context': 'https://schema.org',
+			'@type': 'BreadcrumbList',
+			itemListElement: [
+				{ '@type': 'ListItem', position: 1, name: 'Courses', item: '/courses' },
+				{
+					'@type': 'ListItem',
+					position: 2,
+					name: course.universityName,
+					item: `/universities/${course.universitySlug}`
+				},
+				{ '@type': 'ListItem', position: 3, name: course.title }
+			]
+		})
+	);
 </script>
 
+<Seo title="{course.title} at {course.universityName}" description={seoDescription} />
+
 <svelte:head>
-	<title>{course.title} at {course.universityName} | UniversityDB</title>
-	<meta
-		name="description"
-		content="{displayQualification} in {course.title} at {course.universityName}. {course.studyMode}, {course.duration}."
-	/>
+	{@html courseJsonLd}
+	{@html breadcrumbJsonLd}
 </svelte:head>
 
 <!-- Hero / Header -->

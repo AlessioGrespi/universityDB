@@ -1,95 +1,152 @@
 /**
  * Seed data for search synonyms.
  * Each pair is [term, expandsTo]. Bidirectional pairs have two entries.
+ *
+ * To add new synonyms, add pairs here and re-run: npx tsx scripts/seed-synonyms.ts
+ *
+ * For bulk import from HESA's HECoS vocabulary, see: scripts/build-synonyms.ts
  */
 export const synonymPairs: [string, string][] = [
-	// Bidirectional pairs — common abbreviations & colloquial terms
+	// ─── Aviation & Robotics ────────────────────────────────────────────────────
 	['drones', 'aerial robotics'],
 	['aerial robotics', 'drones'],
+	['drones', 'uav'],
+	['uav', 'drones'],
+	['drones', 'unmanned aerial vehicle'],
+	['unmanned aerial vehicle', 'drones'],
+	['robotics', 'mechatronics'],
+	['mechatronics', 'robotics'],
+	['robotics', 'autonomous systems'],
+	['autonomous systems', 'robotics'],
 
+	// ─── Computing & AI ─────────────────────────────────────────────────────────
 	['ai', 'artificial intelligence'],
 	['artificial intelligence', 'ai'],
-
 	['cs', 'computer science'],
 	['computer science', 'cs'],
 	['compsci', 'computer science'],
 	['computer science', 'compsci'],
-
 	['ml', 'machine learning'],
 	['machine learning', 'ml'],
-
 	['nlp', 'natural language processing'],
 	['natural language processing', 'nlp'],
+	['cv', 'computer vision'],
+	['computer vision', 'cv'],
+	['cyber security', 'cybersecurity'],
+	['cybersecurity', 'cyber security'],
+	['cyber security', 'information security'],
+	['information security', 'cyber security'],
+	['infosec', 'cyber security'],
+	['cyber security', 'infosec'],
+	['data science', 'data analytics'],
+	['data analytics', 'data science'],
+	['data science', 'big data'],
+	['big data', 'data science'],
+	['software engineering', 'software development'],
+	['software development', 'software engineering'],
+	['web development', 'web design'],
+	['web design', 'web development'],
+	['web dev', 'web development'],
+	['ux', 'user experience'],
+	['user experience', 'ux'],
+	['ux', 'ux design'],
+	['hci', 'human-computer interaction'],
+	['human-computer interaction', 'hci'],
+	['bioinformatics', 'computational biology'],
+	['computational biology', 'bioinformatics'],
+	['devops', 'software engineering'],
+	['programming', 'computer science'],
+	['coding', 'computer science'],
 
-	['stats', 'statistics'],
-	['statistics', 'stats'],
+	// ─── Engineering ────────────────────────────────────────────────────────────
+	['ee', 'electrical engineering'],
+	['electrical engineering', 'ee'],
+	['electrical engineering', 'electronics'],
+	['electronics', 'electrical engineering'],
+	['me', 'mechanical engineering'],
+	['mechanical engineering', 'me'],
+	['mech eng', 'mechanical engineering'],
+	['chem eng', 'chemical engineering'],
+	['civil eng', 'civil engineering'],
+	['aero', 'aerospace engineering'],
+	['aerospace engineering', 'aeronautical engineering'],
+	['aeronautical engineering', 'aerospace engineering'],
 
+	// ─── Science & Maths ────────────────────────────────────────────────────────
 	['maths', 'mathematics'],
 	['mathematics', 'maths'],
 	['math', 'mathematics'],
 	['mathematics', 'math'],
-
+	['stats', 'statistics'],
+	['statistics', 'stats'],
 	['bio', 'biology'],
 	['biology', 'bio'],
-
+	['biology', 'biological sciences'],
+	['biological sciences', 'biology'],
 	['chem', 'chemistry'],
 	['chemistry', 'chem'],
+	['biomed', 'biomedical science'],
+	['biomedical science', 'biomedical sciences'],
+	['biomedical sciences', 'biomedical science'],
+	['enviro', 'environmental science'],
+	['environmental science', 'environmental studies'],
+	['environmental studies', 'environmental science'],
+	['astro', 'astrophysics'],
+	['astrophysics', 'astronomy'],
+	['astronomy', 'astrophysics'],
 
+	// ─── Health & Medicine ──────────────────────────────────────────────────────
+	['physio', 'physiotherapy'],
+	['midwifery', 'midwife'],
+	['midwife', 'midwifery'],
+	['ot', 'occupational therapy'],
+	['slt', 'speech and language therapy'],
+	['speech therapy', 'speech and language therapy'],
+	['paramedic science', 'paramedicine'],
+	['paramedicine', 'paramedic science'],
+	['vet', 'veterinary'],
+	['pharma', 'pharmacy'],
+	['nursing', 'adult nursing'],
+	['nursing', 'mental health nursing'],
+
+	// ─── Business & Social Sciences ─────────────────────────────────────────────
 	['econ', 'economics'],
 	['economics', 'econ'],
-
+	['biz', 'business'],
+	['business', 'business management'],
+	['business management', 'business'],
+	['accounting', 'accountancy'],
+	['hr', 'human resource management'],
+	['human resource management', 'human resources'],
+	['human resources', 'human resource management'],
+	['ir', 'international relations'],
+	['international relations', 'ir'],
+	['ppe', 'philosophy politics and economics'],
+	['crim', 'criminology'],
 	['psych', 'psychology'],
 	['psychology', 'psych'],
-
+	['soc', 'sociology'],
 	['polisci', 'political science'],
 	['political science', 'polisci'],
 	['politics', 'political science'],
 	['political science', 'politics'],
-
-	['ee', 'electrical engineering'],
-	['electrical engineering', 'ee'],
-
-	['me', 'mechanical engineering'],
-	['mechanical engineering', 'me'],
-
-	['ux', 'user experience'],
-	['user experience', 'ux'],
-
-	['hci', 'human-computer interaction'],
-	['human-computer interaction', 'hci'],
-
-	['ir', 'international relations'],
-	['international relations', 'ir'],
-
-	['cv', 'computer vision'],
-	['computer vision', 'cv'],
-
-	['infosec', 'cyber security'],
-	['cyber security', 'infosec'],
-	['cybersecurity', 'cyber security'],
-	['cyber security', 'cybersecurity'],
-
-	['bioinformatics', 'computational biology'],
-	['computational biology', 'bioinformatics'],
-
-	['robotics', 'mechatronics'],
-	['mechatronics', 'robotics'],
-
-	// One-way expansions — colloquial to formal
-	['law', 'jurisprudence'],
-	['physio', 'physiotherapy'],
-	['vet', 'veterinary'],
-	['pharma', 'pharmacy'],
-	['arch', 'architecture'],
-	['enviro', 'environmental science'],
-	['astro', 'astrophysics'],
-	['biz', 'business'],
-	['accounting', 'accountancy'],
-	['data science', 'data analytics'],
-	['devops', 'software engineering'],
-	['programming', 'computer science'],
-	['coding', 'computer science'],
 	['finance', 'financial mathematics'],
+
+	// ─── Arts & Humanities ──────────────────────────────────────────────────────
+	['eng lit', 'english literature'],
+	['film', 'film studies'],
+	['film studies', 'filmmaking'],
+	['filmmaking', 'film production'],
+	['fine art', 'visual arts'],
+	['visual arts', 'fine art'],
+	['graphic design', 'visual communication'],
+	['visual communication', 'graphic design'],
+	['arch', 'architecture'],
+	['langs', 'modern languages'],
+	['modern languages', 'modern foreign languages'],
+
+	// ─── Other ──────────────────────────────────────────────────────────────────
+	['law', 'jurisprudence'],
 	['games', 'game design'],
 	['animation', 'computer animation'],
 	['forensics', 'forensic science']

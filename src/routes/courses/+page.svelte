@@ -106,6 +106,18 @@
 	let totalPages = $derived(Math.ceil(data.total / data.limit));
 	let isSearching = $derived(!!$navigating);
 	let hasUcasFilter = $derived(!!myUcasPoints && !isNaN(parseInt(myUcasPoints, 10)));
+
+	let filtersOpen = $state(false);
+	let activeFilterCount = $derived(
+		[
+			data.filters.subject,
+			data.filters.qualification,
+			data.filters.studyMode,
+			data.filters.scheme,
+			data.filters.sort,
+			myUcasPoints.trim() || undefined
+		].filter(Boolean).length
+	);
 </script>
 
 <Seo
@@ -124,7 +136,8 @@
 
 <div class="sticky top-16 z-40 border-b border-surface-200 bg-white/80 backdrop-blur-md">
 	<div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
-		<div class="flex flex-col flex-wrap items-start gap-2 sm:flex-row sm:items-center">
+		<!-- Always-visible row: search + filter toggle + spinner -->
+		<div class="flex flex-wrap items-center gap-2">
 			<div class="relative w-full sm:max-w-xs">
 				<svg
 					class="pointer-events-none absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-surface-400"
@@ -144,68 +157,94 @@
 				/>
 			</div>
 
-			<select
-				value={data.filters.subject ?? ''}
-				onchange={(e) => handleFilterChange('subject', (e.target as HTMLSelectElement).value)}
-				class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+			<!-- Mobile filter toggle button -->
+			<button
+				onclick={() => (filtersOpen = !filtersOpen)}
+				class="flex items-center gap-1.5 rounded-lg border border-surface-300 bg-white px-3 py-2 text-sm text-surface-700 transition-all hover:bg-surface-50 sm:hidden"
 			>
-				<option value="">All Subjects</option>
-				{#each data.filterOptions.subjects as subject}
-					<option value={subject.slug}>{subject.name}</option>
-				{/each}
-			</select>
+				<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+					/>
+				</svg>
+				Filters
+				{#if activeFilterCount > 0}
+					<span
+						class="flex h-5 w-5 items-center justify-center rounded-full bg-primary-600 text-xs font-medium text-white"
+					>
+						{activeFilterCount}
+					</span>
+				{/if}
+			</button>
 
-			<select
-				value={data.filters.qualification ?? ''}
-				onchange={(e) => handleFilterChange('qualification', (e.target as HTMLSelectElement).value)}
-				class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-			>
-				<option value="">All Qualifications</option>
-				{#each data.filterOptions.qualifications as qualification}
-					<option value={qualification}>{qualification}</option>
-				{/each}
-			</select>
+			<!-- Desktop: inline filters (hidden on mobile, shown on sm+) -->
+			<div class="hidden flex-wrap items-center gap-2 sm:flex">
+				<select
+					value={data.filters.subject ?? ''}
+					onchange={(e) => handleFilterChange('subject', (e.target as HTMLSelectElement).value)}
+					class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+				>
+					<option value="">All Subjects</option>
+					{#each data.filterOptions.subjects as subject}
+						<option value={subject.slug}>{subject.name}</option>
+					{/each}
+				</select>
 
-			<select
-				value={data.filters.studyMode ?? ''}
-				onchange={(e) => handleFilterChange('studyMode', (e.target as HTMLSelectElement).value)}
-				class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-			>
-				<option value="">All Study Modes</option>
-				<option value="Full-time">Full-time</option>
-				<option value="Part-time">Part-time</option>
-			</select>
+				<select
+					value={data.filters.qualification ?? ''}
+					onchange={(e) =>
+						handleFilterChange('qualification', (e.target as HTMLSelectElement).value)}
+					class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+				>
+					<option value="">All Qualifications</option>
+					{#each data.filterOptions.qualifications as qualification}
+						<option value={qualification}>{qualification}</option>
+					{/each}
+				</select>
 
-			<select
-				value={data.filters.scheme ?? ''}
-				onchange={(e) => handleFilterChange('scheme', (e.target as HTMLSelectElement).value)}
-				class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-			>
-				<option value="">All Schemes</option>
-				<option value="Undergraduate">Undergraduate</option>
-				<option value="Postgraduate">Postgraduate</option>
-			</select>
+				<select
+					value={data.filters.studyMode ?? ''}
+					onchange={(e) => handleFilterChange('studyMode', (e.target as HTMLSelectElement).value)}
+					class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+				>
+					<option value="">All Study Modes</option>
+					<option value="Full-time">Full-time</option>
+					<option value="Part-time">Part-time</option>
+				</select>
 
-			<select
-				value={data.filters.sort ?? ''}
-				onchange={(e) => handleFilterChange('sort', (e.target as HTMLSelectElement).value)}
-				class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-			>
-				<option value="">Sort: A-Z</option>
-				<option value="university">Sort: University</option>
-			</select>
+				<select
+					value={data.filters.scheme ?? ''}
+					onchange={(e) => handleFilterChange('scheme', (e.target as HTMLSelectElement).value)}
+					class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+				>
+					<option value="">All Schemes</option>
+					<option value="Undergraduate">Undergraduate</option>
+					<option value="Postgraduate">Postgraduate</option>
+				</select>
 
-			<div class="relative">
-				<input
-					type="number"
-					placeholder="My UCAS points"
-					bind:value={myUcasPoints}
-					oninput={handleUcasInput}
-					min="0"
-					max="168"
-					class="w-36 appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 text-sm text-surface-700 transition-all outline-none placeholder:text-surface-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20
-						{hasUcasFilter ? 'border-primary-400 ring-1 ring-primary-200' : ''}"
-				/>
+				<select
+					value={data.filters.sort ?? ''}
+					onchange={(e) => handleFilterChange('sort', (e.target as HTMLSelectElement).value)}
+					class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+				>
+					<option value="">Sort: A-Z</option>
+					<option value="university">Sort: University</option>
+				</select>
+
+				<div class="relative">
+					<input
+						type="number"
+						placeholder="My UCAS points"
+						bind:value={myUcasPoints}
+						oninput={handleUcasInput}
+						min="0"
+						max="168"
+						class="w-36 appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 text-sm text-surface-700 transition-all outline-none placeholder:text-surface-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20
+							{hasUcasFilter ? 'border-primary-400 ring-1 ring-primary-200' : ''}"
+					/>
+				</div>
 			</div>
 
 			{#if isSearching}
@@ -215,6 +254,84 @@
 					></div>
 				</div>
 			{/if}
+		</div>
+
+		<!-- Mobile: collapsible filter drawer -->
+		<div
+			class="grid transition-[grid-template-rows] duration-200 ease-in-out sm:hidden"
+			style="grid-template-rows: {filtersOpen ? '1fr' : '0fr'}"
+		>
+			<div class="overflow-hidden">
+				<div class="flex flex-col gap-2 pt-2">
+					<select
+						value={data.filters.subject ?? ''}
+						onchange={(e) => handleFilterChange('subject', (e.target as HTMLSelectElement).value)}
+						class="w-full cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+					>
+						<option value="">All Subjects</option>
+						{#each data.filterOptions.subjects as subject}
+							<option value={subject.slug}>{subject.name}</option>
+						{/each}
+					</select>
+
+					<select
+						value={data.filters.qualification ?? ''}
+						onchange={(e) =>
+							handleFilterChange('qualification', (e.target as HTMLSelectElement).value)}
+						class="w-full cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+					>
+						<option value="">All Qualifications</option>
+						{#each data.filterOptions.qualifications as qualification}
+							<option value={qualification}>{qualification}</option>
+						{/each}
+					</select>
+
+					<div class="grid grid-cols-2 gap-2">
+						<select
+							value={data.filters.studyMode ?? ''}
+							onchange={(e) =>
+								handleFilterChange('studyMode', (e.target as HTMLSelectElement).value)}
+							class="w-full cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+						>
+							<option value="">All Study Modes</option>
+							<option value="Full-time">Full-time</option>
+							<option value="Part-time">Part-time</option>
+						</select>
+
+						<select
+							value={data.filters.scheme ?? ''}
+							onchange={(e) => handleFilterChange('scheme', (e.target as HTMLSelectElement).value)}
+							class="w-full cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+						>
+							<option value="">All Schemes</option>
+							<option value="Undergraduate">Undergraduate</option>
+							<option value="Postgraduate">Postgraduate</option>
+						</select>
+					</div>
+
+					<div class="grid grid-cols-2 gap-2">
+						<select
+							value={data.filters.sort ?? ''}
+							onchange={(e) => handleFilterChange('sort', (e.target as HTMLSelectElement).value)}
+							class="w-full cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+						>
+							<option value="">Sort: A-Z</option>
+							<option value="university">Sort: University</option>
+						</select>
+
+						<input
+							type="number"
+							placeholder="My UCAS points"
+							bind:value={myUcasPoints}
+							oninput={handleUcasInput}
+							min="0"
+							max="168"
+							class="w-full appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 text-sm text-surface-700 transition-all outline-none placeholder:text-surface-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20
+								{hasUcasFilter ? 'border-primary-400 ring-1 ring-primary-200' : ''}"
+						/>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

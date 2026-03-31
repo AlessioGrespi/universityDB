@@ -48,6 +48,17 @@
 	}
 
 	let isSearching = $derived(!!$navigating);
+
+	let filtersOpen = $state(false);
+	let activeFilterCount = $derived(
+		[
+			data.filters.type,
+			data.filters.tef,
+			data.filters.group,
+			data.filters.region,
+			data.filters.sort
+		].filter(Boolean).length
+	);
 </script>
 
 <Seo
@@ -72,7 +83,8 @@
 
 <div class="sticky top-16 z-40 border-b border-surface-200 bg-white/80 backdrop-blur-md">
 	<div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
-		<div class="flex flex-col flex-wrap items-start gap-2 sm:flex-row sm:items-center">
+		<!-- Always-visible row: search + filter toggle + spinner -->
+		<div class="flex flex-wrap items-center gap-2">
 			<div class="relative w-full sm:max-w-xs">
 				<svg
 					class="pointer-events-none absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-surface-400"
@@ -92,60 +104,85 @@
 				/>
 			</div>
 
-			<select
-				value={data.filters.type ?? ''}
-				onchange={(e) => handleFilterChange('type', (e.target as HTMLSelectElement).value)}
-				class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+			<!-- Mobile filter toggle button -->
+			<button
+				onclick={() => (filtersOpen = !filtersOpen)}
+				class="flex items-center gap-1.5 rounded-lg border border-surface-300 bg-white px-3 py-2 text-sm text-surface-700 transition-all hover:bg-surface-50 sm:hidden"
 			>
-				<option value="">All Types</option>
-				<option value="university">Universities</option>
-				<option value="college">Colleges</option>
-				<option value="conservatoire">Conservatoires</option>
-				<option value="other">Other</option>
-			</select>
+				<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+					/>
+				</svg>
+				Filters
+				{#if activeFilterCount > 0}
+					<span
+						class="flex h-5 w-5 items-center justify-center rounded-full bg-primary-600 text-xs font-medium text-white"
+					>
+						{activeFilterCount}
+					</span>
+				{/if}
+			</button>
 
-			<select
-				value={data.filters.tef ?? ''}
-				onchange={(e) => handleFilterChange('tef', (e.target as HTMLSelectElement).value)}
-				class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-			>
-				<option value="">All TEF Ratings</option>
-				<option value="Gold">Gold</option>
-				<option value="Silver">Silver</option>
-				<option value="Bronze">Bronze</option>
-			</select>
+			<!-- Desktop: inline filters (hidden on mobile, shown on sm+) -->
+			<div class="hidden flex-wrap items-center gap-2 sm:flex">
+				<select
+					value={data.filters.type ?? ''}
+					onchange={(e) => handleFilterChange('type', (e.target as HTMLSelectElement).value)}
+					class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+				>
+					<option value="">All Types</option>
+					<option value="university">Universities</option>
+					<option value="college">Colleges</option>
+					<option value="conservatoire">Conservatoires</option>
+					<option value="other">Other</option>
+				</select>
 
-			<select
-				value={data.filters.group ?? ''}
-				onchange={(e) => handleFilterChange('group', (e.target as HTMLSelectElement).value)}
-				class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-			>
-				<option value="">All Groups</option>
-				<option value="Russell Group">Russell Group</option>
-				<option value="University Alliance">University Alliance</option>
-			</select>
+				<select
+					value={data.filters.tef ?? ''}
+					onchange={(e) => handleFilterChange('tef', (e.target as HTMLSelectElement).value)}
+					class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+				>
+					<option value="">All TEF Ratings</option>
+					<option value="Gold">Gold</option>
+					<option value="Silver">Silver</option>
+					<option value="Bronze">Bronze</option>
+				</select>
 
-			<select
-				value={data.filters.region ?? ''}
-				onchange={(e) => handleFilterChange('region', (e.target as HTMLSelectElement).value)}
-				class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-			>
-				<option value="">All Regions</option>
-				{#each data.filterOptions.regions as region}
-					<option value={region}>{region}</option>
-				{/each}
-			</select>
+				<select
+					value={data.filters.group ?? ''}
+					onchange={(e) => handleFilterChange('group', (e.target as HTMLSelectElement).value)}
+					class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+				>
+					<option value="">All Groups</option>
+					<option value="Russell Group">Russell Group</option>
+					<option value="University Alliance">University Alliance</option>
+				</select>
 
-			<select
-				value={data.filters.sort ?? ''}
-				onchange={(e) => handleFilterChange('sort', (e.target as HTMLSelectElement).value)}
-				class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-			>
-				<option value="">Sort: A-Z</option>
-				<option value="students">Sort: Most Students</option>
-				<option value="founded">Sort: Oldest First</option>
-				<option value="research">Sort: Most Cited</option>
-			</select>
+				<select
+					value={data.filters.region ?? ''}
+					onchange={(e) => handleFilterChange('region', (e.target as HTMLSelectElement).value)}
+					class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+				>
+					<option value="">All Regions</option>
+					{#each data.filterOptions.regions as region}
+						<option value={region}>{region}</option>
+					{/each}
+				</select>
+
+				<select
+					value={data.filters.sort ?? ''}
+					onchange={(e) => handleFilterChange('sort', (e.target as HTMLSelectElement).value)}
+					class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+				>
+					<option value="">Sort: A-Z</option>
+					<option value="students">Sort: Most Students</option>
+					<option value="founded">Sort: Oldest First</option>
+					<option value="research">Sort: Most Cited</option>
+				</select>
+			</div>
 
 			{#if isSearching}
 				<div class="flex items-center gap-2 text-sm text-surface-400">
@@ -154,6 +191,75 @@
 					></div>
 				</div>
 			{/if}
+		</div>
+
+		<!-- Mobile: collapsible filter drawer -->
+		<div
+			class="grid transition-[grid-template-rows] duration-200 ease-in-out sm:hidden"
+			style="grid-template-rows: {filtersOpen ? '1fr' : '0fr'}"
+		>
+			<div class="overflow-hidden">
+				<div class="flex flex-col gap-2 pt-2">
+					<div class="grid grid-cols-2 gap-2">
+						<select
+							value={data.filters.type ?? ''}
+							onchange={(e) => handleFilterChange('type', (e.target as HTMLSelectElement).value)}
+							class="w-full cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+						>
+							<option value="">All Types</option>
+							<option value="university">Universities</option>
+							<option value="college">Colleges</option>
+							<option value="conservatoire">Conservatoires</option>
+							<option value="other">Other</option>
+						</select>
+
+						<select
+							value={data.filters.tef ?? ''}
+							onchange={(e) => handleFilterChange('tef', (e.target as HTMLSelectElement).value)}
+							class="w-full cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+						>
+							<option value="">All TEF Ratings</option>
+							<option value="Gold">Gold</option>
+							<option value="Silver">Silver</option>
+							<option value="Bronze">Bronze</option>
+						</select>
+					</div>
+
+					<div class="grid grid-cols-2 gap-2">
+						<select
+							value={data.filters.group ?? ''}
+							onchange={(e) => handleFilterChange('group', (e.target as HTMLSelectElement).value)}
+							class="w-full cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+						>
+							<option value="">All Groups</option>
+							<option value="Russell Group">Russell Group</option>
+							<option value="University Alliance">University Alliance</option>
+						</select>
+
+						<select
+							value={data.filters.region ?? ''}
+							onchange={(e) => handleFilterChange('region', (e.target as HTMLSelectElement).value)}
+							class="w-full cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+						>
+							<option value="">All Regions</option>
+							{#each data.filterOptions.regions as region}
+								<option value={region}>{region}</option>
+							{/each}
+						</select>
+					</div>
+
+					<select
+						value={data.filters.sort ?? ''}
+						onchange={(e) => handleFilterChange('sort', (e.target as HTMLSelectElement).value)}
+						class="w-full cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+					>
+						<option value="">Sort: A-Z</option>
+						<option value="students">Sort: Most Students</option>
+						<option value="founded">Sort: Oldest First</option>
+						<option value="research">Sort: Most Cited</option>
+					</select>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

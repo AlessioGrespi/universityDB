@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { page } from '$app/state';
+	import { BASE_URL } from '$lib/config';
+
 	interface Props {
 		title: string;
 		description: string;
@@ -23,15 +26,14 @@
 	}: Props = $props();
 
 	let fullTitle = $derived(title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`);
+	let resolvedCanonical = $derived(canonical || `${BASE_URL}${page.url.pathname}`);
 </script>
 
 <svelte:head>
 	<title>{fullTitle}</title>
 	<meta name="description" content={description} />
 
-	{#if canonical}
-		<link rel="canonical" href={canonical} />
-	{/if}
+	<link rel="canonical" href={resolvedCanonical} />
 
 	{#if noindex}
 		<meta name="robots" content="noindex, nofollow" />
@@ -44,9 +46,7 @@
 	<meta property="og:site_name" content={SITE_NAME} />
 	<meta property="og:image" content={image} />
 	<meta property="og:image:alt" content={imageAlt} />
-	{#if canonical}
-		<meta property="og:url" content={canonical} />
-	{/if}
+	<meta property="og:url" content={resolvedCanonical} />
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />

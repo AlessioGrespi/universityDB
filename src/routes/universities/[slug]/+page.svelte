@@ -1,9 +1,11 @@
 <script lang="ts">
 	import type { University, Course } from '$lib/types';
 	import Badge from '$lib/components/Badge.svelte';
+	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import CourseCard from '$lib/components/CourseCard.svelte';
 	import StatCard from '$lib/components/StatCard.svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import { BASE_URL } from '$lib/config';
 
 	let { data } = $props();
 
@@ -149,16 +151,10 @@
 		})
 	);
 
-	let breadcrumbJsonLd = $derived(
-		jsonLdTag({
-			'@context': 'https://schema.org',
-			'@type': 'BreadcrumbList',
-			itemListElement: [
-				{ '@type': 'ListItem', position: 1, name: 'Universities', item: '/universities' },
-				{ '@type': 'ListItem', position: 2, name: university.name }
-			]
-		})
-	);
+	let breadcrumbItems = $derived([
+		{ name: 'Universities', href: '/universities' },
+		{ name: university.name }
+	]);
 </script>
 
 <Seo
@@ -170,18 +166,12 @@
 
 <svelte:head>
 	{@html uniJsonLd}
-	{@html breadcrumbJsonLd}
 </svelte:head>
 
 <!-- Hero / Header -->
 <section class="bg-gradient-to-b from-primary-50 to-white">
 	<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-		<!-- Breadcrumb -->
-		<nav class="text-sm text-surface-400">
-			<a href="/universities" class="text-primary-600 hover:text-primary-700">Universities</a>
-			<span class="mx-1">/</span>
-			<span>{university.name}</span>
-		</nav>
+		<Breadcrumb items={breadcrumbItems} />
 
 		<!-- University header -->
 		<div class="mt-6 flex items-start gap-6">

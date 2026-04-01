@@ -1,8 +1,10 @@
 <script lang="ts">
 	import type { Course, University } from '$lib/types';
 	import Badge from '$lib/components/Badge.svelte';
+	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import CourseCard from '$lib/components/CourseCard.svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import { BASE_URL } from '$lib/config';
 	import { shortlist, toggleShortlist } from '$lib/stores/shortlist';
 	import { compareList, toggleCompare } from '$lib/stores/compare';
 
@@ -116,6 +118,8 @@
 			'@type': 'Course',
 			name: course.title,
 			description: course.description || seoDescription,
+			url: `${BASE_URL}/courses/${course.slug}`,
+			inLanguage: 'en',
 			provider: {
 				'@type': 'EducationalOrganization',
 				name: course.universityName,
@@ -149,47 +153,23 @@
 		})
 	);
 
-	let breadcrumbJsonLd = $derived(
-		jsonLdTag({
-			'@context': 'https://schema.org',
-			'@type': 'BreadcrumbList',
-			itemListElement: [
-				{ '@type': 'ListItem', position: 1, name: 'Courses', item: '/courses' },
-				{
-					'@type': 'ListItem',
-					position: 2,
-					name: course.universityName,
-					item: `/universities/${course.universitySlug}`
-				},
-				{ '@type': 'ListItem', position: 3, name: course.title }
-			]
-		})
-	);
+	let breadcrumbItems = $derived([
+		{ name: 'Courses', href: '/courses' },
+		{ name: course.universityName, href: `/universities/${course.universitySlug}` },
+		{ name: course.title }
+	]);
 </script>
 
-<Seo title="{course.title} at {course.universityName}" description={seoDescription} />
+<Seo title="{displayQualification} {course.title} at {course.universityName}" description={seoDescription} />
 
 <svelte:head>
 	{@html courseJsonLd}
-	{@html breadcrumbJsonLd}
 </svelte:head>
 
 <!-- Hero / Header -->
 <section class="bg-gradient-to-b from-primary-50 to-white">
 	<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-		<!-- Breadcrumb -->
-		<nav class="text-sm text-surface-400">
-			<a href="/courses" class="text-primary-600 transition-colors hover:text-primary-700"
-				>Courses</a
-			>
-			<span class="mx-1">/</span>
-			<a
-				href="/universities/{course.universitySlug}"
-				class="text-primary-600 transition-colors hover:text-primary-700">{course.universityName}</a
-			>
-			<span class="mx-1">/</span>
-			<span class="text-surface-600">{course.title}</span>
-		</nav>
+		<Breadcrumb items={breadcrumbItems} />
 
 		<!-- Title -->
 		<h1 class="mt-4 text-3xl font-bold text-surface-900 sm:text-4xl">

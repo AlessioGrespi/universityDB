@@ -5,4 +5,4 @@ Disallow: /compare
 Disallow: /shortlist
 Disallow: /api/
 
-Sitemap: /sitemap.xml
+Sitemap: https://universitydb.io/sitemap.xml

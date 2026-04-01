@@ -3,6 +3,7 @@
 	import StatCard from '$lib/components/StatCard.svelte';
 	import UniversityCard from '$lib/components/UniversityCard.svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import { BASE_URL } from '$lib/config';
 
 	let { data } = $props();
 
@@ -33,13 +34,14 @@
 			'@context': 'https://schema.org',
 			'@type': 'WebSite',
 			name: 'UniversityDB',
+			url: BASE_URL,
 			description:
 				'UK university course directory. Compare entry requirements, graduate outcomes, and career prospects.',
 			potentialAction: {
 				'@type': 'SearchAction',
 				target: {
 					'@type': 'EntryPoint',
-					urlTemplate: '/courses?q={search_term_string}'
+					urlTemplate: `${BASE_URL}/courses?q={search_term_string}`
 				},
 				'query-input': 'required name=search_term_string'
 			}
@@ -52,7 +54,7 @@
 			'@type': 'Organization',
 			name: 'UniversityDB',
 			description: 'UK university course directory and comparison platform.',
-			url: '/'
+			url: BASE_URL
 		})
 	);
 </script>
@@ -95,7 +97,7 @@
 		<div class="mt-4 flex flex-wrap justify-center gap-2">
 			{#each data.popularSubjects as subject}
 				<a
-					href="/courses?subject={subject.slug}"
+					href="/subjects/{subject.slug}"
 					class="cursor-pointer rounded-full border border-surface-200 px-3 py-1.5 text-sm text-surface-600 transition-all hover:border-primary-300 hover:bg-primary-50 hover:text-primary-600"
 				>
 					{subject.name}
@@ -184,7 +186,7 @@
 		<div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
 			{#each data.popularSubjects as subject}
 				<a
-					href="/courses?subject={subject.slug}"
+					href="/subjects/{subject.slug}"
 					class="group relative rounded-card border border-surface-200 bg-white p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-card-hover"
 				>
 					<span

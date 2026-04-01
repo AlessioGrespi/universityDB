@@ -715,6 +715,86 @@ function formatCount(n: number): string {
 	return n.toLocaleString('en-GB');
 }
 
+export async function getSubjectBySlug(slug: string) {
+	const rows = await db
+		.select({
+			id: schema.subjects.id,
+			name: schema.subjects.name,
+			slug: schema.subjects.slug,
+			courseCount: count(schema.courseSubjects.courseId)
+		})
+		.from(schema.subjects)
+		.leftJoin(schema.courseSubjects, eq(schema.subjects.id, schema.courseSubjects.subjectId))
+		.where(eq(schema.subjects.slug, slug))
+		.groupBy(schema.subjects.id, schema.subjects.name, schema.subjects.slug);
+
+	if (rows.length === 0) return null;
+	return rows[0];
+}
+
+export async function getAllSubjectsWithCounts() {
+	const rows = await db
+		.select({
+			name: schema.subjects.name,
+			slug: schema.subjects.slug,
+			courseCount: count(schema.courseSubjects.courseId)
+		})
+		.from(schema.subjects)
+		.innerJoin(schema.courseSubjects, eq(schema.subjects.id, schema.courseSubjects.subjectId))
+		.groupBy(schema.subjects.id, schema.subjects.name, schema.subjects.slug)
+		.orderBy(asc(schema.subjects.name));
+
+	return rows;
+}
+
+export async function getTopUniversitiesForSubject(subjectSlug: string, limit = 6) {
+	const rows = await db
+		.select({
+			name: schema.universities.name,
+			slug: schema.universities.slug,
+			town: schema.universities.town,
+			tefRating: schema.universities.tefRating,
+			courseCount: count(schema.courses.id)
+		})
+		.from(schema.universities)
+		.innerJoin(schema.courses, eq(schema.universities.id, schema.courses.universityId))
+		.innerJoin(schema.courseSubjects, eq(schema.courses.id, schema.courseSubjects.courseId))
+		.innerJoin(schema.subjects, eq(schema.courseSubjects.subjectId, schema.subjects.id))
+		.where(eq(schema.subjects.slug, subjectSlug))
+		.groupBy(
+			schema.universities.id,
+			schema.universities.name,
+			schema.universities.slug,
+			schema.universities.town,
+			schema.universities.tefRating
+		)
+		.orderBy(desc(count(schema.courses.id)))
+		.limit(limit);
+
+	return rows;
+}
+
+export async function getRelatedSubjects(subjectSlug: string, limit = 8) {
+	// Find subjects that share courses with the given subject
+	const rows = await db.execute<{
+		name: string;
+		slug: string;
+		course_count: number;
+	}>(sql`
+		SELECT s2.name, s2.slug, COUNT(DISTINCT cs2.course_id)::int AS course_count
+		FROM subjects s1
+		INNER JOIN course_subjects cs1 ON s1.id = cs1.subject_id
+		INNER JOIN course_subjects cs2 ON cs1.course_id = cs2.course_id AND cs2.subject_id != s1.id
+		INNER JOIN subjects s2 ON cs2.subject_id = s2.id
+		WHERE s1.slug = ${subjectSlug}
+		GROUP BY s2.id, s2.name, s2.slug
+		ORDER BY course_count DESC
+		LIMIT ${limit}
+	`);
+
+	return [...rows] as Array<{ name: string; slug: string; course_count: number }>;
+}
+
 export async function getPopularSubjects(limit = 8) {
 	const rows = await db
 		.select({

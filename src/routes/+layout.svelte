@@ -8,12 +8,13 @@
 	import { browser } from '$app/environment';
 	import { afterNavigate } from '$app/navigation';
 	import posthog from 'posthog-js';
+	import { env } from '$env/dynamic/public';
 
 	let { children } = $props();
 
 	if (browser) {
-		posthog.init(import.meta.env.PUBLIC_POSTHOG_KEY, {
-			api_host: import.meta.env.PUBLIC_POSTHOG_HOST,
+		posthog.init(env.PUBLIC_POSTHOG_KEY!, {
+			api_host: env.PUBLIC_POSTHOG_HOST,
 			capture_pageview: false,
 			capture_pageleave: true,
 			person_profiles: 'identified_only'

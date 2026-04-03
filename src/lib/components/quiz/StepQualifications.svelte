@@ -20,7 +20,9 @@
 		152: '152 (AAC)',
 		160: '160 (AAB)',
 		168: '168 (AAA)',
-		176: '176 (A*AA)'
+		176: '176 (A*AA)',
+		184: '184 (A*A*A)',
+		192: '192 (A*A*A*)'
 	};
 
 	const degreeOptions = [
@@ -80,15 +82,15 @@
 			<input
 				type="range"
 				min="48"
-				max="176"
+				max="192"
 				step="8"
 				bind:value={ucasValue}
 				class="w-full accent-primary-600"
 			/>
 			<div class="mt-2 flex justify-between text-xs text-surface-400">
 				<span>48</span>
-				<span>112</span>
-				<span>176</span>
+				<span>120</span>
+				<span>192</span>
 			</div>
 		</div>
 	{:else}

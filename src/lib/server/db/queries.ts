@@ -992,8 +992,9 @@ export async function getQuizResults(answers: QuizAnswers): Promise<ScoredCourse
 			if (reqPoints === null) return true; // no requirement = include
 			return answers.ucasPoints! + 16 >= reqPoints; // allow stretch
 		});
-		// If too few results after filtering, fall back to all candidates
-		if (eligibleCandidates.length < 5) eligibleCandidates = candidates;
+		// Only fall back if zero results (not just < 5) to avoid
+		// recommending courses far below the user's level
+		if (eligibleCandidates.length === 0) eligibleCandidates = candidates;
 	}
 
 	// Phase 2: Score and rank
@@ -1153,7 +1154,19 @@ export async function getQuizResults(answers: QuizAnswers): Promise<ScoredCourse
 	// Sort by match score descending
 	scored.sort((a, b) => b.matchScore - a.matchScore);
 
-	return scored.slice(0, 20);
+	// Cap results per university to avoid e.g. 8 Imperial CS variants flooding the list
+	const MAX_PER_UNI = 3;
+	const uniCounts = new Map<string, number>();
+	const capped: ScoredCourse[] = [];
+	for (const course of scored) {
+		const count = uniCounts.get(course.universitySlug) ?? 0;
+		if (count >= MAX_PER_UNI) continue;
+		uniCounts.set(course.universitySlug, count + 1);
+		capped.push(course);
+		if (capped.length >= 20) break;
+	}
+
+	return capped;
 }
 
 export async function saveQuizSubmission(

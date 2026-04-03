@@ -15,6 +15,21 @@ import type {
 import { getCahPrefixesForClusters } from '$lib/data/subject-clusters';
 import { regions as regionData, distanceMiles } from '$lib/data/regions';
 
+// ─── Simple TTL cache ────────────────────────────────────────────────────────
+
+function cached<T>(fn: () => Promise<T>, ttlMs: number): () => Promise<T> {
+	let value: T | undefined;
+	let expiresAt = 0;
+	return async () => {
+		if (Date.now() < expiresAt && value !== undefined) return value;
+		value = await fn();
+		expiresAt = Date.now() + ttlMs;
+		return value;
+	};
+}
+
+const FIVE_MINUTES = 5 * 60 * 1000;
+
 /** In-memory synonym map, loaded once from DB. Keys are lowercase terms. */
 let synonymMap: Map<string, string[]> | null = null;
 
@@ -302,15 +317,19 @@ export async function getUniversityBySlug(slug: string) {
 	return row ? mapUniversity(row) : null;
 }
 
-export async function getFeaturedUniversities(limit = 6) {
+const _getFeaturedUniversities = cached(async () => {
 	const rows = await db
 		.select()
 		.from(schema.universities)
 		.where(sql`${schema.universities.studentCount} IS NOT NULL`)
 		.orderBy(desc(schema.universities.studentCount))
-		.limit(limit);
+		.limit(6);
 
 	return rows.map(mapUniversity);
+}, FIVE_MINUTES);
+
+export async function getFeaturedUniversities(_limit = 6) {
+	return _getFeaturedUniversities();
 }
 
 export async function getCourses(limit = 100) {
@@ -679,7 +698,7 @@ export async function getRelatedCourses(
 	);
 }
 
-export async function getStats() {
+export const getStats = cached(async () => {
 	const [
 		[uniCount],
 		[totalInstitutions],
@@ -707,7 +726,7 @@ export async function getStats() {
 		researchProjects: formatCount(projectCount?.value ?? 0),
 		subjects: formatCount(subjectCount?.value ?? 0)
 	};
-}
+}, FIVE_MINUTES);
 
 function formatCount(n: number): string {
 	if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M+`;
@@ -795,7 +814,7 @@ export async function getRelatedSubjects(subjectSlug: string, limit = 8) {
 	return [...rows] as Array<{ name: string; slug: string; course_count: number }>;
 }
 
-export async function getPopularSubjects(limit = 8) {
+const _getPopularSubjects = cached(async () => {
 	const rows = await db
 		.select({
 			name: schema.subjects.name,
@@ -806,13 +825,17 @@ export async function getPopularSubjects(limit = 8) {
 		.innerJoin(schema.courseSubjects, eq(schema.subjects.id, schema.courseSubjects.subjectId))
 		.groupBy(schema.subjects.id, schema.subjects.name, schema.subjects.slug)
 		.orderBy(desc(count(schema.courseSubjects.courseId)))
-		.limit(limit);
+		.limit(8);
 
 	return rows.map((r) => ({
 		name: r.name,
 		slug: r.slug,
 		courseCount: r.courseCount
 	}));
+}, FIVE_MINUTES);
+
+export async function getPopularSubjects(_limit = 8) {
+	return _getPopularSubjects();
 }
 
 export async function getCoursesBySlugs(slugs: string[]) {

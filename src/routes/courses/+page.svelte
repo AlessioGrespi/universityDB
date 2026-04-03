@@ -115,7 +115,7 @@
 			data.filters.studyMode,
 			data.filters.scheme,
 			data.filters.sort,
-			myUcasPoints.trim() || undefined
+			String(myUcasPoints ?? '').trim() || undefined
 		].filter(Boolean).length
 	);
 </script>

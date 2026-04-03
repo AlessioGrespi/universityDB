@@ -157,7 +157,10 @@ export const courseSubjects = pgTable(
 			.notNull()
 			.references(() => subjects.id, { onDelete: 'cascade' })
 	},
-	(t) => [primaryKey({ columns: [t.courseId, t.subjectId] })]
+	(t) => [
+		primaryKey({ columns: [t.courseId, t.subjectId] }),
+		index('course_subjects_subject_idx').on(t.subjectId)
+	]
 );
 
 // ─── Topics (OpenAlex taxonomy) ───────────────────────────────────────────────

@@ -4,6 +4,7 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { navigating } from '$app/stores';
+	import posthog from 'posthog-js';
 
 	let { data } = $props();
 
@@ -29,7 +30,11 @@
 	function handleSearchInput() {
 		clearTimeout(debounceTimer);
 		debounceTimer = setTimeout(() => {
-			updateFilters({ q: searchInput.trim() || undefined });
+			const q = searchInput.trim() || undefined;
+			if (q) {
+				posthog.capture('university_search', { query: q });
+			}
+			updateFilters({ q });
 		}, 250);
 	}
 
@@ -306,6 +311,13 @@
 								<a
 									href="/universities/{uni.slug}"
 									class="font-medium text-surface-800 transition-colors group-hover:text-primary-600"
+									onclick={() =>
+										posthog.capture('university_clicked', {
+											university_name: uni.name,
+											university_slug: uni.slug,
+											tef_rating: uni.tefRating,
+											source: 'universities_listing'
+										})}
 								>
 									{uni.name}
 								</a>

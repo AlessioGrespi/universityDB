@@ -17,7 +17,8 @@
 			api_host: env.PUBLIC_POSTHOG_HOST,
 			capture_pageview: false,
 			capture_pageleave: true,
-			person_profiles: 'identified_only'
+			person_profiles: 'identified_only',
+			disable_session_recording: false
 		});
 	}
 

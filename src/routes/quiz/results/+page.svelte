@@ -4,11 +4,28 @@
 	import Badge from '$lib/components/Badge.svelte';
 	import { answersToParams } from '$lib/stores/quiz';
 	import { browser } from '$app/environment';
+	import posthog from 'posthog-js';
 
 	let { data }: { data: PageData } = $props();
 
 	const topResults = $derived(data.results.slice(0, 5));
 	const remainingResults = $derived(data.results.slice(5));
+
+	// Track quiz completion
+	$effect(() => {
+		if (browser && data.answers.scheme) {
+			posthog.capture('quiz_completed', {
+				scheme: data.answers.scheme,
+				subject_clusters: data.answers.subjectClusters,
+				priorities: data.answers.priorities,
+				ucas_points: data.answers.ucasPoints,
+				regions: data.answers.regions,
+				study_mode: data.answers.studyMode,
+				results_count: data.results.length,
+				top_match: data.results[0]?.title ?? null
+			});
+		}
+	});
 	// Email gate disabled — email sending not configured yet
 	// const hasEmail = $derived(!!data.answers.email);
 	// let showGated = $state(false);

@@ -6,6 +6,7 @@
 	import { navigating } from '$app/stores';
 	import { shortlist, toggleShortlist } from '$lib/stores/shortlist';
 	import { compareList, toggleCompare, compareCount } from '$lib/stores/compare';
+	import posthog from 'posthog-js';
 
 	let { data } = $props();
 
@@ -32,7 +33,11 @@
 	function handleSearchInput() {
 		clearTimeout(debounceTimer);
 		debounceTimer = setTimeout(() => {
-			updateFilters({ q: searchInput.trim() || undefined });
+			const q = searchInput.trim() || undefined;
+			if (q) {
+				posthog.capture('course_search', { query: q });
+			}
+			updateFilters({ q });
 		}, 250);
 	}
 
@@ -444,6 +449,14 @@
 								<a
 									href="/courses/{course.slug}"
 									class="font-medium text-surface-800 transition-colors group-hover:text-primary-600"
+									onclick={() =>
+										posthog.capture('course_clicked', {
+											course_title: course.title,
+											course_slug: course.slug,
+											university: course.universityName,
+											qualification: course.qualification,
+											source: 'courses_listing'
+										})}
 								>
 									{course.title}
 								</a>

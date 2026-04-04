@@ -2,6 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
 	import { commandPaletteOpen } from '$lib/stores/search';
+	import posthog from 'posthog-js';
 
 	let query = $state('');
 	let results = $state<{ universities: any[]; courses: any[]; subjects: any[] }>({
@@ -63,6 +64,14 @@
 				if (res.ok) {
 					results = await res.json();
 					selectedIndex = 0;
+					posthog.capture('command_palette_search', {
+						query: q,
+						university_results: results.universities.length,
+						course_results: results.courses.length,
+						subject_results: results.subjects.length,
+						total_results:
+							results.universities.length + results.courses.length + results.subjects.length
+					});
 				}
 			} finally {
 				loading = false;
@@ -86,6 +95,15 @@
 	}
 
 	function navigateTo(href: string) {
+		const item = allItems[selectedIndex];
+		if (item) {
+			posthog.capture('command_palette_select', {
+				query: query.trim(),
+				selected_type: item.type,
+				selected_label: item.label,
+				selected_href: href
+			});
+		}
 		close();
 		goto(href);
 	}

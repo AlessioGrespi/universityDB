@@ -699,32 +699,24 @@ export async function getRelatedCourses(
 }
 
 export const getStats = cached(async () => {
-	const [
-		[uniCount],
-		[totalInstitutions],
-		[courseCount],
-		[academicCount],
-		[projectCount],
-		[subjectCount]
-	] = await Promise.all([
-		db
-			.select({ value: count() })
-			.from(schema.universities)
-			.where(eq(schema.universities.institutionType, 'university')),
-		db.select({ value: count() }).from(schema.universities),
-		db.select({ value: count() }).from(schema.courses),
-		db.select({ value: count() }).from(schema.academics),
-		db.select({ value: count() }).from(schema.researchProjects),
-		db.select({ value: count() }).from(schema.subjects)
-	]);
+	const rows = await db.execute(sql`
+		SELECT
+			(SELECT count(*) FROM universities WHERE institution_type = 'university') AS uni_count,
+			(SELECT count(*) FROM universities) AS total_institutions,
+			(SELECT count(*) FROM courses) AS course_count,
+			(SELECT count(*) FROM academics) AS academic_count,
+			(SELECT count(*) FROM research_projects) AS project_count,
+			(SELECT count(*) FROM subjects) AS subject_count
+	`);
+	const row = rows[0] as Record<string, unknown> | undefined;
 
 	return {
-		universities: formatCount(uniCount?.value ?? 0),
-		institutions: formatCount(totalInstitutions?.value ?? 0),
-		courses: formatCount(courseCount?.value ?? 0),
-		academics: formatCount(academicCount?.value ?? 0),
-		researchProjects: formatCount(projectCount?.value ?? 0),
-		subjects: formatCount(subjectCount?.value ?? 0)
+		universities: formatCount(Number(row?.uni_count ?? 0)),
+		institutions: formatCount(Number(row?.total_institutions ?? 0)),
+		courses: formatCount(Number(row?.course_count ?? 0)),
+		academics: formatCount(Number(row?.academic_count ?? 0)),
+		researchProjects: formatCount(Number(row?.project_count ?? 0)),
+		subjects: formatCount(Number(row?.subject_count ?? 0))
 	};
 }, FIVE_MINUTES);
 

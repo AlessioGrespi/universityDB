@@ -61,7 +61,7 @@
 	// Grade-based filter
 	import { browser } from '$app/environment';
 
-	let myUcasPoints = $state('');
+	let myUcasPoints: string | null = $state('');
 
 	$effect(() => {
 		if (browser) {
@@ -71,8 +71,9 @@
 
 	function handleUcasInput() {
 		if (browser) {
-			if (myUcasPoints.trim()) {
-				localStorage.setItem('universitydb-ucas-points', myUcasPoints.trim());
+			const val = String(myUcasPoints ?? '').trim();
+			if (val) {
+				localStorage.setItem('universitydb-ucas-points', val);
 			} else {
 				localStorage.removeItem('universitydb-ucas-points');
 			}
@@ -88,7 +89,7 @@
 	function getEligibility(
 		course: (typeof data.courses)[0]
 	): 'likely' | 'stretch' | 'ambitious' | null {
-		const myPoints = parseInt(myUcasPoints, 10);
+		const myPoints = parseInt(String(myUcasPoints ?? ''), 10);
 		if (!myPoints || isNaN(myPoints)) return null;
 		const reqPoints = parseUcasPoints(course.entryRequirements.ucasPoints);
 		if (!reqPoints) return null;
@@ -105,7 +106,7 @@
 
 	let totalPages = $derived(Math.ceil(data.total / data.limit));
 	let isSearching = $derived(!!$navigating);
-	let hasUcasFilter = $derived(!!myUcasPoints && !isNaN(parseInt(myUcasPoints, 10)));
+	let hasUcasFilter = $derived(!!myUcasPoints && !isNaN(parseInt(String(myUcasPoints), 10)));
 
 	let filtersOpen = $state(false);
 	let activeFilterCount = $derived(

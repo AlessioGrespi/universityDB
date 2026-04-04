@@ -72,7 +72,12 @@ export const universities = pgTable(
 		createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
 		updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow()
 	},
-	(t) => [index('uni_country_idx').on(t.country), index('uni_geo_idx').on(t.latitude, t.longitude)]
+	(t) => [
+		index('uni_country_idx').on(t.country),
+		index('uni_geo_idx').on(t.latitude, t.longitude),
+		index('uni_institution_type_idx').on(t.institutionType),
+		index('uni_student_count_idx').on(t.studentCount)
+	]
 );
 
 // ─── Subjects (UCAS CAH + GtR + REF UoA) ─────────────────────────────────────

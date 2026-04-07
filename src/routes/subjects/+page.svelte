@@ -41,9 +41,7 @@
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		{#each grouped as [letter, group]}
 			<div class="mb-10">
-				<h2
-					class="mb-4 border-b border-surface-200 pb-2 text-lg font-bold text-surface-900"
-				>
+				<h2 class="mb-4 border-b border-surface-200 pb-2 text-lg font-bold text-surface-900">
 					{letter}
 				</h2>
 				<div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">

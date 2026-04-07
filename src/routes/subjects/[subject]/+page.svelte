@@ -31,9 +31,7 @@
 
 <Seo title={seoTitle} description={seoDescription} />
 
-<Breadcrumb
-	items={[{ name: 'Subjects', href: '/subjects' }, { name: subject.name }]}
-/>
+<Breadcrumb items={[{ name: 'Subjects', href: '/subjects' }, { name: subject.name }]} />
 
 <!-- Hero -->
 <section class="bg-gradient-to-b from-primary-50 to-white">
@@ -42,7 +40,8 @@
 			{subject.name} Courses
 		</h1>
 		<p class="mt-3 text-lg text-surface-500">
-			Browse {totalCourses.toLocaleString()} {subject.name} courses across UK universities
+			Browse {totalCourses.toLocaleString()}
+			{subject.name} courses across UK universities
 		</p>
 	</div>
 </section>
@@ -97,7 +96,7 @@
 
 			<!-- Right Column — Sidebar -->
 			<div class="lg:col-span-1">
-				<div class="lg:sticky lg:top-24 space-y-6">
+				<div class="space-y-6 lg:sticky lg:top-24">
 					<!-- Top Universities -->
 					{#if topUniversities.length > 0}
 						<div class="rounded-card border border-surface-200 bg-white p-6 shadow-card">

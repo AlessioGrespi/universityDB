@@ -5,6 +5,7 @@ Research into complete, programmatically accessible datasets for American univer
 ## 1. College Scorecard (U.S. Department of Education)
 
 **Coverage:** ~6,700 institutions, ~3,000 data columns
+
 - Institution names, locations, URLs, accreditation
 - Admissions rates, SAT/ACT score ranges
 - Tuition and fees (in-state/out-of-state), net price by income bracket
@@ -16,6 +17,7 @@ Research into complete, programmatically accessible datasets for American univer
 - Field of study-level data (earnings, debt by CIP code)
 
 **Access:**
+
 - **REST API** (free key via [api.data.gov](https://api.data.gov/signup/)):
   - Base URL: `https://api.data.gov/ed/collegescorecard/v1/schools`
   - Example: `https://api.data.gov/ed/collegescorecard/v1/schools?api_key=YOUR_KEY&school.name=Harvard`
@@ -33,6 +35,7 @@ Research into complete, programmatically accessible datasets for American univer
 ## 2. IPEDS (Integrated Postsecondary Education Data System)
 
 **Coverage:** ~6,400+ Title IV institutions (mandatory reporting)
+
 - Institutional characteristics (name, address, sector, Carnegie classification)
 - Enrollment by level, attendance status, race/ethnicity, gender
 - Completions/degrees awarded by CIP code
@@ -44,6 +47,7 @@ Research into complete, programmatically accessible datasets for American univer
 - Admissions data (applicants, admits, enrollees, test scores)
 
 **Access:**
+
 - **Bulk CSV download:** https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx
 - **IPEDS Data Explorer (web UI):** https://nces.ed.gov/ipeds/datacenter/
 - No official REST API — use Urban Institute API below
@@ -59,6 +63,7 @@ Research into complete, programmatically accessible datasets for American univer
 Mirrors IPEDS data in a clean, queryable REST API. Also includes College Scorecard data and federal student loan data.
 
 **Access:**
+
 - **REST API** (free, no key required):
   - Base URL: `https://educationdata.urban.org/api/v1/`
   - Directory: `https://educationdata.urban.org/api/v1/college-university/ipeds/directory/2022/`
@@ -75,6 +80,7 @@ Mirrors IPEDS data in a clean, queryable REST API. Also includes College Scoreca
 ## 4. CIP Codes (Classification of Instructional Programs)
 
 The standardized taxonomy of academic programs used by IPEDS and College Scorecard.
+
 - 2-digit (broad field), 4-digit (intermediate), 6-digit (specific program)
 - e.g., CIP 11.0701 = Computer Science
 
@@ -93,6 +99,7 @@ Free, open catalog of scholarly works, authors, and institutions (replaced Micro
 **Coverage:** Publication counts, citation counts, h-index, research areas, associated authors per institution.
 
 **Access:**
+
 - **REST API** (no key needed for polite pool; email-based key for higher rate limits):
   - Base URL: `https://api.openalex.org/`
   - Example: `https://api.openalex.org/institutions?search=MIT`
@@ -110,21 +117,23 @@ No public API or bulk download for US News rankings (proprietary/paywalled). How
 
 ## Data Architecture Recommendation
 
-| Data Need | Primary Source | Access Method |
-|---|---|---|
-| University directory (name, location, type) | College Scorecard | API or bulk CSV |
-| Admissions (acceptance rate, SAT/ACT) | College Scorecard | API |
-| Tuition/fees/financial aid | College Scorecard | API |
-| Programs offered + degrees awarded | IPEDS Completions via Urban Institute | REST API |
-| Student demographics/enrollment | IPEDS via Urban Institute | REST API |
-| Faculty counts/salaries | IPEDS (bulk CSV) | CSV download |
-| Post-graduation earnings by program | College Scorecard (field of study files) | Bulk CSV |
-| Research output | OpenAlex | REST API |
+| Data Need                                   | Primary Source                           | Access Method   |
+| ------------------------------------------- | ---------------------------------------- | --------------- |
+| University directory (name, location, type) | College Scorecard                        | API or bulk CSV |
+| Admissions (acceptance rate, SAT/ACT)       | College Scorecard                        | API             |
+| Tuition/fees/financial aid                  | College Scorecard                        | API             |
+| Programs offered + degrees awarded          | IPEDS Completions via Urban Institute    | REST API        |
+| Student demographics/enrollment             | IPEDS via Urban Institute                | REST API        |
+| Faculty counts/salaries                     | IPEDS (bulk CSV)                         | CSV download    |
+| Post-graduation earnings by program         | College Scorecard (field of study files) | Bulk CSV        |
+| Research output                             | OpenAlex                                 | REST API        |
 
 ### Key Identifiers (for joining across sources)
+
 - **UNITID** — IPEDS institution ID (used by both IPEDS and College Scorecard)
 - **OPEID** — federal financial aid ID
 - **CIP codes** — for joining program-level data
 
 ### Practical Starting Point
+
 The College Scorecard "Most Recent Institution-Level Data" CSV is a single file covering most needs. Download it, filter to degree-granting institutions, and use as the seed for the database. Enrich with IPEDS completions (program listings) and OpenAlex (research metrics) via their APIs.

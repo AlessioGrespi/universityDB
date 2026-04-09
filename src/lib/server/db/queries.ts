@@ -33,6 +33,7 @@ function cached<T>(fn: () => Promise<T>, ttlMs: number): () => Promise<T> {
 }
 
 const FIVE_MINUTES = 5 * 60 * 1000;
+const THIRTY_MINUTES = 30 * 60 * 1000;
 
 /** In-memory synonym map, loaded once from DB. Keys are lowercase terms. */
 let synonymMap: Map<string, string[]> | null = null;
@@ -285,14 +286,39 @@ export async function getUniversityBySlug(slug: string) {
 
 const _getFeaturedUniversities = cached(async () => {
 	const rows = await db
-		.select()
+		.select({
+			id: schema.universities.id,
+			name: schema.universities.name,
+			slug: schema.universities.slug,
+			logoUrl: schema.universities.logoUrl,
+			imageUrl: schema.universities.imageUrl,
+			website: schema.universities.website,
+			wikipediaUrl: schema.universities.wikipediaUrl,
+			addressLine1: schema.universities.addressLine1,
+			addressLine2: schema.universities.addressLine2,
+			addressLine3: schema.universities.addressLine3,
+			town: schema.universities.town,
+			postcode: schema.universities.postcode,
+			country: schema.universities.country,
+			latitude: schema.universities.latitude,
+			longitude: schema.universities.longitude,
+			founded: schema.universities.founded,
+			studentCount: schema.universities.studentCount,
+			groups: schema.universities.groups,
+			tefRating: schema.universities.tefRating,
+			worksCount: schema.universities.worksCount,
+			citedByCount: schema.universities.citedByCount,
+			hIndex: schema.universities.hIndex,
+			contactEmail: schema.universities.contactEmail,
+			contactPhone: schema.universities.contactPhone
+		})
 		.from(schema.universities)
 		.where(sql`${schema.universities.studentCount} IS NOT NULL`)
 		.orderBy(desc(schema.universities.studentCount))
 		.limit(6);
 
-	return rows.map(mapUniversity);
-}, FIVE_MINUTES);
+	return rows.map((row) => mapUniversity(row as typeof schema.universities.$inferSelect));
+}, THIRTY_MINUTES);
 
 export async function getFeaturedUniversities(_limit = 6) {
 	return _getFeaturedUniversities();
@@ -330,6 +356,8 @@ export interface CourseSearchParams {
 	qualification?: string;
 	studyMode?: string;
 	scheme?: string;
+	yearDuration?: string;
+	sandwich?: string;
 	sort?: string;
 	limit?: number;
 	offset?: number;
@@ -343,6 +371,8 @@ export async function searchCourses(params: CourseSearchParams) {
 		qualification,
 		studyMode,
 		scheme,
+		yearDuration,
+		sandwich,
 		sort,
 		limit = 50,
 		offset = 0
@@ -369,7 +399,51 @@ export async function searchCourses(params: CourseSearchParams) {
 		}
 	}
 	if (university) conditions.push(eq(schema.universities.slug, university));
-	if (scheme) conditions.push(eq(schema.courses.scheme, scheme));
+	if (scheme === 'Integrated Masters') {
+		// Integrated masters are stored as Postgraduate in DB but have specific qualification prefixes
+		const prefixChecks = INTEGRATED_MASTER_PREFIXES.map(
+			(p) => sql`${schema.courseOptions.qualification} = ${p}`
+		);
+		conditions.push(
+			sql`EXISTS (
+				SELECT 1 FROM ${schema.courseOptions}
+				WHERE ${schema.courseOptions.courseId} = ${schema.courses.id}
+				AND (${sql.join(prefixChecks, sql` OR `)})
+			)`
+		);
+	} else if (scheme) {
+		conditions.push(eq(schema.courses.scheme, scheme));
+	}
+
+	// Duration (years) filter via subquery on courseOptions
+	if (yearDuration) {
+		conditions.push(
+			sql`EXISTS (
+				SELECT 1 FROM ${schema.courseOptions}
+				WHERE ${schema.courseOptions.courseId} = ${schema.courses.id}
+				AND ${schema.courseOptions.duration} ILIKE ${yearDuration + ' year%'}
+			)`
+		);
+	}
+
+	// Sandwich course filter via subquery on courseOptions
+	if (sandwich === 'yes') {
+		conditions.push(
+			sql`EXISTS (
+				SELECT 1 FROM ${schema.courseOptions}
+				WHERE ${schema.courseOptions.courseId} = ${schema.courses.id}
+				AND ${schema.courseOptions.duration} ILIKE '%sandwich%'
+			)`
+		);
+	} else if (sandwich === 'no') {
+		conditions.push(
+			sql`NOT EXISTS (
+				SELECT 1 FROM ${schema.courseOptions}
+				WHERE ${schema.courseOptions.courseId} = ${schema.courses.id}
+				AND ${schema.courseOptions.duration} ILIKE '%sandwich%'
+			)`
+		);
+	}
 
 	// Subject filter needs a subquery to avoid joining in the main query
 	if (subject) {
@@ -456,7 +530,7 @@ export async function searchCourses(params: CourseSearchParams) {
 }
 
 export async function getCourseFilterOptions() {
-	const [subjects, studyModes] = await Promise.all([
+	const [subjects, studyModes, durations] = await Promise.all([
 		db
 			.select({
 				name: schema.subjects.name,
@@ -471,13 +545,24 @@ export async function getCourseFilterOptions() {
 			.selectDistinct({ studyMode: schema.courseOptions.studyMode })
 			.from(schema.courseOptions)
 			.where(sql`${schema.courseOptions.studyMode} IS NOT NULL`)
-			.orderBy(schema.courseOptions.studyMode)
+			.orderBy(schema.courseOptions.studyMode),
+		db
+			.select({
+				years:
+					sql<string>`DISTINCT substring(${schema.courseOptions.duration} FROM '^([0-9]+)')`.as(
+						'years'
+					)
+			})
+			.from(schema.courseOptions)
+			.where(sql`${schema.courseOptions.duration} IS NOT NULL`)
+			.orderBy(sql`1`)
 	]);
 
 	return {
 		subjects: subjects.map((s) => ({ name: s.name, slug: s.slug, courseCount: s.courseCount })),
 		qualifications: QUALIFICATION_GROUPS.map((g) => ({ label: g.label, value: g.value })),
-		studyModes: studyModes.map((s) => s.studyMode).filter((s): s is string => s !== null)
+		studyModes: studyModes.map((s) => s.studyMode).filter((s): s is string => s !== null),
+		yearDurations: durations.map((d) => d.years).filter((y): y is string => y !== null && y !== '')
 	};
 }
 
@@ -802,7 +887,7 @@ const _getPopularSubjects = cached(async () => {
 		slug: r.slug,
 		courseCount: r.courseCount
 	}));
-}, FIVE_MINUTES);
+}, THIRTY_MINUTES);
 
 export async function getPopularSubjects(_limit = 8) {
 	return _getPopularSubjects();

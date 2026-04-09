@@ -160,7 +160,10 @@
 	]);
 </script>
 
-<Seo title="{displayQualification} {course.title} at {course.universityName}" description={seoDescription} />
+<Seo
+	title="{displayQualification} {course.title} at {course.universityName}"
+	description={seoDescription}
+/>
 
 <svelte:head>
 	{@html courseJsonLd}

@@ -7,9 +7,7 @@ import { BASE_URL } from '$lib/config';
 const COURSES_PER_SITEMAP = 10_000;
 
 export const GET: RequestHandler = async () => {
-	const [{ count }] = await db
-		.select({ count: sql<number>`count(*)::int` })
-		.from(schema.courses);
+	const [{ count }] = await db.select({ count: sql<number>`count(*)::int` }).from(schema.courses);
 
 	const courseChunks = Math.ceil(count / COURSES_PER_SITEMAP);
 

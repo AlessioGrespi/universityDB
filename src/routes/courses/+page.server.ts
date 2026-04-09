@@ -8,6 +8,8 @@ export const load: PageServerLoad = async ({ url }) => {
 	const qualification = url.searchParams.get('qualification') || undefined;
 	const studyMode = url.searchParams.get('studyMode') || undefined;
 	const scheme = url.searchParams.get('scheme') || undefined;
+	const yearDuration = url.searchParams.get('yearDuration') || undefined;
+	const sandwich = url.searchParams.get('sandwich') || undefined;
 	const sort = url.searchParams.get('sort') || undefined;
 	const page = Math.max(1, Number(url.searchParams.get('page')) || 1);
 	const limit = 50;
@@ -20,6 +22,8 @@ export const load: PageServerLoad = async ({ url }) => {
 			qualification,
 			studyMode,
 			scheme,
+			yearDuration,
+			sandwich,
 			sort,
 			limit,
 			offset: (page - 1) * limit
@@ -32,7 +36,17 @@ export const load: PageServerLoad = async ({ url }) => {
 		total,
 		page,
 		limit,
-		filters: { q, university, subject, qualification, studyMode, scheme, sort },
+		filters: {
+			q,
+			university,
+			subject,
+			qualification,
+			studyMode,
+			scheme,
+			yearDuration,
+			sandwich,
+			sort
+		},
 		filterOptions
 	};
 };

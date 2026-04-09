@@ -120,6 +120,8 @@
 			data.filters.qualification,
 			data.filters.studyMode,
 			data.filters.scheme,
+			data.filters.yearDuration,
+			data.filters.sandwich,
 			data.filters.sort,
 			String(myUcasPoints ?? '').trim() || undefined
 		].filter(Boolean).length
@@ -228,6 +230,29 @@
 					<option value="">All Schemes</option>
 					<option value="Undergraduate">Undergraduate</option>
 					<option value="Postgraduate">Postgraduate</option>
+					<option value="Integrated Masters">Integrated Masters</option>
+				</select>
+
+				<select
+					value={data.filters.yearDuration ?? ''}
+					onchange={(e) =>
+						handleFilterChange('yearDuration', (e.target as HTMLSelectElement).value)}
+					class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+				>
+					<option value="">All Durations</option>
+					{#each data.filterOptions.yearDurations as yr}
+						<option value={yr}>{yr} {parseInt(yr) === 1 ? 'year' : 'years'}</option>
+					{/each}
+				</select>
+
+				<select
+					value={data.filters.sandwich ?? ''}
+					onchange={(e) => handleFilterChange('sandwich', (e.target as HTMLSelectElement).value)}
+					class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+				>
+					<option value="">Sandwich: Any</option>
+					<option value="yes">Sandwich Only</option>
+					<option value="no">Exclude Sandwich</option>
 				</select>
 
 				<select
@@ -312,6 +337,32 @@
 							<option value="">All Schemes</option>
 							<option value="Undergraduate">Undergraduate</option>
 							<option value="Postgraduate">Postgraduate</option>
+							<option value="Integrated Masters">Integrated Masters</option>
+						</select>
+					</div>
+
+					<div class="grid grid-cols-2 gap-2">
+						<select
+							value={data.filters.yearDuration ?? ''}
+							onchange={(e) =>
+								handleFilterChange('yearDuration', (e.target as HTMLSelectElement).value)}
+							class="w-full cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+						>
+							<option value="">All Durations</option>
+							{#each data.filterOptions.yearDurations as yr}
+								<option value={yr}>{yr} {parseInt(yr) === 1 ? 'year' : 'years'}</option>
+							{/each}
+						</select>
+
+						<select
+							value={data.filters.sandwich ?? ''}
+							onchange={(e) =>
+								handleFilterChange('sandwich', (e.target as HTMLSelectElement).value)}
+							class="w-full cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+						>
+							<option value="">Sandwich: Any</option>
+							<option value="yes">Sandwich Only</option>
+							<option value="no">Exclude Sandwich</option>
 						</select>
 					</div>
 

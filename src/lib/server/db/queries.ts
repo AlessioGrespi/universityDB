@@ -390,6 +390,8 @@ export interface CourseSearchParams {
 	qualification?: string;
 	studyMode?: string;
 	scheme?: string;
+	yearDuration?: string;
+	sandwich?: string;
 	sort?: string;
 	limit?: number;
 	offset?: number;
@@ -403,6 +405,8 @@ export async function searchCourses(params: CourseSearchParams) {
 		qualification,
 		studyMode,
 		scheme,
+		yearDuration,
+		sandwich,
 		sort,
 		limit = 50,
 		offset = 0
@@ -429,7 +433,51 @@ export async function searchCourses(params: CourseSearchParams) {
 		}
 	}
 	if (university) conditions.push(eq(schema.universities.slug, university));
-	if (scheme) conditions.push(eq(schema.courses.scheme, scheme));
+	if (scheme === 'Integrated Masters') {
+		// Integrated masters are stored as Postgraduate in DB but have specific qualification prefixes
+		const prefixChecks = INTEGRATED_MASTER_PREFIXES.map(
+			(p) => sql`${schema.courseOptions.qualification} = ${p}`
+		);
+		conditions.push(
+			sql`EXISTS (
+				SELECT 1 FROM ${schema.courseOptions}
+				WHERE ${schema.courseOptions.courseId} = ${schema.courses.id}
+				AND (${sql.join(prefixChecks, sql` OR `)})
+			)`
+		);
+	} else if (scheme) {
+		conditions.push(eq(schema.courses.scheme, scheme));
+	}
+
+	// Duration (years) filter via subquery on courseOptions
+	if (yearDuration) {
+		conditions.push(
+			sql`EXISTS (
+				SELECT 1 FROM ${schema.courseOptions}
+				WHERE ${schema.courseOptions.courseId} = ${schema.courses.id}
+				AND ${schema.courseOptions.duration} ILIKE ${yearDuration + ' year%'}
+			)`
+		);
+	}
+
+	// Sandwich course filter via subquery on courseOptions
+	if (sandwich === 'yes') {
+		conditions.push(
+			sql`EXISTS (
+				SELECT 1 FROM ${schema.courseOptions}
+				WHERE ${schema.courseOptions.courseId} = ${schema.courses.id}
+				AND ${schema.courseOptions.duration} ILIKE '%sandwich%'
+			)`
+		);
+	} else if (sandwich === 'no') {
+		conditions.push(
+			sql`NOT EXISTS (
+				SELECT 1 FROM ${schema.courseOptions}
+				WHERE ${schema.courseOptions.courseId} = ${schema.courses.id}
+				AND ${schema.courseOptions.duration} ILIKE '%sandwich%'
+			)`
+		);
+	}
 
 	// Subject filter needs a subquery to avoid joining in the main query
 	if (subject) {
@@ -497,7 +545,7 @@ export async function searchCourses(params: CourseSearchParams) {
 }
 
 export async function getCourseFilterOptions() {
-	const [subjects, qualifications, studyModes] = await Promise.all([
+	const [subjects, qualifications, studyModes, durations] = await Promise.all([
 		db
 			.select({
 				name: schema.subjects.name,
@@ -517,7 +565,17 @@ export async function getCourseFilterOptions() {
 			.selectDistinct({ studyMode: schema.courseOptions.studyMode })
 			.from(schema.courseOptions)
 			.where(sql`${schema.courseOptions.studyMode} IS NOT NULL`)
-			.orderBy(schema.courseOptions.studyMode)
+			.orderBy(schema.courseOptions.studyMode),
+		db
+			.select({
+				years:
+					sql<string>`DISTINCT substring(${schema.courseOptions.duration} FROM '^([0-9]+)')`.as(
+						'years'
+					)
+			})
+			.from(schema.courseOptions)
+			.where(sql`${schema.courseOptions.duration} IS NOT NULL`)
+			.orderBy(sql`1`)
 	]);
 
 	return {
@@ -525,7 +583,8 @@ export async function getCourseFilterOptions() {
 		qualifications: qualifications
 			.map((q) => q.qualification)
 			.filter((q): q is string => q !== null),
-		studyModes: studyModes.map((s) => s.studyMode).filter((s): s is string => s !== null)
+		studyModes: studyModes.map((s) => s.studyMode).filter((s): s is string => s !== null),
+		yearDurations: durations.map((d) => d.years).filter((y): y is string => y !== null && y !== '')
 	};
 }
 

@@ -29,6 +29,7 @@ function cached<T>(fn: () => Promise<T>, ttlMs: number): () => Promise<T> {
 }
 
 const FIVE_MINUTES = 5 * 60 * 1000;
+const THIRTY_MINUTES = 30 * 60 * 1000;
 
 /** In-memory synonym map, loaded once from DB. Keys are lowercase terms. */
 let synonymMap: Map<string, string[]> | null = null;
@@ -319,14 +320,39 @@ export async function getUniversityBySlug(slug: string) {
 
 const _getFeaturedUniversities = cached(async () => {
 	const rows = await db
-		.select()
+		.select({
+			id: schema.universities.id,
+			name: schema.universities.name,
+			slug: schema.universities.slug,
+			logoUrl: schema.universities.logoUrl,
+			imageUrl: schema.universities.imageUrl,
+			website: schema.universities.website,
+			wikipediaUrl: schema.universities.wikipediaUrl,
+			addressLine1: schema.universities.addressLine1,
+			addressLine2: schema.universities.addressLine2,
+			addressLine3: schema.universities.addressLine3,
+			town: schema.universities.town,
+			postcode: schema.universities.postcode,
+			country: schema.universities.country,
+			latitude: schema.universities.latitude,
+			longitude: schema.universities.longitude,
+			founded: schema.universities.founded,
+			studentCount: schema.universities.studentCount,
+			groups: schema.universities.groups,
+			tefRating: schema.universities.tefRating,
+			worksCount: schema.universities.worksCount,
+			citedByCount: schema.universities.citedByCount,
+			hIndex: schema.universities.hIndex,
+			contactEmail: schema.universities.contactEmail,
+			contactPhone: schema.universities.contactPhone
+		})
 		.from(schema.universities)
 		.where(sql`${schema.universities.studentCount} IS NOT NULL`)
 		.orderBy(desc(schema.universities.studentCount))
 		.limit(6);
 
-	return rows.map(mapUniversity);
-}, FIVE_MINUTES);
+	return rows.map((row) => mapUniversity(row as typeof schema.universities.$inferSelect));
+}, THIRTY_MINUTES);
 
 export async function getFeaturedUniversities(_limit = 6) {
 	return _getFeaturedUniversities();
@@ -824,7 +850,7 @@ const _getPopularSubjects = cached(async () => {
 		slug: r.slug,
 		courseCount: r.courseCount
 	}));
-}, FIVE_MINUTES);
+}, THIRTY_MINUTES);
 
 export async function getPopularSubjects(_limit = 8) {
 	return _getPopularSubjects();

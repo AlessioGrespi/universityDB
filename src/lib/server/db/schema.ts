@@ -113,6 +113,7 @@ export const courses = pgTable(
 	},
 	(t) => [
 		uniqueIndex('course_uni_slug_idx').on(t.universityId, t.slug),
+		index('course_slug_idx').on(t.slug),
 		index('course_uni_idx').on(t.universityId),
 		index('course_scheme_idx').on(t.scheme)
 	]

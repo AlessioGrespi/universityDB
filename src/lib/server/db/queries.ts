@@ -13,6 +13,10 @@ import type {
 	ScoredCourse
 } from '$lib/types';
 import { getCahPrefixesForClusters } from '$lib/data/subject-clusters';
+import {
+	QUALIFICATION_GROUPS,
+	INTEGRATED_MASTER_PREFIXES
+} from '$lib/server/db/qualification-groups';
 import { regions as regionData, distanceMiles } from '$lib/data/regions';
 
 // ─── Simple TTL cache ────────────────────────────────────────────────────────
@@ -97,46 +101,8 @@ function mapEntryRequirements(raw: Record<string, string> | null | undefined): E
 }
 
 // UK Integrated Masters are undergraduate degrees despite the "M" prefix.
-// UCAS data mislabels most of them as Postgraduate.
-const INTEGRATED_MASTER_PREFIXES = [
-	'MEng',
-	'MChem',
-	'MPhys',
-	'MSci',
-	'Msci',
-	'MComp',
-	'MMath',
-	'MBiol',
-	'MBiochem',
-	'MBiolSci',
-	'MBiomedSci',
-	'MGeol',
-	'MGeog',
-	'MArch',
-	'MNatSci',
-	'MEarthSci',
-	'MEarthPhys',
-	'MChemPhys',
-	'MEnv',
-	'MEnvSci',
-	'MMorse',
-	'MPharmSci',
-	'MPhysPhil',
-	'MMet',
-	'MMarBiol',
-	'MInf',
-	'MLang',
-	'MChiro',
-	'MMathStat',
-	'MOptom',
-	'MCompu',
-	'MHist',
-	'MPharm',
-	'MVetPhys',
-	'MZool',
-	'MArts',
-	'MLibArts'
-];
+// UCAS data mislabels most integrated masters as Postgraduate.
+// INTEGRATED_MASTER_PREFIXES is imported from qualification-groups.ts
 
 function isIntegratedMasters(qualification: string): boolean {
 	if (!qualification) return false;
@@ -419,7 +385,26 @@ export async function searchCourses(params: CourseSearchParams) {
 	// Qualification + studyMode filter via subquery on courseOptions
 	if (qualification || studyMode) {
 		const optConditions: SQL[] = [sql`${schema.courseOptions.courseId} = ${schema.courses.id}`];
-		if (qualification) optConditions.push(eq(schema.courseOptions.qualification, qualification));
+
+		if (qualification) {
+			const group = QUALIFICATION_GROUPS.find((g) => g.value === qualification);
+			if (group) {
+				const patternConds = group.patterns.map(
+					(p) => sql`${schema.courseOptions.fullQualification} ILIKE ${p}`
+				);
+				optConditions.push(sql`(${sql.join(patternConds, sql` OR `)})`);
+
+				// Some groups are scheme-aware (e.g., Bachelor's includes Scottish MA (Hons)
+				// which has "Master of Arts" in full_qualification but scheme = Undergraduate)
+				if (group.schemeFilter) {
+					conditions.push(eq(schema.courses.scheme, group.schemeFilter));
+				}
+			} else {
+				// Backward compat: treat as raw qualification (exact match)
+				optConditions.push(eq(schema.courseOptions.qualification, qualification));
+			}
+		}
+
 		if (studyMode) optConditions.push(eq(schema.courseOptions.studyMode, studyMode));
 
 		conditions.push(
@@ -471,7 +456,7 @@ export async function searchCourses(params: CourseSearchParams) {
 }
 
 export async function getCourseFilterOptions() {
-	const [subjects, qualifications, studyModes] = await Promise.all([
+	const [subjects, studyModes] = await Promise.all([
 		db
 			.select({
 				name: schema.subjects.name,
@@ -483,11 +468,6 @@ export async function getCourseFilterOptions() {
 			.groupBy(schema.subjects.id, schema.subjects.name, schema.subjects.slug)
 			.orderBy(schema.subjects.name),
 		db
-			.selectDistinct({ qualification: schema.courseOptions.qualification })
-			.from(schema.courseOptions)
-			.where(sql`${schema.courseOptions.qualification} IS NOT NULL`)
-			.orderBy(schema.courseOptions.qualification),
-		db
 			.selectDistinct({ studyMode: schema.courseOptions.studyMode })
 			.from(schema.courseOptions)
 			.where(sql`${schema.courseOptions.studyMode} IS NOT NULL`)
@@ -496,9 +476,7 @@ export async function getCourseFilterOptions() {
 
 	return {
 		subjects: subjects.map((s) => ({ name: s.name, slug: s.slug, courseCount: s.courseCount })),
-		qualifications: qualifications
-			.map((q) => q.qualification)
-			.filter((q): q is string => q !== null),
+		qualifications: QUALIFICATION_GROUPS.map((g) => ({ label: g.label, value: g.value })),
 		studyModes: studyModes.map((s) => s.studyMode).filter((s): s is string => s !== null)
 	};
 }

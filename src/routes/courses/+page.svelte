@@ -207,8 +207,8 @@
 					class="cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
 				>
 					<option value="">All Qualifications</option>
-					{#each data.filterOptions.qualifications as qualification}
-						<option value={qualification}>{qualification}</option>
+					{#each data.filterOptions.qualifications as qual}
+						<option value={qual.value}>{qual.label}</option>
 					{/each}
 				</select>
 
@@ -312,8 +312,8 @@
 						class="w-full cursor-pointer appearance-none rounded-lg border border-surface-300 bg-white px-3 py-2 pr-8 text-sm text-surface-700 transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
 					>
 						<option value="">All Qualifications</option>
-						{#each data.filterOptions.qualifications as qualification}
-							<option value={qualification}>{qualification}</option>
+						{#each data.filterOptions.qualifications as qual}
+							<option value={qual.value}>{qual.label}</option>
 						{/each}
 					</select>
 
